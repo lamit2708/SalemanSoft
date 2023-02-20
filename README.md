@@ -1,0 +1,2 @@
+# SalemanSoft
+A small crm
