@@ -2,7 +2,7 @@
         
 CREATE TABLE Activity
 (
-  Id          INT     NOT NULL AUTO_INCREMENT,
+  Id          INT          NOT NULL AUTO_INCREMENT,
   Name        VARCHAR(100) NOT NULL,
   Description VARCHAR(512) NOT NULL,
   PRIMARY KEY (Id)
@@ -10,25 +10,25 @@ CREATE TABLE Activity
 
 CREATE TABLE Anwser
 (
-  Id          BIGINT   NOT NULL AUTO_INCREMENT,
+  Id          BIGINT       NOT NULL AUTO_INCREMENT,
   Content     VARCHAR(512) NOT NULL,
-  CreatedDate DATETIME NOT NULL,
-  UserId      INT      NOT NULL,
-  QuestionId  BIGINT   NOT NULL,
+  CreatedDate DATETIME     NOT NULL,
+  UserId      INT          NOT NULL,
+  QuestionId  BIGINT       NOT NULL,
   PRIMARY KEY (Id)
 );
 
 CREATE TABLE Customer
 (
-  Id             BIGINT  NOT NULL AUTO_INCREMENT,
+  Id             BIGINT       NOT NULL AUTO_INCREMENT,
   Name           VARCHAR(100) NOT NULL,
-  Phone          VARCHAR(12) NOT NULL,
+  Phone          VARCHAR(100) NOT NULL,
   Email          VARCHAR(100) NOT NULL,
   Address        VARCHAR(100) NULL    ,
-  Gender         BOOL    NULL     COMMENT 'True: Male, False: Female',
-  PriorityId     INT     NULL    ,
-  CustomerInfoId BIGINT  NULL    ,
-  IsBought       BOOL    NOT NULL,
+  Gender         BOOL         NULL     COMMENT 'True: Male, False: Female',
+  PriorityId     INT          NULL    ,
+  CustomerInfoId BIGINT       NULL    ,
+  IsBought       BOOL         NOT NULL,
   PRIMARY KEY (Id)
 );
 
@@ -37,18 +37,18 @@ ALTER TABLE Customer
 
 CREATE TABLE CustomerInfo
 (
-  Id               BIGINT   NOT NULL AUTO_INCREMENT,
-  CustomerSourceId INT      NULL    ,
-  Hobby            VARCHAR(512)  NULL    ,
-  Job              VARCHAR(100)  NULL    ,
-  BirthDate        DATETIME NULL    ,
-  IsMarrage        BOOL     NULL    ,
+  Id               BIGINT       NOT NULL AUTO_INCREMENT,
+  CustomerSourceId INT          NULL    ,
+  Hobby            VARCHAR(512) NULL    ,
+  Job              VARCHAR(100) NULL    ,
+  BirthDate        DATETIME     NULL    ,
+  IsMarrage        BOOL         NULL    ,
   PRIMARY KEY (Id)
 );
 
 CREATE TABLE CustomerSource
 (
-  Id          INT     NOT NULL AUTO_INCREMENT,
+  Id          INT          NOT NULL AUTO_INCREMENT,
   Name        VARCHAR(100) NOT NULL,
   Description VARCHAR(512) NOT NULL,
   PRIMARY KEY (Id)
@@ -59,26 +59,26 @@ ALTER TABLE CustomerSource
 
 CREATE TABLE Deal
 (
-  Id          BIGINT   NOT NULL AUTO_INCREMENT,
-  CreatedDate DATETIME NOT NULL,
-  CustomerId  BIGINT   NOT NULL,
-  DealStepId  INT      NOT NULL,
-  UserId      INT      NOT NULL,
-  OrderId     INT      NULL    ,
-  Name        VARCHAR(100)  NULL    ,
-  Description VARCHAR(512)  NULL    ,
+  Id          BIGINT       NOT NULL AUTO_INCREMENT,
+  CreatedDate DATETIME     NOT NULL,
+  CustomerId  BIGINT       NOT NULL,
+  DealStepId  INT          NOT NULL,
+  UserId      INT          NOT NULL,
+  OrderId     INT          NULL    ,
+  Name        VARCHAR(100) NULL    ,
+  Description VARCHAR(512) NULL    ,
   PRIMARY KEY (Id)
 );
 
 CREATE TABLE DealActivity
 (
-  Id          INT      NOT NULL AUTO_INCREMENT,
-  DealId      BIGINT   NOT NULL,
-  ActivityId  INT      NOT NULL,
-  Subject     VARCHAR(100)  NOT NULL,
-  Content     VARCHAR(512)  NOT NULL,
-  CreatedDate DATETIME NOT NULL,
-  UserId      INT      NOT NULL,
+  Id          INT          NOT NULL AUTO_INCREMENT,
+  DealId      BIGINT       NOT NULL,
+  ActivityId  INT          NOT NULL,
+  Subject     VARCHAR(100) NOT NULL,
+  Content     VARCHAR(512) NOT NULL,
+  CreatedDate DATETIME     NOT NULL,
+  UserId      INT          NOT NULL,
   PRIMARY KEY (Id)
 );
 
@@ -95,7 +95,7 @@ CREATE TABLE DealQuotation
 
 CREATE TABLE DealStep
 (
-  Id          INT     NOT NULL AUTO_INCREMENT,
+  Id          INT          NOT NULL AUTO_INCREMENT,
   Name        VARCHAR(100) NOT NULL,
   Description VARCHAR(512) NULL    ,
   PRIMARY KEY (Id)
@@ -109,7 +109,7 @@ CREATE TABLE DealStepHistory
   UserId     INT      NOT NULL
 );
 
-CREATE TABLE Order
+CREATE TABLE `Order`
 (
   Id          INT      NOT NULL,
   CustomerId  BIGINT   NOT NULL,
@@ -120,18 +120,18 @@ CREATE TABLE Order
 
 CREATE TABLE Priority
 (
-  Id          INT     NOT NULL AUTO_INCREMENT,
-  Name        VARCHAR(100) NOT NULL,
+  Id          INT            NOT NULL AUTO_INCREMENT,
+  Name        VARCHAR(100)   NOT NULL,
   Description VARCHAR(512) NOT NULL,
   PRIMARY KEY (Id)
 );
 
 CREATE TABLE Product
 (
-  Id          INT     NOT NULL AUTO_INCREMENT,
+  Id          INT          NOT NULL AUTO_INCREMENT,
   Name        VARCHAR(100) NOT NULL,
-  Price       DOUBLE  NOT NULL,
-  Quatity     INT     NOT NULL DEFAULT 0,
+  Price       DOUBLE       NOT NULL,
+  Quatity     INT          NOT NULL DEFAULT 0,
   Category    VARCHAR(100) NULL    ,
   Description VARCHAR(512) NULL    ,
   PRIMARY KEY (Id)
@@ -149,16 +149,16 @@ CREATE TABLE ProductOrder
 
 CREATE TABLE Question
 (
-  Id          BIGINT   NOT NULL AUTO_INCREMENT,
-  Description VAR      NOT NULL,
-  CreatedDate DATETIME NOT NULL,
-  TicketId    INT      NOT NULL,
+  Id          BIGINT       NOT NULL AUTO_INCREMENT,
+  Description VARCHAR(512) NOT NULL,
+  CreatedDate DATETIME     NOT NULL,
+  TicketId    INT          NOT NULL,
   PRIMARY KEY (Id)
 );
 
 CREATE TABLE Role
 (
-  Id          INT     NOT NULL AUTO_INCREMENT,
+  Id          INT          NOT NULL AUTO_INCREMENT,
   Name        VARCHAR(100) NOT NULL,
   Description VARCHAR(512) NOT NULL,
   PRIMARY KEY (Id)
@@ -166,7 +166,7 @@ CREATE TABLE Role
 
 CREATE TABLE Team
 (
-  Id          INT     NOT NULL AUTO_INCREMENT,
+  Id          INT          NOT NULL AUTO_INCREMENT,
   Name        VARCHAR(100) NOT NULL,
   Description VARCHAR(512) NOT NULL,
   PRIMARY KEY (Id)
@@ -174,9 +174,9 @@ CREATE TABLE Team
 
 CREATE TABLE Ticket
 (
-  Id         INT     NOT NULL AUTO_INCREMENT,
+  Id         INT          NOT NULL AUTO_INCREMENT,
   Name       VARCHAR(100) NULL    ,
-  CustomerId BIGINT  NOT NULL,
+  CustomerId BIGINT       NOT NULL,
   PRIMARY KEY (Id)
 );
 
@@ -185,13 +185,13 @@ ALTER TABLE Ticket
 
 CREATE TABLE User
 (
-  Id       INT     NOT NULL AUTO_INCREMENT,
+  Id       INT          NOT NULL AUTO_INCREMENT,
   Name     VARCHAR(100) NOT NULL,
   Phone    VARCHAR(100) NOT NULL,
   Username VARCHAR(100) NOT NULL,
   Password VARCHAR(100) NOT NULL,
   Email    VARCHAR(100) NULL    ,
-  TeamId   INT     NULL    ,
+  TeamId   INT          NULL    ,
   PRIMARY KEY (Id)
 );
 
@@ -322,12 +322,12 @@ ALTER TABLE DealQuotation
     FOREIGN KEY (UserId)
     REFERENCES User (Id);
 
-ALTER TABLE Order
+ALTER TABLE `Order`
   ADD CONSTRAINT FK_Customer_TO_Order
     FOREIGN KEY (CustomerId)
     REFERENCES Customer (Id);
 
-ALTER TABLE Order
+ALTER TABLE `Order`
   ADD CONSTRAINT FK_User_TO_Order
     FOREIGN KEY (UserId)
     REFERENCES User (Id);
@@ -335,12 +335,12 @@ ALTER TABLE Order
 ALTER TABLE Deal
   ADD CONSTRAINT FK_Order_TO_Deal
     FOREIGN KEY (OrderId)
-    REFERENCES Order (Id);
+    REFERENCES `Order` (Id);
 
 ALTER TABLE ProductOrder
   ADD CONSTRAINT FK_Order_TO_ProductOrder
     FOREIGN KEY (OrderId)
-    REFERENCES Order (Id);
+    REFERENCES `Order` (Id);
 
 ALTER TABLE ProductOrder
   ADD CONSTRAINT FK_Product_TO_ProductOrder
@@ -360,4 +360,7 @@ ALTER TABLE Question
 ALTER TABLE Ticket
   ADD CONSTRAINT FK_Customer_TO_Ticket
     FOREIGN KEY (CustomerId)
-    REFERENCES Customer (Id); 
+    REFERENCES Customer (Id);
+
+        
+      
