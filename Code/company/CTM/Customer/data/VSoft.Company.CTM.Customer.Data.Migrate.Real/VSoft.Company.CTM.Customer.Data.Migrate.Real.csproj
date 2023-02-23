@@ -40,8 +40,8 @@
 		<Reference Include="VegunSoft.Framework.Efc.Migrate.Provider">
 			<HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vegun-library-dnet\Framework\Efc\VegunSoft.Framework.Efc.Migrate.Provider.dll</HintPath>
 		</Reference>
-		<Reference Include="VegunSoft.Framework.Efc.Migrate.Provider.SqlServer">
-			<HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vegun-library-dnet\Framework\Efc\VegunSoft.Framework.Efc.Migrate.Provider.SqlServer.dll</HintPath>
+		<Reference Include="VegunSoft.Framework.Efc.Migrate.Provider.MySQL">
+			<HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vegun-library-dnet\Framework\Efc\VegunSoft.Framework.Efc.Migrate.Provider.MySQL.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 

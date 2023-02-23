@@ -1,4 +1,4 @@
-﻿using VegunSoft.Framework.Efc.Migrate.Provider.SqlServer.Services;
+﻿using VegunSoft.Framework.Efc.Migrate.Provider.MySQL.Services;
 using VSoft.Company.CTM.Customer.Data.Db.Contexts;
 using VSoft.Company.CTM.Customer.Data.Entity.Models;
-await new EfcSingleMigrateServiceSqlServer<CustomerDbContext, MCustomerEntity>().LogCount();
+await new EfcSingleMigrateServiceMySQL<CustomerDbContext, MCustomerEntity>().LogCount();
