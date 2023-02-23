@@ -1,0 +1,363 @@
+
+        
+CREATE TABLE Activity
+(
+  Id          INT     NOT NULL AUTO_INCREMENT,
+  Name        VARCHAR(100) NOT NULL,
+  Description VARCHAR(512) NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Anwser
+(
+  Id          BIGINT   NOT NULL AUTO_INCREMENT,
+  Content     VARCHAR(512) NOT NULL,
+  CreatedDate DATETIME NOT NULL,
+  UserId      INT      NOT NULL,
+  QuestionId  BIGINT   NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Customer
+(
+  Id             BIGINT  NOT NULL AUTO_INCREMENT,
+  Name           VARCHAR(100) NOT NULL,
+  Phone          VARCHAR(12) NOT NULL,
+  Email          VARCHAR(100) NOT NULL,
+  Address        VARCHAR(100) NULL    ,
+  Gender         BOOL    NULL     COMMENT 'True: Male, False: Female',
+  PriorityId     INT     NULL    ,
+  CustomerInfoId BIGINT  NULL    ,
+  IsBought       BOOL    NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+ALTER TABLE Customer
+  ADD CONSTRAINT UQ_Phone UNIQUE (Phone);
+
+CREATE TABLE CustomerInfo
+(
+  Id               BIGINT   NOT NULL AUTO_INCREMENT,
+  CustomerSourceId INT      NULL    ,
+  Hobby            VARCHAR(512)  NULL    ,
+  Job              VARCHAR(100)  NULL    ,
+  BirthDate        DATETIME NULL    ,
+  IsMarrage        BOOL     NULL    ,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE CustomerSource
+(
+  Id          INT     NOT NULL AUTO_INCREMENT,
+  Name        VARCHAR(100) NOT NULL,
+  Description VARCHAR(512) NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+ALTER TABLE CustomerSource
+  ADD CONSTRAINT UQ_Name UNIQUE (Name);
+
+CREATE TABLE Deal
+(
+  Id          BIGINT   NOT NULL AUTO_INCREMENT,
+  CreatedDate DATETIME NOT NULL,
+  CustomerId  BIGINT   NOT NULL,
+  DealStepId  INT      NOT NULL,
+  UserId      INT      NOT NULL,
+  OrderId     INT      NULL    ,
+  Name        VARCHAR(100)  NULL    ,
+  Description VARCHAR(512)  NULL    ,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE DealActivity
+(
+  Id          INT      NOT NULL AUTO_INCREMENT,
+  DealId      BIGINT   NOT NULL,
+  ActivityId  INT      NOT NULL,
+  Subject     VARCHAR(100)  NOT NULL,
+  Content     VARCHAR(512)  NOT NULL,
+  CreatedDate DATETIME NOT NULL,
+  UserId      INT      NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE DealQuotation
+(
+  Id          BIGINT   NOT NULL,
+  DealId      BIGINT   NOT NULL,
+  ProductId   INT      NOT NULL,
+  Quatitty    INT      NOT NULL,
+  UserId      INT      NOT NULL,
+  CreatedDate DATETIME NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE DealStep
+(
+  Id          INT     NOT NULL AUTO_INCREMENT,
+  Name        VARCHAR(100) NOT NULL,
+  Description VARCHAR(512) NULL    ,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE DealStepHistory
+(
+  Id         BIGINT   NOT NULL,
+  DealStepId INT      NOT NULL,
+  DateTime   DATETIME NOT NULL,
+  UserId     INT      NOT NULL
+);
+
+CREATE TABLE Order
+(
+  Id          INT      NOT NULL,
+  CustomerId  BIGINT   NOT NULL,
+  UserId      INT      NOT NULL,
+  CreatedDate DATETIME NULL    ,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Priority
+(
+  Id          INT     NOT NULL AUTO_INCREMENT,
+  Name        VARCHAR(100) NOT NULL,
+  Description VARCHAR(512) NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Product
+(
+  Id          INT     NOT NULL AUTO_INCREMENT,
+  Name        VARCHAR(100) NOT NULL,
+  Price       DOUBLE  NOT NULL,
+  Quatity     INT     NOT NULL DEFAULT 0,
+  Category    VARCHAR(100) NULL    ,
+  Description VARCHAR(512) NULL    ,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE ProductOrder
+(
+  Id        INT    NOT NULL,
+  OrderId   INT    NOT NULL,
+  ProductId INT    NOT NULL,
+  Quatity   INT    NOT NULL,
+  UnitPrice DOUBLE NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Question
+(
+  Id          BIGINT   NOT NULL AUTO_INCREMENT,
+  Description VAR      NOT NULL,
+  CreatedDate DATETIME NOT NULL,
+  TicketId    INT      NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Role
+(
+  Id          INT     NOT NULL AUTO_INCREMENT,
+  Name        VARCHAR(100) NOT NULL,
+  Description VARCHAR(512) NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Team
+(
+  Id          INT     NOT NULL AUTO_INCREMENT,
+  Name        VARCHAR(100) NOT NULL,
+  Description VARCHAR(512) NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Ticket
+(
+  Id         INT     NOT NULL AUTO_INCREMENT,
+  Name       VARCHAR(100) NULL    ,
+  CustomerId BIGINT  NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+ALTER TABLE Ticket
+  ADD CONSTRAINT UQ_Name UNIQUE (Name);
+
+CREATE TABLE User
+(
+  Id       INT     NOT NULL AUTO_INCREMENT,
+  Name     VARCHAR(100) NOT NULL,
+  Phone    VARCHAR(100) NOT NULL,
+  Username VARCHAR(100) NOT NULL,
+  Password VARCHAR(100) NOT NULL,
+  Email    VARCHAR(100) NULL    ,
+  TeamId   INT     NULL    ,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE UserCustomer
+(
+  Id              INT      NOT NULL AUTO_INCREMENT,
+  CustomerId      BIGINT   NOT NULL,
+  UserId          INT      NULL    ,
+  TeamId          INT      NOT NULL,
+  CreatedDateTeam DATETIME NOT NULL,
+  CreatedDateUser DATETIME NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE UserRole
+(
+  RoleId INT NOT NULL,
+  UserId INT NOT NULL
+);
+
+ALTER TABLE UserCustomer
+  ADD CONSTRAINT FK_Customer_TO_UserCustomer
+    FOREIGN KEY (CustomerId)
+    REFERENCES Customer (Id);
+
+ALTER TABLE UserCustomer
+  ADD CONSTRAINT FK_User_TO_UserCustomer
+    FOREIGN KEY (UserId)
+    REFERENCES User (Id);
+
+ALTER TABLE UserCustomer
+  ADD CONSTRAINT FK_Team_TO_UserCustomer
+    FOREIGN KEY (TeamId)
+    REFERENCES Team (Id);
+
+ALTER TABLE Customer
+  ADD CONSTRAINT FK_Priority_TO_Customer
+    FOREIGN KEY (PriorityId)
+    REFERENCES Priority (Id);
+
+ALTER TABLE User
+  ADD CONSTRAINT FK_Team_TO_User
+    FOREIGN KEY (TeamId)
+    REFERENCES Team (Id);
+
+ALTER TABLE Deal
+  ADD CONSTRAINT FK_Customer_TO_Deal
+    FOREIGN KEY (CustomerId)
+    REFERENCES Customer (Id);
+
+ALTER TABLE DealQuotation
+  ADD CONSTRAINT FK_Product_TO_DealQuotation
+    FOREIGN KEY (ProductId)
+    REFERENCES Product (Id);
+
+ALTER TABLE DealQuotation
+  ADD CONSTRAINT FK_Deal_TO_DealQuotation
+    FOREIGN KEY (DealId)
+    REFERENCES Deal (Id);
+
+ALTER TABLE Anwser
+  ADD CONSTRAINT FK_User_TO_Anwser
+    FOREIGN KEY (UserId)
+    REFERENCES User (Id);
+
+ALTER TABLE DealStepHistory
+  ADD CONSTRAINT FK_Deal_TO_DealStepHistory
+    FOREIGN KEY (Id)
+    REFERENCES Deal (Id);
+
+ALTER TABLE DealStepHistory
+  ADD CONSTRAINT FK_DealStep_TO_DealStepHistory
+    FOREIGN KEY (DealStepId)
+    REFERENCES DealStep (Id);
+
+ALTER TABLE DealStepHistory
+  ADD CONSTRAINT FK_User_TO_DealStepHistory
+    FOREIGN KEY (UserId)
+    REFERENCES User (Id);
+
+ALTER TABLE UserRole
+  ADD CONSTRAINT FK_Role_TO_UserRole
+    FOREIGN KEY (RoleId)
+    REFERENCES Role (Id);
+
+ALTER TABLE UserRole
+  ADD CONSTRAINT FK_User_TO_UserRole
+    FOREIGN KEY (UserId)
+    REFERENCES User (Id);
+
+ALTER TABLE CustomerInfo
+  ADD CONSTRAINT FK_CustomerSource_TO_CustomerInfo
+    FOREIGN KEY (CustomerSourceId)
+    REFERENCES CustomerSource (Id);
+
+ALTER TABLE Customer
+  ADD CONSTRAINT FK_CustomerInfo_TO_Customer
+    FOREIGN KEY (CustomerInfoId)
+    REFERENCES CustomerInfo (Id);
+
+ALTER TABLE Deal
+  ADD CONSTRAINT FK_DealStep_TO_Deal
+    FOREIGN KEY (DealStepId)
+    REFERENCES DealStep (Id);
+
+ALTER TABLE DealActivity
+  ADD CONSTRAINT FK_Activity_TO_DealActivity
+    FOREIGN KEY (ActivityId)
+    REFERENCES Activity (Id);
+
+ALTER TABLE DealActivity
+  ADD CONSTRAINT FK_Deal_TO_DealActivity
+    FOREIGN KEY (DealId)
+    REFERENCES Deal (Id);
+
+ALTER TABLE DealActivity
+  ADD CONSTRAINT FK_User_TO_DealActivity
+    FOREIGN KEY (UserId)
+    REFERENCES User (Id);
+
+ALTER TABLE Deal
+  ADD CONSTRAINT FK_User_TO_Deal
+    FOREIGN KEY (UserId)
+    REFERENCES User (Id);
+
+ALTER TABLE DealQuotation
+  ADD CONSTRAINT FK_User_TO_DealQuotation
+    FOREIGN KEY (UserId)
+    REFERENCES User (Id);
+
+ALTER TABLE Order
+  ADD CONSTRAINT FK_Customer_TO_Order
+    FOREIGN KEY (CustomerId)
+    REFERENCES Customer (Id);
+
+ALTER TABLE Order
+  ADD CONSTRAINT FK_User_TO_Order
+    FOREIGN KEY (UserId)
+    REFERENCES User (Id);
+
+ALTER TABLE Deal
+  ADD CONSTRAINT FK_Order_TO_Deal
+    FOREIGN KEY (OrderId)
+    REFERENCES Order (Id);
+
+ALTER TABLE ProductOrder
+  ADD CONSTRAINT FK_Order_TO_ProductOrder
+    FOREIGN KEY (OrderId)
+    REFERENCES Order (Id);
+
+ALTER TABLE ProductOrder
+  ADD CONSTRAINT FK_Product_TO_ProductOrder
+    FOREIGN KEY (ProductId)
+    REFERENCES Product (Id);
+
+ALTER TABLE Anwser
+  ADD CONSTRAINT FK_Question_TO_Anwser
+    FOREIGN KEY (QuestionId)
+    REFERENCES Question (Id);
+
+ALTER TABLE Question
+  ADD CONSTRAINT FK_Ticket_TO_Question
+    FOREIGN KEY (TicketId)
+    REFERENCES Ticket (Id);
+
+ALTER TABLE Ticket
+  ADD CONSTRAINT FK_Customer_TO_Ticket
+    FOREIGN KEY (CustomerId)
+    REFERENCES Customer (Id); 
