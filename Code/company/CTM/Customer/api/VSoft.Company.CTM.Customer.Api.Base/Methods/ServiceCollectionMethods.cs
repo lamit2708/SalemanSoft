@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using VegunSoft.Framework.Efc.Cfg.Configs;
-using VegunSoft.Framework.Efc.Provider.SqlServer.Methods;
 using VSoft.Company.CTM.Customer.Business.Provider.Services;
 using VSoft.Company.CTM.Customer.Business.Services;
 using VSoft.Company.CTM.Customer.Data.Db.Contexts;
 using VSoft.Company.CTM.Customer.Repository.Services;
 using VSoft.Company.CTM.Customer.Repository.Efc.Provider.Services;
+using VegunSoft.Framework.Efc.Provider.MySQL.Methods;
 
 namespace VSoft.Company.CTM.Customer.Api.Base.Methods
 {
@@ -21,7 +21,7 @@ namespace VSoft.Company.CTM.Customer.Api.Base.Methods
                 {
                     cfg.ConnectionKey = connectionKey;
                 }
-                options.UseSqlServer(cfg, configuration);
+                options.UseMySQL(cfg, configuration);
             });
             services.AddScoped<ICustomerRepository, EfcCustomerRepository>();
             services.AddScoped<ICustomerMgmtBus, CustomerMgmtBus>();

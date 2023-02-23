@@ -17,7 +17,8 @@
 		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.26.0" />
 		
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.2" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+		
+		<PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.0" />
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.26.0" />
 	</ItemGroup>
 
@@ -41,8 +42,8 @@
 	  <Reference Include="VegunSoft.Framework.Efc.Cfg">
 	    <HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vegun-library-dnet\Framework\Efc\VegunSoft.Framework.Efc.Cfg.dll</HintPath>
 	  </Reference>
-	  <Reference Include="VegunSoft.Framework.Efc.Provider.SqlServer">
-	    <HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vegun-library-dnet\Framework\Efc\VegunSoft.Framework.Efc.Provider.SqlServer.dll</HintPath>
+	  <Reference Include="VegunSoft.Framework.Efc.Provider.MySQL">
+	    <HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vegun-library-dnet\Framework\Efc\VegunSoft.Framework.Efc.Provider.MySQL.dll</HintPath>
 	  </Reference>
 	  <Reference Include="VegunSoft.Framework.Repository">
 	    <HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vegun-library-dnet\Framework\Repository\VegunSoft.Framework.Repository.dll</HintPath>

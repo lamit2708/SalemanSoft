@@ -2,7 +2,7 @@
 using VegunSoft.Framework.Business.Dto.Request;
 using VegunSoft.Framework.Business.UnitTest.Bases;
 using VegunSoft.Framework.Efc.Cfg.Configs;
-using VegunSoft.Framework.Efc.Provider.SqlServer.Methods;
+using VegunSoft.Framework.Efc.Provider.MySQL.Methods;
 using VSoft.Company.CTM.Customer.Business.Dto.Request;
 using VSoft.Company.CTM.Customer.Business.Provider.Services;
 using VSoft.Company.CTM.Customer.Business.Services;
@@ -17,7 +17,7 @@ namespace VSoft.Company.CTM.Customer.Business.UnitTest.Bases
         protected override List<string>? LogFields { get; set; } = new List<string>()
         {
             nameof(Model.Id),
-            nameof(Model.FullName),
+            nameof(Model.Name),
            
         };
 
@@ -25,7 +25,7 @@ namespace VSoft.Company.CTM.Customer.Business.UnitTest.Bases
         {
             ServiceCollection?.AddDbContext<CustomerDbContext>((builder) =>
             {
-                builder.UseSqlServer(new MDbConnectionCfg());
+                builder.UseMySQL(new MDbConnectionCfg());
             });
 
             ServiceCollection?.AddScoped<ICustomerRepository, EfcCustomerRepository>();
@@ -33,7 +33,7 @@ namespace VSoft.Company.CTM.Customer.Business.UnitTest.Bases
         }
 
 
-        protected async Task TestGetFullNameByIdAsync(MDtoRequestFindByInt dto)
+        protected async Task TestGetFullNameByIdAsync(MDtoRequestFindByLong dto)
         {
             await RunTest("TestGetByIdAsync", async (log) =>
             {
@@ -45,7 +45,7 @@ namespace VSoft.Company.CTM.Customer.Business.UnitTest.Bases
         }
 
 
-        protected async Task TestFindAsync(MDtoRequestFindByInt request)
+        protected async Task TestFindAsync(MDtoRequestFindByLong request)
         {
             await RunTest("TestFindAsync", async (log) =>
             {
@@ -58,7 +58,7 @@ namespace VSoft.Company.CTM.Customer.Business.UnitTest.Bases
 
         }
 
-        protected async Task TestFindRangeAsync(MDtoRequestFindRangeByInts request)
+        protected async Task TestFindRangeAsync(MDtoRequestFindRangeByLongs request)
         {
             await RunTest("TestFindRangeAsync", async (log) =>
             {

@@ -10,10 +10,14 @@ public static class CustomerEntityMethods
         return new CustomerDto()
         {
             Id = src.Id,
-            FullName = src.FullName,
-            IsDeleted = src.IsDeleted,
-            CreatedDate = src.CreatedDate,
-            UpdatedDate = src.UpdatedDate,
+            Name = src.Name,
+            Phone = src.Phone,
+            Email = src.Email,
+            Address = src.Address,
+            Gender = src.Gender,
+            PriorityId = src.PriorityId,
+            CustomerInfoId = src.CustomerInfoId,
+            IsBought = src.IsBought,
         };
     }
 }
