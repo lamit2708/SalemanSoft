@@ -12,9 +12,9 @@ namespace VSoft.Company.CTM.Customer.Business.UnitTest.Test.Tests
         [DataRow(63491)]
         [DataRow(63492)]
         [DataRow(63493)]
-        public async Task FindAsync(int id)
+        public async Task FindAsync(long id)
         {
-            await TestFindAsync(new MDtoRequestFindByInt()
+            await TestFindAsync(new MDtoRequestFindByLong()
             {
                 Id = id,
             });
@@ -22,25 +22,27 @@ namespace VSoft.Company.CTM.Customer.Business.UnitTest.Test.Tests
 
         [TestMethod]
         [DataRow(63494, 63495, 63496)]
-        public async Task FindRangeAsync(int id1, int id2, int id3)
+        public async Task FindRangeAsync(long id1, long id2, long id3)
         {
-            await TestFindRangeAsync(new MDtoRequestFindRangeByInts()
+            await TestFindRangeAsync(new MDtoRequestFindRangeByLongs()
             {
                 Ids = new[] { id1, id2, id3 },
             });
         }
 
         [TestMethod]
-        public async Task TestCreate()
-        {            
+        [DataRow("Đặng Thế Nhân", "3504984957", "aaa@gmail.com")]
+        [DataRow("Lê Vũ Lâm", "0234532565", "abc@yahoo.com")]
+        [DataRow("Nguyễn Tấn Phát", "54235235236", "xyz@gmail.com")]
+        public async Task TestCreate(string fullName, string phone, string email)
+        {
+            var e = new CustomerDto();
+            e.Name = fullName;
+            e.Phone = phone;
+            e.Email = email;
             await TestCreateAsync(new CustomerInsertDtoRequest()
             {
-                Data = new CustomerDto()
-                {
-                    //CTMname = "it.nhan7285",
-                    //Password = "Welcome@7",
-                    //FullName = "Đặng Thế Nhân",
-                }
+                Data = e
             });
         }
 
@@ -59,14 +61,14 @@ namespace VSoft.Company.CTM.Customer.Business.UnitTest.Test.Tests
         }
 
         [TestMethod]
-        [DataRow(63470)]
-        [DataRow(63471)]
-        [DataRow(63472)]
-        public async Task DeleteAsync(int id)
+        [DataRow(1)]
+        [DataRow(2)]
+        [DataRow(3)]
+        public async Task DeleteAsync(long id)
         {
             await TestDeleteAsync(new CustomerDeleteDtoRequest()
             {
-               // Id = "it.nhan7285",
+                Id = id,
             });
         }
     }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VegunSoft.Framework.Entity.Key.Base;
 
-namespace VSoft.Company.CTM.Customer.Business.Dto.Data
+namespace VSoft.Company.CTM.Customer.Data.Entity.Models
 {
-    public class CustomerDto
+    public class MCustomerEntityBasic : IIdEntity<long>
     {
         public long Id { get; set; }
 
@@ -28,10 +29,5 @@ namespace VSoft.Company.CTM.Customer.Business.Dto.Data
         public long? CustomerInfoId { get; set; }
 
         public bool IsBought { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Id} / {Name}";
-        }
     }
 }
