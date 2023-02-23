@@ -1,0 +1,7 @@
+1. Input: Các giao diện tổng quát 1 tài khoản gồm các mục:
+	+ Sô lượng các customer chưa tương tác
+	+ Số lượng các deal đang tương tác
+	+ Số lượng các deal won trong tháng
+	+ Số lượng các câu hỏi chưa trả lời
+	+ Các button liên kết đến từng mục
+2. Chức năng: thông báo, nhắc nhở, thống kê các công việc cần làm hoặc đã làm
