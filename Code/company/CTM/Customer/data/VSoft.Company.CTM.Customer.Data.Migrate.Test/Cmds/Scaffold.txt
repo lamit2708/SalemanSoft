@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext 'Data Source=C:\\SalemanSoft.db' Microsoft.EntityFrameworkCore.Sqlite -Tables Customer
