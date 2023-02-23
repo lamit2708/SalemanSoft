@@ -9,7 +9,7 @@ namespace VSoft.Company.CTM.Customer.Repository.UnitTest.Real.Values.GroupA
         {
             //Id = 63452,
           
-            FullName = "Đặng Thế Nhân",
+            Name = "Đặng Thế Nhân",
            
         };
     }

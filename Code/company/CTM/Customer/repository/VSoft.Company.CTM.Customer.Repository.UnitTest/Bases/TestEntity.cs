@@ -14,7 +14,7 @@ namespace VSoft.Company.CTM.Customer.Repository.UnitTest.Bases
         public virtual MCustomerEntity GetCreateEntity(string fullName)
         {
             var e = Entity;
-            e.FullName = fullName;
+            e.Name = fullName;
             return e;
         }
 
@@ -30,7 +30,7 @@ namespace VSoft.Company.CTM.Customer.Repository.UnitTest.Bases
             var e = Entity;
             var arr = data.Split(" / ");
             e.Id = Convert.ToInt32(arr[0]);
-            e.FullName = arr[1];
+            e.Name = arr[1];
             return e;
         }
 
@@ -38,7 +38,7 @@ namespace VSoft.Company.CTM.Customer.Repository.UnitTest.Bases
         {
             var e = Entity;
             e.Id = id;
-            e.FullName = fullName;
+            e.Name = fullName;
             return e;
         }
 

@@ -34,7 +34,7 @@ public class TestCustomerTest : TestMgmtEntities
     public async Task CreateAsync(string fullName)
     {
         var e = new A01().GetCreateEntity();
-        e.FullName = fullName;
+        e.Name = fullName;
       
         await TestCreateAsync(e);
     }
@@ -71,7 +71,7 @@ public class TestCustomerTest : TestMgmtEntities
 
     [TestMethod]
     [DataRow("Diễn giải A", "Diễn giải B", "63473 / Diễn giải 111", "63474 / Diễn giải 222", "63475 / Diễn giải 333", 1, 2)]
-    public async Task SaveRangeAsync(string note1, string note2, string data1, string data2, string data3, int id1, int id2)
+    public async Task SaveRangeAsync(string note1, string note2, string data1, string data2, string data3, long id1, long id2)
     {
         var ec1 = new A01().GetCreateEntity(note1);
         var ec2 = new A01().GetCreateEntity(note2);
@@ -83,7 +83,7 @@ public class TestCustomerTest : TestMgmtEntities
 
     [TestMethod]
     [DataRow("Diễn giải A1", "Diễn giải B1", "63473 / Diễn giải 1", "63474 / Diễn giải 2", "63475 / Diễn giải 3", 63478, 63479)]
-    public async Task SaveRangeTransactionAsync(string note1, string note2, string data1, string data2, string data3, int id1, int id2)
+    public async Task SaveRangeTransactionAsync(string note1, string note2, string data1, string data2, string data3, long id1, long id2)
     {
         var ec1 = new A01().GetCreateEntity(note1);
         var ec2 = new A01().GetCreateEntity(note2);

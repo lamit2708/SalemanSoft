@@ -1,6 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using VegunSoft.Framework.Efc.Provider.SqlServer.Methods;
+using VegunSoft.Framework.Efc.Provider.MySQL.Methods;
 using VegunSoft.Framework.Repository.Model.Params;
 using VegunSoft.Framework.Repository.Model.Results;
 using VegunSoft.Framework.Repository.UnitTest.Bases;
@@ -18,7 +17,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerDbContext, ICustomerRepos
     {
         nameof(Model.Id),
 
-        nameof(Model.FullName),
+        nameof(Model.Name),
        
     };
 
@@ -26,12 +25,12 @@ public class TestMgmtEntities : RepositoryTest<CustomerDbContext, ICustomerRepos
     {
         ServiceCollection?.AddDbContext<CustomerDbContext>((builder) =>
         {
-            builder.UseSqlServer(DbConnectionCfg).EnableSensitiveDataLogging();
+            builder.UseMySQL(DbConnectionCfg).EnableSensitiveDataLogging();
         });
         ServiceCollection?.AddScoped<ICustomerRepository, EfcCustomerRepository>();
     }
 
-    protected async Task TestGetFullNameByIdAsync(int id)
+    protected async Task TestGetFullNameByIdAsync(long id)
     {
         await RunTest("TestGetByIdAsync", async (r, l) =>
         {
@@ -40,7 +39,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerDbContext, ICustomerRepos
         });
     }
 
-    protected async Task TestGetByIdAsync(int id)
+    protected async Task TestGetByIdAsync(long id)
     {
         await RunTest("TestGetByIdAsync", async (r, l) =>
         {
@@ -95,7 +94,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerDbContext, ICustomerRepos
 
     }
 
-    protected async Task TestSaveRangeAsync(Model[] createEntities, Model[] updateEntities, int[]? deleteEntitiesIds)
+    protected async Task TestSaveRangeAsync(Model[] createEntities, Model[] updateEntities, long[]? deleteEntitiesIds)
     {
         await RunTest("TestAddCustomer", async (r, l) =>
         {
@@ -113,7 +112,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerDbContext, ICustomerRepos
 
     }
 
-    protected async Task TestSaveRangeTransactionAsync(Model[] createEntities, Model[] updateEntities, int[]? deleteEntitiesIds)
+    protected async Task TestSaveRangeTransactionAsync(Model[] createEntities, Model[] updateEntities, long[]? deleteEntitiesIds)
     {
         await RunTest("TestAddCustomer", async (r, l) =>
         {
@@ -132,7 +131,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerDbContext, ICustomerRepos
 
     }
 
-    protected async Task TestDeleteAsync(int id)
+    protected async Task TestDeleteAsync(long id)
     {
         await RunTest("TestDelCustomer", async (r, l) =>
         {
@@ -149,7 +148,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerDbContext, ICustomerRepos
 
     }
 
-    protected async Task TestDeleteRangeAsync(params int[] ids)
+    protected async Task TestDeleteRangeAsync(params long[] ids)
     {
         await RunTest("TestDelCustomer", async (r, l) =>
         {

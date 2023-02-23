@@ -2,29 +2,23 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VSoft.Company.CTM.Customer.Data.Db.Contexts;
 
 #nullable disable
 
-namespace VSoft.Company.CTM.Customer.Data.Migrate.Test.Migrations
+namespace VSoft.Company.CTM.Customer.Data.Migrate.Real.Migrations
 {
     [DbContext(typeof(CustomerDbContext))]
-    [Migration("20230223052439_Init")]
-    partial class Init
+    partial class CustomerDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasAnnotation("ProductVersion", "7.0.2")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("VSoft.Company.CTM.Customer.Data.Entity.Models.MCustomerEntity", b =>
                 {
@@ -34,19 +28,17 @@ namespace VSoft.Company.CTM.Customer.Data.Migrate.Test.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime")
                         .HasColumnName("CreatedDate");
 
                     b.Property<string>("FullName")
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
+                        .HasColumnType("varchar(100)")
                         .HasColumnName("FullName");
 
                     b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit")
+                        .HasColumnType("tinyint(1)")
                         .HasColumnName("IsDeleted");
 
                     b.Property<DateTime?>("UpdatedDate")

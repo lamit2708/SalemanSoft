@@ -1,0 +1,11 @@
+1)Build Core Library
+D:\workspace\Library\DNet\Code\vgsoft-framework-dnet\Data
+Entity>Identity>Paging>Repository>Efc>Business>Api
+
++Build Base
+D:\workspace\Library\DNet\Code\vgsoft-framework-dnet\Data\VegunSoft.Framework.Api\Api
+
+
+2>Build Api
+D:\workspace\SalemanSoft\git\Code\company\CTM\Customer\
+Data>Repository>Bus>Api>Client

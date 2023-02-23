@@ -1,0 +1,16 @@
+1)Git setup
++Install  git, tortoise git / github desktop
+
+2)Visual studio community setup
++Visual Studio Community
++dotNet 6,7
+
+3)Visual Studio Code setup
++Visual Studio Code
++Erd Editor Extension
+
+
+3)Database
++Install xampp
+
+

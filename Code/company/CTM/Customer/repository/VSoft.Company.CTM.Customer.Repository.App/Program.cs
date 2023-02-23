@@ -23,4 +23,4 @@ var repository = serviceProvider?.GetService<ICustomerRepository>();
 var id = 63452;
 var entity = await (repository?.GetByIdAsync(id) ?? Task.FromResult<MCustomerEntity?>(null));
 Console.WriteLine($"CustomerId: {entity?.Id}");
-Console.WriteLine($"CustomerFullName: {entity?.FullName}");
+Console.WriteLine($"CustomerFullName: {entity?.Name}");

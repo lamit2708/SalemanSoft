@@ -7,16 +7,27 @@ using VegunSoft.Framework.Entity.Key.Base;
 
 namespace VSoft.Company.CTM.Customer.Data.Entity.Models
 {
-    public class MCustomerEntityBasic : IIdEntity<int>
+    public class MCustomerEntityBasic : IIdEntity<long>
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
-        public string? FullName { get; set; }
+        public string Name { get; set; } = null!;
 
-        public bool? IsDeleted { get; set; }
+        public string Phone { get; set; } = null!;
 
-        public DateTime? CreatedDate { get; set; }
+        public string Email { get; set; } = null!;
 
-        public DateTime? UpdatedDate { get; set; }
+        public string? Address { get; set; }
+
+        /// <summary>
+        /// True: Male, False: Female
+        /// </summary>
+        public bool? Gender { get; set; }
+
+        public int? PriorityId { get; set; }
+
+        public long? CustomerInfoId { get; set; }
+
+        public bool IsBought { get; set; }
     }
 }

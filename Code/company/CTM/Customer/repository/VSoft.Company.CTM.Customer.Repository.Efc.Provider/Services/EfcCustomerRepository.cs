@@ -6,7 +6,7 @@ using VSoft.Company.CTM.Customer.Repository.Efc.Services;
 
 namespace VSoft.Company.CTM.Customer.Repository.Efc.Provider.Services;
 
-public class EfcCustomerRepository : EFcRepositoryEntityMgmtId<CustomerDbContext, MCustomerEntity, int>, ICustomerRepositoryEfc
+public class EfcCustomerRepository : EFcRepositoryEntityMgmtId<CustomerDbContext, MCustomerEntity, long>, ICustomerRepositoryEfc
 {
 
     public EfcCustomerRepository(CustomerDbContext dbContext) : base(dbContext, dbContext.Items)
@@ -14,19 +14,19 @@ public class EfcCustomerRepository : EFcRepositoryEntityMgmtId<CustomerDbContext
 
     }
 
-    public string? GetFullName(int? id)
+    public string? GetFullName(long? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");
         if (id == null) throw new Exception("id is null");
-        return Entities.Where(x => x.Id == id).Select(x => x.FullName ?? string.Empty).FirstOrDefault();
+        return Entities.Where(x => x.Id == id).Select(x => x.Name ?? string.Empty).FirstOrDefault();
     }
 
-    public Task<string?> GetFullNameAsync(int? id)
+    public Task<string?> GetFullNameAsync(long? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");
         if (id == null) throw new Exception("id is null");
-        return Entities.Where(x => x.Id == id).Select(x => x.FullName ?? string.Empty).FirstOrDefaultAsync() ;
+        return Entities.Where(x => x.Id == id).Select(x => x.Name ?? string.Empty).FirstOrDefaultAsync() ;
     }
 }

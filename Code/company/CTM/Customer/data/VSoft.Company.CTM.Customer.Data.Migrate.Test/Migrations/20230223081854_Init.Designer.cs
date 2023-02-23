@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VSoft.Company.CTM.Customer.Data.Db.Contexts;
 
@@ -10,9 +11,11 @@ using VSoft.Company.CTM.Customer.Data.Db.Contexts;
 namespace VSoft.Company.CTM.Customer.Data.Migrate.Test.Migrations
 {
     [DbContext(typeof(CustomerDbContext))]
-    partial class CustomerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230223081854_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

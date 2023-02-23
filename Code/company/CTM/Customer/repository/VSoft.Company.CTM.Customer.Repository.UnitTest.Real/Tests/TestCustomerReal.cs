@@ -10,38 +10,49 @@ public class TestCustomerReal : TestMgmtEntities
     protected override string TestName { get; set; } = "Real";
 
     [TestMethod]
-    [DataRow(1, DisplayName = "GetByIdAsync > 1")]
-    [DataRow(2, DisplayName = "GetByIdAsync > 2")]
-    public async Task GetByIdAsync(int id)
+    [DataRow(5, DisplayName = "GetByIdAsync > 1")]
+    [DataRow(6, DisplayName = "GetByIdAsync > 2")]
+    public async Task GetByIdAsync(long id)
     {
         await TestGetByIdAsync(id);
     }
 
     [TestMethod]
-    [DataRow("Đặng Thế Nhân")]
-    [DataRow("Lê Vũ Lâm")]
-    [DataRow("Nguyễn Tấn Phát")]
-    public async Task CreateAsync(string fullName)
+    [DataRow("Đặng Thế Nhân","3504984957","aaa@gmail.com")]
+    [DataRow("Lê Vũ Lâm","0234532565","abc@yahoo.com")]
+    [DataRow("Nguyễn Tấn Phát","54235235236","xyz@gmail.com")]
+    public async Task CreateAsync(string fullName, string phone, string email)
     {
         var e = new A01().GetCreateEntity();
-        e.FullName = fullName;
+        e.Name = fullName;
+        e.Phone = phone;
+        e.Email = email;
+
         await TestCreateAsync(e);
     }
 
     [TestMethod]
-    public async Task UpdateAsync()
+    [DataRow(4,"Đặng Thế Nhân", "@3504984957", "aaa@gmail.com")]
+    [DataRow(5,"Lê Vũ Lâm", "@0234532565", "abc@yahoo.com")]
+    [DataRow(6,"Nguyễn Tấn Phát", "@54235235236", "xyz@gmail.com")]
+    public async Task UpdateAsync(long id,string fullName, string phone, string email)
     {
         await TestUpdateAsync(new MCustomerEntity()
         {
-
+            Id= id,
+            Name= fullName,
+            Phone= phone,
+            Email= email,
+            Address="default",
         });
     }
 
 
     [TestMethod]
-    public async Task DeleteAsync()
+    [DataRow(1)]
+    public async Task DeleteAsync(long id)
     {
-        var id = 63452;
+        
         await TestDeleteAsync(id);
     }
 }

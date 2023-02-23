@@ -1,0 +1,2 @@
+1) db model
+2) html design
