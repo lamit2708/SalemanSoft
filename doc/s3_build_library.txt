@@ -9,3 +9,6 @@ D:\workspace\Library\DNet\Code\vgsoft-framework-dnet\Data\VegunSoft.Framework.Ap
 2>Build Api
 D:\workspace\SalemanSoft\git\Code\company\CTM\Customer\
 Data>Repository>Bus>Api>Client
+
+
+Scaffold-DbContext 'Data Source=localhost;Initial Catalog=crmdb;CTM ID=root;Password=root' MySql.EntityFrameworkCor -Tables Customer
