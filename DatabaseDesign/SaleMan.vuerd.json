@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -285.5,
-    "scrollLeft": -607,
-    "zoomLevel": 1,
+    "scrollTop": -960.6999999999999,
+    "scrollLeft": -250.99999999999892,
+    "zoomLevel": 0.8,
     "show": {
       "tableComment": false,
       "columnComment": false,
@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "user",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "C#",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -297,7 +297,7 @@
           "active": false,
           "left": 2126.4557,
           "top": 1500.3355,
-          "zIndex": 19,
+          "zIndex": 16,
           "widthName": 60,
           "widthComment": 60
         },
@@ -359,7 +359,7 @@
           "active": false,
           "left": 1507.5992,
           "top": 1425.7367,
-          "zIndex": 12,
+          "zIndex": 10,
           "widthName": 60,
           "widthComment": 60
         },
@@ -444,7 +444,7 @@
           "active": false,
           "left": 834.0188,
           "top": 1309.4315,
-          "zIndex": 11,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 60
         },
@@ -667,7 +667,7 @@
           "active": false,
           "left": 123.936,
           "top": 2050.5928,
-          "zIndex": 21,
+          "zIndex": 18,
           "widthName": 60,
           "widthComment": 60
         },
@@ -752,7 +752,7 @@
           "active": false,
           "left": 1038.1369,
           "top": 1958.5317,
-          "zIndex": 17,
+          "zIndex": 15,
           "widthName": 60,
           "widthComment": 60
         },
@@ -906,7 +906,7 @@
           "active": false,
           "left": 849.4454,
           "top": 1677.1606,
-          "zIndex": 23,
+          "zIndex": 20,
           "widthName": 85.79541015625,
           "widthComment": 60
         },
@@ -1106,7 +1106,7 @@
           "active": false,
           "left": 930.0733,
           "top": 617.9117,
-          "zIndex": 46,
+          "zIndex": 21,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1191,7 +1191,7 @@
           "active": false,
           "left": 2140.9116,
           "top": 1082.5343,
-          "zIndex": 14,
+          "zIndex": 12,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1499,7 +1499,7 @@
           "active": false,
           "left": 2112.9319,
           "top": 326.1709,
-          "zIndex": 9,
+          "zIndex": 8,
           "widthName": 85.10986328125,
           "widthComment": 60
         },
@@ -1738,7 +1738,7 @@
           "active": false,
           "left": 295.0377,
           "top": 1603.4989,
-          "zIndex": 20,
+          "zIndex": 17,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1846,7 +1846,7 @@
           "active": false,
           "left": 1501.3271,
           "top": 1171.1464,
-          "zIndex": 13,
+          "zIndex": 11,
           "widthName": 95.92626953125,
           "widthComment": 60
         },
@@ -2000,7 +2000,7 @@
           "active": false,
           "left": 1116.5803,
           "top": 2141.6347,
-          "zIndex": 16,
+          "zIndex": 14,
           "widthName": 80.03173828125,
           "widthComment": 60
         },
@@ -2085,7 +2085,7 @@
           "active": false,
           "left": 1748.2861,
           "top": 2088.7788,
-          "zIndex": 22,
+          "zIndex": 19,
           "widthName": 99.5380859375,
           "widthComment": 60
         },
@@ -2170,7 +2170,7 @@
           "active": false,
           "left": 2116.5433,
           "top": 906.6497,
-          "zIndex": 15,
+          "zIndex": 13,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2347,7 +2347,7 @@
           "active": false,
           "left": 2110.385,
           "top": 561.8733,
-          "zIndex": 8,
+          "zIndex": 7,
           "widthName": 69.9072265625,
           "widthComment": 60
         },
@@ -2594,7 +2594,7 @@
         "id": "0850deb4-a5dd-4c81-b907-022392288bf8"
       },
       {
-        "name": "TIcket",
+        "name": "Ticket",
         "comment": "",
         "columns": [
           {
@@ -2671,7 +2671,7 @@
           "active": false,
           "left": 17.5,
           "top": 1068.4895,
-          "zIndex": 4,
+          "zIndex": 25,
           "widthName": 60,
           "widthComment": 60
         },
