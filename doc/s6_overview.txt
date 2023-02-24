@@ -1,0 +1,22 @@
+1) Entity> 
++Core hỗ trợ các cột dữ liệu hay dùng để làm việc db; Giúp tái sử dụng;
++Thư viện hỗ trợ sẵn các cột cần, dùng mô hình code first để sinh bảng trong db
++Provider implement Interface; Provider mới là hiện thực;
++Nguyên tắc Ioc, dùng interface chứ hạn chế dùng class; Giúp ít bị ràng buộc, có thể thay thế;
+
+2)Identity
++Core hỗ trợ login, token;
+
+3)Efc Entity Framework core
++Làm việc trực tiếp với Entity
++Thư viện hiện thực hàm kết nối database
+
+4)Repository
++Hỗ trợ làm việc trong repository;
++Viết sẵn các hàm có sẵn.
+
+5)Business
++Các hàm hỗ trợ nghiệp vụ
+
+6)Api
++Hiện thực API

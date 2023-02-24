@@ -1,0 +1,9 @@
+
+1)Vào module cụ thể
+Mở Power shell chạy để module cần thay đổi
+Get-ChildItem -Recurse -Filter *Customer* | Rename-Item -NewName { $_.name -replace 'Customer', 'Main'} -verbose
+
+2)Mở Visual Studio Code
+Search và replace
+Chú ý chọn Match case
+Replace tên hoa sau đó tên thường

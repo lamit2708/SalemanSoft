@@ -16,7 +16,7 @@ public abstract class CustomerBaseController : ControllerBase
     }    
 
     [HttpGet(nameof(ICustomerActionName.FindOne))]
-    public async Task<IActionResult> FindAsync([FromBody] MDtoRequestFindByLong dtoRequest)
+    public async Task<IActionResult> FindAsync([FromQuery] MDtoRequestFindByLong dtoRequest)
     {
         var res = await Bus.FindAsync(dtoRequest);
         return Ok(res);
