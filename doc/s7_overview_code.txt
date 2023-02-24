@@ -1,0 +1,12 @@
+1)data
+
+2)repository
+
+3)business
+
+4)client
+
+5)api
+
+6)Entity framework core
+has column type

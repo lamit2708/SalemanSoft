@@ -1,0 +1,75 @@
+1)Sao chép module mẫu
+-copy CTM\Customer --> USR\User
+-Xóa tất cả thư mục bin và obj bên trong
+2)Rename 
+-Rename Tên thư mục theo cấu trúc (Thư mục).(File)
+--Mở powershell, nhảy đến thư mục của module mới:
+cd D:\workspace\SalemanSoft\git\Code\company\USR\User\
+--Chạy câu lệnh đổi tên
+Get-ChildItem -Recurse -Filter *.CTM.Customer* | Rename-Item -NewName { $_.name -replace '.CTM.Customer', '.USR.User'} -verbose
+
+--Đổi tên file
+Get-ChildItem -Recurse -Filter *Customer* | Rename-Item -NewName { $_.name -replace 'Customer', 'User'} -verbose
+
+--Đổi tên trong nội dung của file code bằng visual studio code
++Mở visual studio code
++Mở thư mục D:\workspace\SalemanSoft\git\Code\company\USR\User
++Chọn phân biệt hoa thường
++Thay CTM.Customer> USR.User 
++Thay Customer>User
++Replace all
++Thay customer>user
++Replace all
+
+
+3)Tạo code data để xử lý với bảng trong database
++Vào Data>D:\workspace\SalemanSoft\git\Code\company\USR\User\data
+
++Chạy câu lệnh đọc database để biến thành entity cho bảng user
+Scaffold-DbContext 'Data Source=localhost;Initial Catalog=crmdb;User ID=root;Password=root' MySql.EntityFrameworkCore -Tables User
+
++Trong visual studio IDE, chọn Vsoft.Comapny.USR.User.Data.Migrate.Real
+Set as startup project
+
++Mở package manager Console> Chọn default project: Vsoft.Company.USR.User.Data.Migrate.Real
+
+4)Code sinh ra bảng User trong Vsoft.Company.USR.User.Data.Migrate.Real 
++Copy thuộc tính User vào VSoft.Company.USR.User.Data.Entity>MUserEntity.cs
++Nếu id kiểu long hay int thì sửa lớp kế thừa IIdEntity<int> hay IIdEntity<long>
+
+5)Copy code từ Vsoft.Company.USR.User.Data.Migrate.Real>CrmDbContext.cs
+Sang VSoft.Company.USR.User.Data.Db\Contexts\UserDbContext.cs 
+Theo cấu trúc tương tự;
+	protected void ConfigTable(EntityTypeBuilder<MCustomerEntity> builder)
+    {
+        builder.ToTable("user");
+    }
+	
+	 protected void ConfigIndex(EntityTypeBuilder<MCustomerEntity> builder)
+    {
+        builder.HasKey(e => e.Id).HasName("PRIMARY");
+        builder.HasIndex(e => e.TeamId, "FK_Team_TO_User");
+    }
+
+  
+    protected void ConfigBasicFields(EntityTypeBuilder<MCustomerEntity> builder)
+    {
+        builder.Property(e => e.Id).HasColumnType("int(11)");
+        builder.Property(e => e.Email)
+            .HasMaxLength(100)
+            .HasDefaultValueSql("'NULL'");
+        builder.Property(e => e.Name).HasMaxLength(100);
+        builder.Property(e => e.Password).HasMaxLength(100);
+        builder.Property(e => e.Phone).HasMaxLength(100);
+        builder.Property(e => e.TeamId)
+            .HasDefaultValueSql("'NULL'")
+            .HasColumnType("int(11)");
+        builder.Property(e => e.Username).HasMaxLength(100);
+    }
+	
+6)Delete migration folder trong VSoft.Company.USR.User.Data.Migrate.Real
++Delete migration folder
++Tạo lại migration
++Mở package manager Console> Run add-migration Init 
+
+7)Vào Repository

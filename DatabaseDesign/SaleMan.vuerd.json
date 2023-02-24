@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -581.799999999999,
-    "scrollLeft": 0,
-    "zoomLevel": 1,
+    "scrollTop": -910.5999999999984,
+    "scrollLeft": -572.8000000000005,
+    "zoomLevel": 0.4,
     "show": {
       "tableComment": false,
       "columnComment": false,
@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "user",
-    "canvasType": "@vuerd/builtin-sql-ddl",
+    "canvasType": "ERD",
     "language": "C#",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -752,7 +752,7 @@
           "active": false,
           "left": 1038.1369,
           "top": 1958.5317,
-          "zIndex": 21,
+          "zIndex": 20,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2000,7 +2000,7 @@
           "active": false,
           "left": 1116.5803,
           "top": 2141.6347,
-          "zIndex": 20,
+          "zIndex": 19,
           "widthName": 80.03173828125,
           "widthComment": 60
         },
@@ -2452,10 +2452,10 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 0,
           "top": 698.4295,
-          "zIndex": 28,
+          "zIndex": 21,
           "widthName": 60,
           "widthComment": 60
         },
