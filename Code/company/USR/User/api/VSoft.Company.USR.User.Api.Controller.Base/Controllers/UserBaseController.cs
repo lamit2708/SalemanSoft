@@ -16,14 +16,14 @@ public abstract class UserBaseController : ControllerBase
     }    
 
     [HttpGet(nameof(IUserActionName.FindOne))]
-    public async Task<IActionResult> FindAsync([FromQuery] MDtoRequestFindByLong dtoRequest)
+    public async Task<IActionResult> FindAsync([FromQuery] MDtoRequestFindByInt dtoRequest)
     {
         var res = await Bus.FindAsync(dtoRequest);
         return Ok(res);
     }
 
     [HttpGet(nameof(IUserActionName.FindRange))]
-    public async Task<IActionResult> FindRangeAsync([FromBody] MDtoRequestFindRangeByLongs dtosRequest)
+    public async Task<IActionResult> FindRangeAsync([FromQuery] MDtoRequestFindRangeByInts dtosRequest)
     {
         var res = await Bus.FindRangeAsync(dtosRequest);
         return Ok(res);
