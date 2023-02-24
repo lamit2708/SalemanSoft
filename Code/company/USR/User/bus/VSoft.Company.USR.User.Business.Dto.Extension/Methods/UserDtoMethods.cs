@@ -13,11 +13,10 @@ public static class UserDtoMethods
             Name = src.Name,
             Phone = src.Phone,
             Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            UserInfoId = src.UserInfoId,
-            IsBought = src.IsBought,
+            Username = src.Username,
+            Password = src.Password,
+            TeamId = src.TeamId,
+           
         };
     }
 }

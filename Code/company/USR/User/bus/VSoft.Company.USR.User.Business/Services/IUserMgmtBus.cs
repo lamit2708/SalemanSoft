@@ -7,17 +7,17 @@ namespace VSoft.Company.USR.User.Business.Services;
 
 public interface IUserMgmtBus
 {
-    MDtoResponseString GetFullName(MDtoRequestFindByLong request);
+    MDtoResponseString GetFullName(MDtoRequestFindByInt request);
 
-    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request);
+    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request);
 
-    UserFindDtoResponse Find(MDtoRequestFindByLong request);
+    UserFindDtoResponse Find(MDtoRequestFindByInt request);
 
-    Task<UserFindDtoResponse> FindAsync(MDtoRequestFindByLong request);
+    Task<UserFindDtoResponse> FindAsync(MDtoRequestFindByInt request);
 
-    UserFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request);
+    UserFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request);
 
-    Task<UserFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request);
+    Task<UserFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request);
 
     UserInsertDtoResponse Create(UserInsertDtoRequest request);
 
