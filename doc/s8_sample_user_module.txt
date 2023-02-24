@@ -22,7 +22,7 @@ Get-ChildItem -Recurse -Filter *Customer* | Rename-Item -NewName { $_.name -repl
 +Replace all
 
 
-3)Tạo code data để xử lý với bảng trong database
+3)Làm việc tầng DATA
 +Vào Data>D:\workspace\SalemanSoft\git\Code\company\USR\User\data
 
 +Chạy câu lệnh đọc database để biến thành entity cho bảng user
@@ -72,4 +72,18 @@ Theo cấu trúc tương tự;
 +Tạo lại migration
 +Mở package manager Console> Run add-migration Init 
 
-7)Vào Repository
+7)Làm việc tầng Repository
++Build và sửa lỗi cho các field
++Chạy UnitTest cho các hàm create, update, delete
++Kiểm tra với table trong database
+
+8) Làm việc với Business
++Mở VSoft.Company.USR.User.Business.Dto>UserDto.cs
++Copy từ VSoft.Company.USR.User.Data.Entity>MUserEntity.cs => Lấy các thuộc tính của Entity, chép vào UserDto
++Chỉnh lại code trong VSoft.Company.USR.User.Business.Dto.Extension> UserDtoMethods.cs, UserEntityMethods.cs
++Build và chạy code trong UnitTest cho chức năng: create, update, delete;
+
+9) Làm việc với tầng API
+Build
+Chọn VSoft.Company.USR.User.Api.UnitTest.Real> Set Startup Project;
+Run
