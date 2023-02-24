@@ -4,10 +4,10 @@ using VSoft.Company.USR.User.Data.Entity.Models;
 
 namespace VSoft.Company.USR.User.Repository.Services;
 
-public interface IUserRepository : IEfcRepositoryEntityMgmtId<UserDbContext, MUserEntity, long>
+public interface IUserRepository : IEfcRepositoryEntityMgmtId<UserDbContext, MUserEntity, int>
 {
 
-    string? GetFullName(long? id);
+    string? GetFullName(int? id);
 
-    Task<string?> GetFullNameAsync(long? id);
+    Task<string?> GetFullNameAsync(int? id);
 }

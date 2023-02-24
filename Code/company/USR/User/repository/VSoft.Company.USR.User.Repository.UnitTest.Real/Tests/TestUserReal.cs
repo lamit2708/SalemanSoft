@@ -12,45 +12,50 @@ public class TestUserReal : TestMgmtEntities
     [TestMethod]
     [DataRow(5, DisplayName = "GetByIdAsync > 1")]
     [DataRow(6, DisplayName = "GetByIdAsync > 2")]
-    public async Task GetByIdAsync(long id)
+    public async Task GetByIdAsync(int id)
     {
         await TestGetByIdAsync(id);
     }
 
     [TestMethod]
-    [DataRow("Đặng Thế Nhân","3504984957","aaa@gmail.com")]
-    [DataRow("Lê Vũ Lâm","0234532565","abc@yahoo.com")]
-    [DataRow("Nguyễn Tấn Phát","54235235236","xyz@gmail.com")]
-    public async Task CreateAsync(string fullName, string phone, string email)
+    [DataRow("Đặng Thế Nhân","3504984957","nhan","123","aaa@gmail.com")]
+    [DataRow("Lê Vũ Lâm","0234532565","lam","123","abc@yahoo.com")]
+    [DataRow("Nguyễn Tấn Phát","54235235236","phat","123","xyz@gmail.com")]
+    public async Task CreateAsync(string fullName, string phone,string username, string password, string email)
     {
         var e = new A01().GetCreateEntity();
         e.Name = fullName;
         e.Phone = phone;
+        e.Username = username;
+        e.Password = password;
         e.Email = email;
+        e.TeamId = null;
 
         await TestCreateAsync(e);
     }
 
     [TestMethod]
-    [DataRow(4,"Đặng Thế Nhân", "@3504984957", "aaa@gmail.com")]
-    [DataRow(5,"Lê Vũ Lâm", "@0234532565", "abc@yahoo.com")]
-    [DataRow(6,"Nguyễn Tấn Phát", "@54235235236", "xyz@gmail.com")]
-    public async Task UpdateAsync(long id,string fullName, string phone, string email)
+    [DataRow(1,"Đặng Thế Nhân", "3504984957", "nhan111", "123456", "aaa@gmail.com")]
+    [DataRow(2, "Lê Vũ Lâm", "0234532565", "lam111", "123456", "abc@yahoo.com")]
+    [DataRow(3, "Nguyễn Tấn Phát", "54235235236", "phat111", "123456", "xyz@gmail.com")]
+    public async Task UpdateAsync(int id,string fullName, string phone,string username, string password, string email)
     {
         await TestUpdateAsync(new MUserEntity()
         {
             Id= id,
             Name= fullName,
             Phone= phone,
+            Username= username,
+            Password= password,
             Email= email,
-            Address="default",
+          
         });
     }
 
 
     [TestMethod]
     [DataRow(1)]
-    public async Task DeleteAsync(long id)
+    public async Task DeleteAsync(int id)
     {
         
         await TestDeleteAsync(id);

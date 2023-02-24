@@ -30,7 +30,7 @@ public class TestMgmtEntities : RepositoryTest<UserDbContext, IUserRepository, M
         ServiceCollection?.AddScoped<IUserRepository, EfcUserRepository>();
     }
 
-    protected async Task TestGetFullNameByIdAsync(long id)
+    protected async Task TestGetFullNameByIdAsync(int id)
     {
         await RunTest("TestGetByIdAsync", async (r, l) =>
         {
@@ -39,7 +39,7 @@ public class TestMgmtEntities : RepositoryTest<UserDbContext, IUserRepository, M
         });
     }
 
-    protected async Task TestGetByIdAsync(long id)
+    protected async Task TestGetByIdAsync(int id)
     {
         await RunTest("TestGetByIdAsync", async (r, l) =>
         {
@@ -94,7 +94,7 @@ public class TestMgmtEntities : RepositoryTest<UserDbContext, IUserRepository, M
 
     }
 
-    protected async Task TestSaveRangeAsync(Model[] createEntities, Model[] updateEntities, long[]? deleteEntitiesIds)
+    protected async Task TestSaveRangeAsync(Model[] createEntities, Model[] updateEntities, int[]? deleteEntitiesIds)
     {
         await RunTest("TestAddUser", async (r, l) =>
         {
@@ -112,7 +112,7 @@ public class TestMgmtEntities : RepositoryTest<UserDbContext, IUserRepository, M
 
     }
 
-    protected async Task TestSaveRangeTransactionAsync(Model[] createEntities, Model[] updateEntities, long[]? deleteEntitiesIds)
+    protected async Task TestSaveRangeTransactionAsync(Model[] createEntities, Model[] updateEntities, int[]? deleteEntitiesIds)
     {
         await RunTest("TestAddUser", async (r, l) =>
         {
@@ -131,7 +131,7 @@ public class TestMgmtEntities : RepositoryTest<UserDbContext, IUserRepository, M
 
     }
 
-    protected async Task TestDeleteAsync(long id)
+    protected async Task TestDeleteAsync(int id)
     {
         await RunTest("TestDelUser", async (r, l) =>
         {
@@ -148,7 +148,7 @@ public class TestMgmtEntities : RepositoryTest<UserDbContext, IUserRepository, M
 
     }
 
-    protected async Task TestDeleteRangeAsync(params long[] ids)
+    protected async Task TestDeleteRangeAsync(params int[] ids)
     {
         await RunTest("TestDelUser", async (r, l) =>
         {
