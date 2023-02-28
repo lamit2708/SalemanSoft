@@ -1,1 +1,1 @@
-﻿Scaffold-DbContext 'Data Source=.;Initial Catalog=SalemanSoft;CTM ID=root;Password=123456;TrustServerCertificate=True' MySql.EntityFrameworkCor -Tables Customer
+﻿Scaffold-DbContext 'Data Source=localhost;Initial Catalog=crmdb;USER ID=root;Password=123456' MySql.EntityFrameworkCore -Tables Customer

@@ -1,0 +1,16 @@
+﻿using VSoft.Company.ACT.Activity.Data.Entity.Models;
+using VSoft.Company.ACT.Activity.Repository.UnitTest.Bases;
+
+namespace VSoft.Company.ACT.Activity.Repository.UnitTest.Real.Values.GroupA
+{
+    public class A01 : TestEntity
+    {
+        protected override MActivityEntity Entity => new MActivityEntity()
+        {
+            //Id = 63452,
+          
+            Name = "Đặng Thế Nhân",
+           
+        };
+    }
+}

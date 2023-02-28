@@ -1,0 +1,16 @@
+﻿using VSoft.Company.TIC.Ticket.Data.Entity.Models;
+using VSoft.Company.TIC.Ticket.Repository.UnitTest.Bases;
+
+namespace VSoft.Company.TIC.Ticket.Repository.UnitTest.Test.Values.GroupA
+{
+    public class A01 : TestEntity
+    {
+        protected override MTicketEntity Entity => new MTicketEntity()
+        {
+            //Id = 63452,
+           
+            Name = "Đặng Thế Nhân",
+         
+        };
+    }
+}
