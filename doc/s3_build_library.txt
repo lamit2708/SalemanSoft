@@ -11,4 +11,4 @@ D:\workspace\SalemanSoft\git\Code\company\CTM\Customer\
 Data>Repository>Bus>Api>Client
 
 
-Scaffold-DbContext 'Data Source=localhost;Initial Catalog=crmdb;CTM ID=root;Password=root' MySql.EntityFrameworkCor -Tables Customer
+Scaffold-DbContext 'Data Source=localhost;Initial Catalog=crmdb;CTM ID=root;Password=root' MySql.EntityFrameworkCore -Tables Customer
