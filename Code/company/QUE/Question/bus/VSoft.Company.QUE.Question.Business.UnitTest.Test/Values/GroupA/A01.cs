@@ -7,9 +7,7 @@ namespace VSoft.Company.QUE.Question.Business.UnitTest.Test.Values.GroupA
     {
         protected override QuestionDto Dto => new QuestionDto()
         {
-         
-            Name = "Đặng Thế Nhân",
-            
+            Id = 1   
         };
     }
 }

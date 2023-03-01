@@ -7,10 +7,7 @@ namespace VSoft.Company.QUE.Question.Repository.UnitTest.Test.Values.GroupA
     {
         protected override MQuestionEntity Entity => new MQuestionEntity()
         {
-            //Id = 63452,
-           
-            Name = "Đặng Thế Nhân",
-         
+            Id = 1,
         };
     }
 }

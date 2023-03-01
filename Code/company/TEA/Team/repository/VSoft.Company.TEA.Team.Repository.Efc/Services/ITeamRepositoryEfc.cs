@@ -5,7 +5,7 @@ using VSoft.Company.TEA.Team.Repository.Services;
 
 namespace VSoft.Company.TEA.Team.Repository.Efc.Services;
 
-public interface ITeamRepositoryEfc : ITeamRepository, IEfcRepositoryEntityMgmtId<TeamDbContext, MTeamEntity, long>
+public interface ITeamRepositoryEfc : ITeamRepository, IEfcRepositoryEntityMgmtId<TeamDbContext, MTeamEntity, int>
 {
    
 }

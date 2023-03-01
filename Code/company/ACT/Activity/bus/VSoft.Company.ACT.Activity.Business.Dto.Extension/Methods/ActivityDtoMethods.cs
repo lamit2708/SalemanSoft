@@ -11,13 +11,7 @@ public static class ActivityDtoMethods
         {
             Id = src.Id,
             Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            ActivityInfoId = src.ActivityInfoId,
-            IsBought = src.IsBought,
+            Description = src.Description
         };
     }
 }

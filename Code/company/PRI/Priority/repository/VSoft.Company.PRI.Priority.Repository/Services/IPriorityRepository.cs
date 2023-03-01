@@ -4,10 +4,10 @@ using VSoft.Company.PRI.Priority.Data.Entity.Models;
 
 namespace VSoft.Company.PRI.Priority.Repository.Services;
 
-public interface IPriorityRepository : IEfcRepositoryEntityMgmtId<PriorityDbContext, MPriorityEntity, long>
+public interface IPriorityRepository : IEfcRepositoryEntityMgmtId<PriorityDbContext, MPriorityEntity, int>
 {
 
-    string? GetFullName(long? id);
+    string? GetFullName(int? id);
 
-    Task<string?> GetFullNameAsync(long? id);
+    Task<string?> GetFullNameAsync(int? id);
 }

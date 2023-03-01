@@ -1,5 +1,4 @@
-﻿using VSoft.Company.UCU.UserCustomer.Business.Dto.Request;
-using VSoft.Company.UCU.UserCustomer.Business.UnitTest.Bases;
+﻿using VSoft.Company.UCU.UserCustomer.Business.UnitTest.Bases;
 using VSoft.Company.UCU.UserCustomer.Business.UnitTest.Test.Values.GroupA;
 
 namespace VSoft.Company.UCU.UserCustomer.Business.UnitTest.Test.Tests
@@ -12,7 +11,7 @@ namespace VSoft.Company.UCU.UserCustomer.Business.UnitTest.Test.Tests
         public async Task WriteCreateJsonAsync(string fullName)
         {
             var dto = new A01().GetCreateDto();
-            dto.Name = fullName;            
+            //dto.Name = fullName;            
             await WriteJSonAsync(dto);
         }
 

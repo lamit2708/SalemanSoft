@@ -5,7 +5,7 @@ using VSoft.Company.ROL.Role.Repository.Services;
 
 namespace VSoft.Company.ROL.Role.Repository.Efc.Services;
 
-public interface IRoleRepositoryEfc : IRoleRepository, IEfcRepositoryEntityMgmtId<RoleDbContext, MRoleEntity, long>
+public interface IRoleRepositoryEfc : IRoleRepository, IEfcRepositoryEntityMgmtId<RoleDbContext, MRoleEntity, int>
 {
    
 }

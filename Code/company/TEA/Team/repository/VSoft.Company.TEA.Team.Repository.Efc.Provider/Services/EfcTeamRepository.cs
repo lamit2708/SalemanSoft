@@ -6,7 +6,7 @@ using VSoft.Company.TEA.Team.Repository.Efc.Services;
 
 namespace VSoft.Company.TEA.Team.Repository.Efc.Provider.Services;
 
-public class EfcTeamRepository : EFcRepositoryEntityMgmtId<TeamDbContext, MTeamEntity, long>, ITeamRepositoryEfc
+public class EfcTeamRepository : EFcRepositoryEntityMgmtId<TeamDbContext, MTeamEntity, int>, ITeamRepositoryEfc
 {
 
     public EfcTeamRepository(TeamDbContext dbContext) : base(dbContext, dbContext.Items)
@@ -14,7 +14,7 @@ public class EfcTeamRepository : EFcRepositoryEntityMgmtId<TeamDbContext, MTeamE
 
     }
 
-    public string? GetFullName(long? id)
+    public string? GetFullName(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");
@@ -22,7 +22,7 @@ public class EfcTeamRepository : EFcRepositoryEntityMgmtId<TeamDbContext, MTeamE
         return Entities.Where(x => x.Id == id).Select(x => x.Name ?? string.Empty).FirstOrDefault();
     }
 
-    public Task<string?> GetFullNameAsync(long? id)
+    public Task<string?> GetFullNameAsync(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");

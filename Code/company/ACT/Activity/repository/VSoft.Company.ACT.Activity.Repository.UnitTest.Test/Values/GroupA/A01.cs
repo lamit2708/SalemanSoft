@@ -7,10 +7,7 @@ namespace VSoft.Company.ACT.Activity.Repository.UnitTest.Test.Values.GroupA
     {
         protected override MActivityEntity Entity => new MActivityEntity()
         {
-            //Id = 63452,
-           
-            Name = "Đặng Thế Nhân",
-         
+            Id = 1,
         };
     }
 }

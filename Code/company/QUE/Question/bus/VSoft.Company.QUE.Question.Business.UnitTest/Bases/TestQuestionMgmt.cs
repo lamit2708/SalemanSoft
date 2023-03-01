@@ -17,7 +17,7 @@ namespace VSoft.Company.QUE.Question.Business.UnitTest.Bases
         protected override List<string>? LogFields { get; set; } = new List<string>()
         {
             nameof(Model.Id),
-            nameof(Model.Name),
+            nameof(Model.TicketId),
            
         };
 

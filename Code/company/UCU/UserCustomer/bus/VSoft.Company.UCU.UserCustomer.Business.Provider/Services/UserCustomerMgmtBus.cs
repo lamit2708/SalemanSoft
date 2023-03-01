@@ -27,7 +27,7 @@ public class UserCustomerMgmtBus : BusinessRepositoryService<UserCustomerDto, IU
 
     protected override List<string>? SaveRequiredFields { get; set; } = new List<string>()
     {
-        nameof(UserCustomerDto.Name),
+        nameof(UserCustomerDto.CustomerId),
         
     };
 
@@ -36,54 +36,54 @@ public class UserCustomerMgmtBus : BusinessRepositoryService<UserCustomerDto, IU
 
     }
 
-    public MDtoResponseString GetFullName(MDtoRequestFindByLong request)
+    public MDtoResponseString GetFullName(MDtoRequestFindByInt request)
     {
-        return GetValue<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return GetValue<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullName), request, "email",
             (id) => Repository?.GetFullName(id)
         );
     }
 
-    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request)
+    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request)
     {
-        return await GetValueAsync<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return await GetValueAsync<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullNameAsync), request, "email",
             async (id) => await (Repository?.GetFullNameAsync(id) ?? Task.FromResult<string?>(null))
         );
     }
 
-    public UserCustomerFindDtoResponse Find(MDtoRequestFindByLong request)
+    public UserCustomerFindDtoResponse Find(MDtoRequestFindByInt request)
     {
-        return Find<MDtoRequestFindByLong, UserCustomerFindDtoResponse, long>
+        return Find<MDtoRequestFindByInt, UserCustomerFindDtoResponse, int>
         (
             request,
             (id) => Repository?.GetById(id)?.GetDto()
         );
     }
 
-    public async Task<UserCustomerFindDtoResponse> FindAsync(MDtoRequestFindByLong request)
+    public async Task<UserCustomerFindDtoResponse> FindAsync(MDtoRequestFindByInt request)
     {
-        return await FindAsync<MDtoRequestFindByLong, UserCustomerFindDtoResponse, long>
+        return await FindAsync<MDtoRequestFindByInt, UserCustomerFindDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdAsync(id) ?? Task.FromResult<MUserCustomerEntity?>(null)))?.GetDto()
         );
     }
 
-    public UserCustomerFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request)
+    public UserCustomerFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request)
     {
-        return FindRange<MDtoRequestFindRangeByLongs, UserCustomerFindRangeDtoResponse, long>
+        return FindRange<MDtoRequestFindRangeByInts, UserCustomerFindRangeDtoResponse, int>
         (
             request,
             (id) => Repository?.GetByIds(id)?.Select(e => e.GetDto()).ToArray()
         );
     }
 
-    public async Task<UserCustomerFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request)
+    public async Task<UserCustomerFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request)
     {
-        return await FindRangeAsync<MDtoRequestFindRangeByLongs, UserCustomerFindRangeDtoResponse, long>
+        return await FindRangeAsync<MDtoRequestFindRangeByInts, UserCustomerFindRangeDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdsAsync(id) ?? Task.FromResult<IEnumerable<MUserCustomerEntity>?>(null)))?.Select(e => e.GetDto()).ToArray()
@@ -201,7 +201,7 @@ public class UserCustomerMgmtBus : BusinessRepositoryService<UserCustomerDto, IU
 
     public UserCustomerDeleteDtoResponse Delete(UserCustomerDeleteDtoRequest request)
     {
-        return Delete<UserCustomerDeleteDtoRequest, UserCustomerDeleteDtoResponse, long>
+        return Delete<UserCustomerDeleteDtoRequest, UserCustomerDeleteDtoResponse, int>
         (
              request,
              (id) =>
@@ -215,7 +215,7 @@ public class UserCustomerMgmtBus : BusinessRepositoryService<UserCustomerDto, IU
 
     public async Task<UserCustomerDeleteDtoResponse> DeleteAsync(UserCustomerDeleteDtoRequest request)
     {
-        return await DeleteAsync<UserCustomerDeleteDtoRequest, UserCustomerDeleteDtoResponse, long>
+        return await DeleteAsync<UserCustomerDeleteDtoRequest, UserCustomerDeleteDtoResponse, int>
         (
              request,
              async (id) =>
@@ -229,7 +229,7 @@ public class UserCustomerMgmtBus : BusinessRepositoryService<UserCustomerDto, IU
 
     public UserCustomerDeleteRangeDtoResponse DeleteRange(UserCustomerDeleteRangeDtoRequest request)
     {
-        return DeleteRange<UserCustomerDeleteRangeDtoRequest, UserCustomerDeleteRangeDtoResponse, long>
+        return DeleteRange<UserCustomerDeleteRangeDtoRequest, UserCustomerDeleteRangeDtoResponse, int>
         (
              request,
              (ids) =>
@@ -243,7 +243,7 @@ public class UserCustomerMgmtBus : BusinessRepositoryService<UserCustomerDto, IU
 
     public async Task<UserCustomerDeleteRangeDtoResponse> DeleteRangeAsync(UserCustomerDeleteRangeDtoRequest request)
     {
-       return await DeleteRangeAsync<UserCustomerDeleteRangeDtoRequest, UserCustomerDeleteRangeDtoResponse, long>
+       return await DeleteRangeAsync<UserCustomerDeleteRangeDtoRequest, UserCustomerDeleteRangeDtoResponse, int>
        (
             request,
             async (ids) =>

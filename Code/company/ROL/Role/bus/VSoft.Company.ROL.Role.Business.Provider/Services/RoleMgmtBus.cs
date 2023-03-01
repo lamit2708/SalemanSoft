@@ -36,54 +36,54 @@ public class RoleMgmtBus : BusinessRepositoryService<RoleDto, IRoleRepository>, 
 
     }
 
-    public MDtoResponseString GetFullName(MDtoRequestFindByLong request)
+    public MDtoResponseString GetFullName(MDtoRequestFindByInt request)
     {
-        return GetValue<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return GetValue<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullName), request, "email",
             (id) => Repository?.GetFullName(id)
         );
     }
 
-    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request)
+    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request)
     {
-        return await GetValueAsync<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return await GetValueAsync<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullNameAsync), request, "email",
             async (id) => await (Repository?.GetFullNameAsync(id) ?? Task.FromResult<string?>(null))
         );
     }
 
-    public RoleFindDtoResponse Find(MDtoRequestFindByLong request)
+    public RoleFindDtoResponse Find(MDtoRequestFindByInt request)
     {
-        return Find<MDtoRequestFindByLong, RoleFindDtoResponse, long>
+        return Find<MDtoRequestFindByInt, RoleFindDtoResponse, int>
         (
             request,
             (id) => Repository?.GetById(id)?.GetDto()
         );
     }
 
-    public async Task<RoleFindDtoResponse> FindAsync(MDtoRequestFindByLong request)
+    public async Task<RoleFindDtoResponse> FindAsync(MDtoRequestFindByInt request)
     {
-        return await FindAsync<MDtoRequestFindByLong, RoleFindDtoResponse, long>
+        return await FindAsync<MDtoRequestFindByInt, RoleFindDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdAsync(id) ?? Task.FromResult<MRoleEntity?>(null)))?.GetDto()
         );
     }
 
-    public RoleFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request)
+    public RoleFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request)
     {
-        return FindRange<MDtoRequestFindRangeByLongs, RoleFindRangeDtoResponse, long>
+        return FindRange<MDtoRequestFindRangeByInts, RoleFindRangeDtoResponse, int>
         (
             request,
             (id) => Repository?.GetByIds(id)?.Select(e => e.GetDto()).ToArray()
         );
     }
 
-    public async Task<RoleFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request)
+    public async Task<RoleFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request)
     {
-        return await FindRangeAsync<MDtoRequestFindRangeByLongs, RoleFindRangeDtoResponse, long>
+        return await FindRangeAsync<MDtoRequestFindRangeByInts, RoleFindRangeDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdsAsync(id) ?? Task.FromResult<IEnumerable<MRoleEntity>?>(null)))?.Select(e => e.GetDto()).ToArray()
@@ -229,7 +229,7 @@ public class RoleMgmtBus : BusinessRepositoryService<RoleDto, IRoleRepository>, 
 
     public RoleDeleteRangeDtoResponse DeleteRange(RoleDeleteRangeDtoRequest request)
     {
-        return DeleteRange<RoleDeleteRangeDtoRequest, RoleDeleteRangeDtoResponse, long>
+        return DeleteRange<RoleDeleteRangeDtoRequest, RoleDeleteRangeDtoResponse, int>
         (
              request,
              (ids) =>
@@ -243,7 +243,7 @@ public class RoleMgmtBus : BusinessRepositoryService<RoleDto, IRoleRepository>, 
 
     public async Task<RoleDeleteRangeDtoResponse> DeleteRangeAsync(RoleDeleteRangeDtoRequest request)
     {
-       return await DeleteRangeAsync<RoleDeleteRangeDtoRequest, RoleDeleteRangeDtoResponse, long>
+       return await DeleteRangeAsync<RoleDeleteRangeDtoRequest, RoleDeleteRangeDtoResponse, int>
        (
             request,
             async (ids) =>

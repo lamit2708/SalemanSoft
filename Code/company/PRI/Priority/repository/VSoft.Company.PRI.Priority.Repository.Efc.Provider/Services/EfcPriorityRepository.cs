@@ -6,7 +6,7 @@ using VSoft.Company.PRI.Priority.Repository.Efc.Services;
 
 namespace VSoft.Company.PRI.Priority.Repository.Efc.Provider.Services;
 
-public class EfcPriorityRepository : EFcRepositoryEntityMgmtId<PriorityDbContext, MPriorityEntity, long>, IPriorityRepositoryEfc
+public class EfcPriorityRepository : EFcRepositoryEntityMgmtId<PriorityDbContext, MPriorityEntity, int>, IPriorityRepositoryEfc
 {
 
     public EfcPriorityRepository(PriorityDbContext dbContext) : base(dbContext, dbContext.Items)
@@ -14,7 +14,7 @@ public class EfcPriorityRepository : EFcRepositoryEntityMgmtId<PriorityDbContext
 
     }
 
-    public string? GetFullName(long? id)
+    public string? GetFullName(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");
@@ -22,7 +22,7 @@ public class EfcPriorityRepository : EFcRepositoryEntityMgmtId<PriorityDbContext
         return Entities.Where(x => x.Id == id).Select(x => x.Name ?? string.Empty).FirstOrDefault();
     }
 
-    public Task<string?> GetFullNameAsync(long? id)
+    public Task<string?> GetFullNameAsync(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");

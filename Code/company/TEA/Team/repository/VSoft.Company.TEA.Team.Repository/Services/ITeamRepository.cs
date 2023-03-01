@@ -4,10 +4,10 @@ using VSoft.Company.TEA.Team.Data.Entity.Models;
 
 namespace VSoft.Company.TEA.Team.Repository.Services;
 
-public interface ITeamRepository : IEfcRepositoryEntityMgmtId<TeamDbContext, MTeamEntity, long>
+public interface ITeamRepository : IEfcRepositoryEntityMgmtId<TeamDbContext, MTeamEntity, int>
 {
 
-    string? GetFullName(long? id);
+    string? GetFullName(int? id);
 
-    Task<string?> GetFullNameAsync(long? id);
+    Task<string?> GetFullNameAsync(int? id);
 }

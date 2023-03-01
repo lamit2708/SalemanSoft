@@ -17,7 +17,7 @@ namespace VSoft.Company.DSH.DealStepHistory.Business.UnitTest.Bases
         protected override List<string>? LogFields { get; set; } = new List<string>()
         {
             nameof(Model.Id),
-            nameof(Model.Name),
+            nameof(Model.DealStepId),
            
         };
 

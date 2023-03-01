@@ -6,7 +6,7 @@ using VSoft.Company.ROL.Role.Repository.Efc.Services;
 
 namespace VSoft.Company.ROL.Role.Repository.Efc.Provider.Services;
 
-public class EfcRoleRepository : EFcRepositoryEntityMgmtId<RoleDbContext, MRoleEntity, long>, IRoleRepositoryEfc
+public class EfcRoleRepository : EFcRepositoryEntityMgmtId<RoleDbContext, MRoleEntity, int>, IRoleRepositoryEfc
 {
 
     public EfcRoleRepository(RoleDbContext dbContext) : base(dbContext, dbContext.Items)
@@ -14,7 +14,7 @@ public class EfcRoleRepository : EFcRepositoryEntityMgmtId<RoleDbContext, MRoleE
 
     }
 
-    public string? GetFullName(long? id)
+    public string? GetFullName(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");
@@ -22,7 +22,7 @@ public class EfcRoleRepository : EFcRepositoryEntityMgmtId<RoleDbContext, MRoleE
         return Entities.Where(x => x.Id == id).Select(x => x.Name ?? string.Empty).FirstOrDefault();
     }
 
-    public Task<string?> GetFullNameAsync(long? id)
+    public Task<string?> GetFullNameAsync(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");

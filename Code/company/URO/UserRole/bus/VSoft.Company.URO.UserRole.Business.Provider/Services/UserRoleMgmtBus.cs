@@ -27,7 +27,7 @@ public class UserRoleMgmtBus : BusinessRepositoryService<UserRoleDto, IUserRoleR
 
     protected override List<string>? SaveRequiredFields { get; set; } = new List<string>()
     {
-        nameof(UserRoleDto.Name),
+        nameof(UserRoleDto.UserId),
         
     };
 

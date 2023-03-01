@@ -10,14 +10,9 @@ public static class QuestionEntityMethods
         return new QuestionDto()
         {
             Id = src.Id,
-            Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            QuestionInfoId = src.QuestionInfoId,
-            IsBought = src.IsBought,
+            Description = src.Description,
+            CreatedDate = src.CreatedDate,
+            TicketId = src.TicketId,
         };
     }
 }

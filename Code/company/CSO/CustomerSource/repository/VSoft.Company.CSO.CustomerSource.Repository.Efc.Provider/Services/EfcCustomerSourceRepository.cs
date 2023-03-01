@@ -6,7 +6,7 @@ using VSoft.Company.CSO.CustomerSource.Repository.Efc.Services;
 
 namespace VSoft.Company.CSO.CustomerSource.Repository.Efc.Provider.Services;
 
-public class EfcCustomerSourceRepository : EFcRepositoryEntityMgmtId<CustomerSourceDbContext, MCustomerSourceEntity, long>, ICustomerSourceRepositoryEfc
+public class EfcCustomerSourceRepository : EFcRepositoryEntityMgmtId<CustomerSourceDbContext, MCustomerSourceEntity, int>, ICustomerSourceRepositoryEfc
 {
 
     public EfcCustomerSourceRepository(CustomerSourceDbContext dbContext) : base(dbContext, dbContext.Items)
@@ -14,7 +14,7 @@ public class EfcCustomerSourceRepository : EFcRepositoryEntityMgmtId<CustomerSou
 
     }
 
-    public string? GetFullName(long? id)
+    public string? GetFullName(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");
@@ -22,7 +22,7 @@ public class EfcCustomerSourceRepository : EFcRepositoryEntityMgmtId<CustomerSou
         return Entities.Where(x => x.Id == id).Select(x => x.Name ?? string.Empty).FirstOrDefault();
     }
 
-    public Task<string?> GetFullNameAsync(long? id)
+    public Task<string?> GetFullNameAsync(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");

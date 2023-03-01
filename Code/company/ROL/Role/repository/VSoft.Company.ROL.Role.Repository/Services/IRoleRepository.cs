@@ -4,10 +4,10 @@ using VSoft.Company.ROL.Role.Data.Entity.Models;
 
 namespace VSoft.Company.ROL.Role.Repository.Services;
 
-public interface IRoleRepository : IEfcRepositoryEntityMgmtId<RoleDbContext, MRoleEntity, long>
+public interface IRoleRepository : IEfcRepositoryEntityMgmtId<RoleDbContext, MRoleEntity, int>
 {
 
-    string? GetFullName(long? id);
+    string? GetFullName(int? id);
 
-    Task<string?> GetFullNameAsync(long? id);
+    Task<string?> GetFullNameAsync(int? id);
 }

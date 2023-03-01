@@ -12,9 +12,9 @@ namespace VSoft.Company.CSO.CustomerSource.Business.UnitTest.Test.Tests
         [DataRow(63491)]
         [DataRow(63492)]
         [DataRow(63493)]
-        public async Task FindAsync(long id)
+        public async Task FindAsync(int id)
         {
-            await TestFindAsync(new MDtoRequestFindByLong()
+            await TestFindAsync(new MDtoRequestFindByInt()
             {
                 Id = id,
             });
@@ -22,9 +22,9 @@ namespace VSoft.Company.CSO.CustomerSource.Business.UnitTest.Test.Tests
 
         [TestMethod]
         [DataRow(63494, 63495, 63496)]
-        public async Task FindRangeAsync(long id1, long id2, long id3)
+        public async Task FindRangeAsync(int id1, int id2, int id3)
         {
-            await TestFindRangeAsync(new MDtoRequestFindRangeByLongs()
+            await TestFindRangeAsync(new MDtoRequestFindRangeByInts()
             {
                 Ids = new[] { id1, id2, id3 },
             });
@@ -38,8 +38,8 @@ namespace VSoft.Company.CSO.CustomerSource.Business.UnitTest.Test.Tests
         {
             var e = new CustomerSourceDto();
             e.Name = fullName;
-            e.Phone = phone;
-            e.Email = email;
+            //e.Phone = phone;
+            //e.Email = email;
             await TestCreateAsync(new CustomerSourceInsertDtoRequest()
             {
                 Data = e

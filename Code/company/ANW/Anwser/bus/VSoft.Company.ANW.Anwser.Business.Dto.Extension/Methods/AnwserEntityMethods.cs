@@ -10,14 +10,10 @@ public static class AnwserEntityMethods
         return new AnwserDto()
         {
             Id = src.Id,
-            Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            AnwserInfoId = src.AnwserInfoId,
-            IsBought = src.IsBought,
+            Content = src.Content,
+            CreatedDate = src.CreatedDate,
+            UserId = src.UserId,
+            QuestionId = src.QuestionId,
         };
     }
 }

@@ -30,7 +30,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerSourceDbContext, ICustome
         ServiceCollection?.AddScoped<ICustomerSourceRepository, EfcCustomerSourceRepository>();
     }
 
-    protected async Task TestGetFullNameByIdAsync(long id)
+    protected async Task TestGetFullNameByIdAsync(int id)
     {
         await RunTest("TestGetByIdAsync", async (r, l) =>
         {
@@ -94,7 +94,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerSourceDbContext, ICustome
 
     }
 
-    protected async Task TestSaveRangeAsync(Model[] createEntities, Model[] updateEntities, long[]? deleteEntitiesIds)
+    protected async Task TestSaveRangeAsync(Model[] createEntities, Model[] updateEntities, int[]? deleteEntitiesIds)
     {
         await RunTest("TestAddCustomerSource", async (r, l) =>
         {
@@ -112,7 +112,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerSourceDbContext, ICustome
 
     }
 
-    protected async Task TestSaveRangeTransactionAsync(Model[] createEntities, Model[] updateEntities, long[]? deleteEntitiesIds)
+    protected async Task TestSaveRangeTransactionAsync(Model[] createEntities, Model[] updateEntities, int[]? deleteEntitiesIds)
     {
         await RunTest("TestAddCustomerSource", async (r, l) =>
         {
@@ -148,7 +148,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerSourceDbContext, ICustome
 
     }
 
-    protected async Task TestDeleteRangeAsync(params long[] ids)
+    protected async Task TestDeleteRangeAsync(params int[] ids)
     {
         await RunTest("TestDelCustomerSource", async (r, l) =>
         {

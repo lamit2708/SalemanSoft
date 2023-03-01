@@ -17,7 +17,7 @@ public class TestMgmtEntities : RepositoryTest<UserRoleDbContext, IUserRoleRepos
     {
         nameof(Model.Id),
 
-        nameof(Model.Name),
+        nameof(Model.UserId),
        
     };
 

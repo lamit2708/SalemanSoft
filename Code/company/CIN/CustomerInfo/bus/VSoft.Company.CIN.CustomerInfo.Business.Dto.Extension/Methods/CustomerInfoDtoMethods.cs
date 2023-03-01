@@ -10,14 +10,11 @@ public static class CustomerInfoDtoMethods
         return new MCustomerInfoEntity()
         {
             Id = src.Id,
-            Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            CustomerInfoInfoId = src.CustomerInfoInfoId,
-            IsBought = src.IsBought,
+            CustomerSourceId = src.CustomerSourceId,
+            Hobby = src.Hobby,
+            Job = src.Job,
+            BirthDate = src.BirthDate,
+            IsMarrage = src.IsMarrage,
         };
     }
 }

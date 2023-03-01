@@ -27,7 +27,7 @@ public class DealActivityMgmtBus : BusinessRepositoryService<DealActivityDto, ID
 
     protected override List<string>? SaveRequiredFields { get; set; } = new List<string>()
     {
-        nameof(DealActivityDto.Name),
+        nameof(DealActivityDto.DealId),
         
     };
 
@@ -36,54 +36,54 @@ public class DealActivityMgmtBus : BusinessRepositoryService<DealActivityDto, ID
 
     }
 
-    public MDtoResponseString GetFullName(MDtoRequestFindByLong request)
+    public MDtoResponseString GetFullName(MDtoRequestFindByInt request)
     {
-        return GetValue<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return GetValue<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullName), request, "email",
             (id) => Repository?.GetFullName(id)
         );
     }
 
-    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request)
+    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request)
     {
-        return await GetValueAsync<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return await GetValueAsync<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullNameAsync), request, "email",
             async (id) => await (Repository?.GetFullNameAsync(id) ?? Task.FromResult<string?>(null))
         );
     }
 
-    public DealActivityFindDtoResponse Find(MDtoRequestFindByLong request)
+    public DealActivityFindDtoResponse Find(MDtoRequestFindByInt request)
     {
-        return Find<MDtoRequestFindByLong, DealActivityFindDtoResponse, long>
+        return Find<MDtoRequestFindByInt, DealActivityFindDtoResponse, int>
         (
             request,
             (id) => Repository?.GetById(id)?.GetDto()
         );
     }
 
-    public async Task<DealActivityFindDtoResponse> FindAsync(MDtoRequestFindByLong request)
+    public async Task<DealActivityFindDtoResponse> FindAsync(MDtoRequestFindByInt request)
     {
-        return await FindAsync<MDtoRequestFindByLong, DealActivityFindDtoResponse, long>
+        return await FindAsync<MDtoRequestFindByInt, DealActivityFindDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdAsync(id) ?? Task.FromResult<MDealActivityEntity?>(null)))?.GetDto()
         );
     }
 
-    public DealActivityFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request)
+    public DealActivityFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request)
     {
-        return FindRange<MDtoRequestFindRangeByLongs, DealActivityFindRangeDtoResponse, long>
+        return FindRange<MDtoRequestFindRangeByInts, DealActivityFindRangeDtoResponse, int>
         (
             request,
             (id) => Repository?.GetByIds(id)?.Select(e => e.GetDto()).ToArray()
         );
     }
 
-    public async Task<DealActivityFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request)
+    public async Task<DealActivityFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request)
     {
-        return await FindRangeAsync<MDtoRequestFindRangeByLongs, DealActivityFindRangeDtoResponse, long>
+        return await FindRangeAsync<MDtoRequestFindRangeByInts, DealActivityFindRangeDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdsAsync(id) ?? Task.FromResult<IEnumerable<MDealActivityEntity>?>(null)))?.Select(e => e.GetDto()).ToArray()
@@ -201,7 +201,7 @@ public class DealActivityMgmtBus : BusinessRepositoryService<DealActivityDto, ID
 
     public DealActivityDeleteDtoResponse Delete(DealActivityDeleteDtoRequest request)
     {
-        return Delete<DealActivityDeleteDtoRequest, DealActivityDeleteDtoResponse, long>
+        return Delete<DealActivityDeleteDtoRequest, DealActivityDeleteDtoResponse, int>
         (
              request,
              (id) =>
@@ -215,7 +215,7 @@ public class DealActivityMgmtBus : BusinessRepositoryService<DealActivityDto, ID
 
     public async Task<DealActivityDeleteDtoResponse> DeleteAsync(DealActivityDeleteDtoRequest request)
     {
-        return await DeleteAsync<DealActivityDeleteDtoRequest, DealActivityDeleteDtoResponse, long>
+        return await DeleteAsync<DealActivityDeleteDtoRequest, DealActivityDeleteDtoResponse, int>
         (
              request,
              async (id) =>
@@ -229,7 +229,7 @@ public class DealActivityMgmtBus : BusinessRepositoryService<DealActivityDto, ID
 
     public DealActivityDeleteRangeDtoResponse DeleteRange(DealActivityDeleteRangeDtoRequest request)
     {
-        return DeleteRange<DealActivityDeleteRangeDtoRequest, DealActivityDeleteRangeDtoResponse, long>
+        return DeleteRange<DealActivityDeleteRangeDtoRequest, DealActivityDeleteRangeDtoResponse, int>
         (
              request,
              (ids) =>
@@ -243,7 +243,7 @@ public class DealActivityMgmtBus : BusinessRepositoryService<DealActivityDto, ID
 
     public async Task<DealActivityDeleteRangeDtoResponse> DeleteRangeAsync(DealActivityDeleteRangeDtoRequest request)
     {
-       return await DeleteRangeAsync<DealActivityDeleteRangeDtoRequest, DealActivityDeleteRangeDtoResponse, long>
+       return await DeleteRangeAsync<DealActivityDeleteRangeDtoRequest, DealActivityDeleteRangeDtoResponse, int>
        (
             request,
             async (ids) =>

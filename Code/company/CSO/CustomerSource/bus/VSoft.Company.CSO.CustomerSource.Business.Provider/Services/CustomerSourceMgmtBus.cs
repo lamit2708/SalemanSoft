@@ -36,54 +36,54 @@ public class CustomerSourceMgmtBus : BusinessRepositoryService<CustomerSourceDto
 
     }
 
-    public MDtoResponseString GetFullName(MDtoRequestFindByLong request)
+    public MDtoResponseString GetFullName(MDtoRequestFindByInt request)
     {
-        return GetValue<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return GetValue<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullName), request, "email",
             (id) => Repository?.GetFullName(id)
         );
     }
 
-    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request)
+    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request)
     {
-        return await GetValueAsync<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return await GetValueAsync<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullNameAsync), request, "email",
             async (id) => await (Repository?.GetFullNameAsync(id) ?? Task.FromResult<string?>(null))
         );
     }
 
-    public CustomerSourceFindDtoResponse Find(MDtoRequestFindByLong request)
+    public CustomerSourceFindDtoResponse Find(MDtoRequestFindByInt request)
     {
-        return Find<MDtoRequestFindByLong, CustomerSourceFindDtoResponse, long>
+        return Find<MDtoRequestFindByInt, CustomerSourceFindDtoResponse, int>
         (
             request,
             (id) => Repository?.GetById(id)?.GetDto()
         );
     }
 
-    public async Task<CustomerSourceFindDtoResponse> FindAsync(MDtoRequestFindByLong request)
+    public async Task<CustomerSourceFindDtoResponse> FindAsync(MDtoRequestFindByInt request)
     {
-        return await FindAsync<MDtoRequestFindByLong, CustomerSourceFindDtoResponse, long>
+        return await FindAsync<MDtoRequestFindByInt, CustomerSourceFindDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdAsync(id) ?? Task.FromResult<MCustomerSourceEntity?>(null)))?.GetDto()
         );
     }
 
-    public CustomerSourceFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request)
+    public CustomerSourceFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request)
     {
-        return FindRange<MDtoRequestFindRangeByLongs, CustomerSourceFindRangeDtoResponse, long>
+        return FindRange<MDtoRequestFindRangeByInts, CustomerSourceFindRangeDtoResponse, int>
         (
             request,
             (id) => Repository?.GetByIds(id)?.Select(e => e.GetDto()).ToArray()
         );
     }
 
-    public async Task<CustomerSourceFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request)
+    public async Task<CustomerSourceFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request)
     {
-        return await FindRangeAsync<MDtoRequestFindRangeByLongs, CustomerSourceFindRangeDtoResponse, long>
+        return await FindRangeAsync<MDtoRequestFindRangeByInts, CustomerSourceFindRangeDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdsAsync(id) ?? Task.FromResult<IEnumerable<MCustomerSourceEntity>?>(null)))?.Select(e => e.GetDto()).ToArray()
@@ -229,7 +229,7 @@ public class CustomerSourceMgmtBus : BusinessRepositoryService<CustomerSourceDto
 
     public CustomerSourceDeleteRangeDtoResponse DeleteRange(CustomerSourceDeleteRangeDtoRequest request)
     {
-        return DeleteRange<CustomerSourceDeleteRangeDtoRequest, CustomerSourceDeleteRangeDtoResponse, long>
+        return DeleteRange<CustomerSourceDeleteRangeDtoRequest, CustomerSourceDeleteRangeDtoResponse, int>
         (
              request,
              (ids) =>
@@ -243,7 +243,7 @@ public class CustomerSourceMgmtBus : BusinessRepositoryService<CustomerSourceDto
 
     public async Task<CustomerSourceDeleteRangeDtoResponse> DeleteRangeAsync(CustomerSourceDeleteRangeDtoRequest request)
     {
-       return await DeleteRangeAsync<CustomerSourceDeleteRangeDtoRequest, CustomerSourceDeleteRangeDtoResponse, long>
+       return await DeleteRangeAsync<CustomerSourceDeleteRangeDtoRequest, CustomerSourceDeleteRangeDtoResponse, int>
        (
             request,
             async (ids) =>

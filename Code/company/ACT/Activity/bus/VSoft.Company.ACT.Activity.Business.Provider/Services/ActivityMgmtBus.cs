@@ -36,54 +36,54 @@ public class ActivityMgmtBus : BusinessRepositoryService<ActivityDto, IActivityR
 
     }
 
-    public MDtoResponseString GetFullName(MDtoRequestFindByLong request)
+    public MDtoResponseString GetFullName(MDtoRequestFindByInt request)
     {
-        return GetValue<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return GetValue<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullName), request, "email",
             (id) => Repository?.GetFullName(id)
         );
     }
 
-    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request)
+    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request)
     {
-        return await GetValueAsync<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return await GetValueAsync<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullNameAsync), request, "email",
             async (id) => await (Repository?.GetFullNameAsync(id) ?? Task.FromResult<string?>(null))
         );
     }
 
-    public ActivityFindDtoResponse Find(MDtoRequestFindByLong request)
+    public ActivityFindDtoResponse Find(MDtoRequestFindByInt request)
     {
-        return Find<MDtoRequestFindByLong, ActivityFindDtoResponse, long>
+        return Find<MDtoRequestFindByInt, ActivityFindDtoResponse, int>
         (
             request,
             (id) => Repository?.GetById(id)?.GetDto()
         );
     }
 
-    public async Task<ActivityFindDtoResponse> FindAsync(MDtoRequestFindByLong request)
+    public async Task<ActivityFindDtoResponse> FindAsync(MDtoRequestFindByInt request)
     {
-        return await FindAsync<MDtoRequestFindByLong, ActivityFindDtoResponse, long>
+        return await FindAsync<MDtoRequestFindByInt, ActivityFindDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdAsync(id) ?? Task.FromResult<MActivityEntity?>(null)))?.GetDto()
         );
     }
 
-    public ActivityFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request)
+    public ActivityFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request)
     {
-        return FindRange<MDtoRequestFindRangeByLongs, ActivityFindRangeDtoResponse, long>
+        return FindRange<MDtoRequestFindRangeByInts, ActivityFindRangeDtoResponse, int>
         (
             request,
             (id) => Repository?.GetByIds(id)?.Select(e => e.GetDto()).ToArray()
         );
     }
 
-    public async Task<ActivityFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request)
+    public async Task<ActivityFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request)
     {
-        return await FindRangeAsync<MDtoRequestFindRangeByLongs, ActivityFindRangeDtoResponse, long>
+        return await FindRangeAsync<MDtoRequestFindRangeByInts, ActivityFindRangeDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdsAsync(id) ?? Task.FromResult<IEnumerable<MActivityEntity>?>(null)))?.Select(e => e.GetDto()).ToArray()
@@ -229,7 +229,7 @@ public class ActivityMgmtBus : BusinessRepositoryService<ActivityDto, IActivityR
 
     public ActivityDeleteRangeDtoResponse DeleteRange(ActivityDeleteRangeDtoRequest request)
     {
-        return DeleteRange<ActivityDeleteRangeDtoRequest, ActivityDeleteRangeDtoResponse, long>
+        return DeleteRange<ActivityDeleteRangeDtoRequest, ActivityDeleteRangeDtoResponse, int>
         (
              request,
              (ids) =>
@@ -243,7 +243,7 @@ public class ActivityMgmtBus : BusinessRepositoryService<ActivityDto, IActivityR
 
     public async Task<ActivityDeleteRangeDtoResponse> DeleteRangeAsync(ActivityDeleteRangeDtoRequest request)
     {
-       return await DeleteRangeAsync<ActivityDeleteRangeDtoRequest, ActivityDeleteRangeDtoResponse, long>
+       return await DeleteRangeAsync<ActivityDeleteRangeDtoRequest, ActivityDeleteRangeDtoResponse, int>
        (
             request,
             async (ids) =>

@@ -7,17 +7,17 @@ namespace VSoft.Company.CSO.CustomerSource.Business.Services;
 
 public interface ICustomerSourceMgmtBus
 {
-    MDtoResponseString GetFullName(MDtoRequestFindByLong request);
+    MDtoResponseString GetFullName(MDtoRequestFindByInt request);
 
-    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request);
+    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request);
 
-    CustomerSourceFindDtoResponse Find(MDtoRequestFindByLong request);
+    CustomerSourceFindDtoResponse Find(MDtoRequestFindByInt request);
 
-    Task<CustomerSourceFindDtoResponse> FindAsync(MDtoRequestFindByLong request);
+    Task<CustomerSourceFindDtoResponse> FindAsync(MDtoRequestFindByInt request);
 
-    CustomerSourceFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request);
+    CustomerSourceFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request);
 
-    Task<CustomerSourceFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request);
+    Task<CustomerSourceFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request);
 
     CustomerSourceInsertDtoResponse Create(CustomerSourceInsertDtoRequest request);
 

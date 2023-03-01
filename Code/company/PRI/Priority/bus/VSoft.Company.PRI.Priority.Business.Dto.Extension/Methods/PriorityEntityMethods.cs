@@ -11,13 +11,7 @@ public static class PriorityEntityMethods
         {
             Id = src.Id,
             Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            PriorityInfoId = src.PriorityInfoId,
-            IsBought = src.IsBought,
+            Description = src.Description,
         };
     }
 }

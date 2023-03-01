@@ -7,10 +7,7 @@ namespace VSoft.Company.CIN.CustomerInfo.Repository.UnitTest.Test.Values.GroupA
     {
         protected override MCustomerInfoEntity Entity => new MCustomerInfoEntity()
         {
-            //Id = 63452,
-           
-            Name = "Đặng Thế Nhân",
-         
+            Id = 1,
         };
     }
 }

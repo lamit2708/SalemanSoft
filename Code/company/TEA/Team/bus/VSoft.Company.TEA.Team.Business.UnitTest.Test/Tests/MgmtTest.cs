@@ -14,7 +14,7 @@ namespace VSoft.Company.TEA.Team.Business.UnitTest.Test.Tests
         [DataRow("1fbdbe39-a443-4403-bb81-d4c070f18762", DisplayName = "Case 2")]
         public async Task GetFullNameByIdAsync(int id)
         {
-            await TestGetFullNameByIdAsync(new MDtoRequestFindByLong()
+            await TestGetFullNameByIdAsync(new MDtoRequestFindByInt()
             {
                 Id = id
             });
@@ -26,7 +26,7 @@ namespace VSoft.Company.TEA.Team.Business.UnitTest.Test.Tests
         [DataRow(63493)]
         public async Task FindAsync(int id)
         {
-            await TestFindAsync(new MDtoRequestFindByLong()
+            await TestFindAsync(new MDtoRequestFindByInt()
             {
                 Id = id,
             });
@@ -34,9 +34,9 @@ namespace VSoft.Company.TEA.Team.Business.UnitTest.Test.Tests
 
         [TestMethod]
         [DataRow(1, 2, 3)]
-        public async Task FindRangeAsync(long id1, long id2, long id3)
+        public async Task FindRangeAsync(int id1, int id2, int id3)
         {
-            await TestFindRangeAsync(new MDtoRequestFindRangeByLongs()
+            await TestFindRangeAsync(new MDtoRequestFindRangeByInts()
             {
                 Ids = new[] { id1, id2, id3 },
             });
@@ -112,7 +112,7 @@ namespace VSoft.Company.TEA.Team.Business.UnitTest.Test.Tests
 
         [TestMethod]
         [DataRow(63494, 63495, 63496)]
-        public async Task DeleteRangeAsync(long id1, long id2, long id3)
+        public async Task DeleteRangeAsync(int id1, int id2, int id3)
         {
             await TestDeleteRangeAsync(new TeamDeleteRangeDtoRequest()
             {
@@ -123,7 +123,7 @@ namespace VSoft.Company.TEA.Team.Business.UnitTest.Test.Tests
 
         [TestMethod]
         [DataRow("Diễn giải A1", "Diễn giải B1", "63473 / Diễn giải 111", "63474 / Diễn giải 222", "63475 / Diễn giải 333", 63497, 63498)]
-        public async Task SaveRangeAsync(string note1, string note2, string data1, string data2, string data3, long id1, long id2)
+        public async Task SaveRangeAsync(string note1, string note2, string data1, string data2, string data3, int id1, int id2)
         {
             var ec1 = new A01().GetCreateDto(note1);
             var ec2 = new A01().GetCreateDto(note2);
@@ -140,7 +140,7 @@ namespace VSoft.Company.TEA.Team.Business.UnitTest.Test.Tests
 
         [TestMethod]
         [DataRow("Diễn giải A111", "Diễn giải B111", "63473 / Diễn giải 111", "63474 / Diễn giải 222", "63475 / Diễn giải 333", 63499, 63500)]
-        public async Task SaveRangeTransactionAsync(string note1, string note2, string data1, string data2, string data3, long id1, long id2)
+        public async Task SaveRangeTransactionAsync(string note1, string note2, string data1, string data2, string data3, int id1, int id2)
         {
             var ec1 = new A01().GetCreateDto(note1);
             var ec2 = new A01().GetCreateDto(note2);

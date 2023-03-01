@@ -10,14 +10,12 @@ public static class DealActivityEntityMethods
         return new DealActivityDto()
         {
             Id = src.Id,
-            Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            DealActivityInfoId = src.DealActivityInfoId,
-            IsBought = src.IsBought,
+            DealId = src.DealId,
+            ActivityId = src.ActivityId,
+            Subject = src.Subject,
+            Content = src.Content,
+            CreatedDate = src.CreatedDate,
+            UserId = src.UserId,
         };
     }
 }

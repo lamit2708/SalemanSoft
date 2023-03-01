@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VSoft.Company.DST.DealStep.Repository.Efc.Provider\VSoft.Company.DST.DealStep.Repository.Efc.Provider.csproj" />
-    <ProjectReference Include="..\VSoft.Company.DST.DealStep.Repository\VSoft.Company.DST.DealStep.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>

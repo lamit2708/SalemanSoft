@@ -24,9 +24,9 @@ public class TestQuestionReal : TestMgmtEntities
     public async Task CreateAsync(string fullName, string phone, string email)
     {
         var e = new A01().GetCreateEntity();
-        e.Name = fullName;
-        e.Phone = phone;
-        e.Email = email;
+        //e.Name = fullName;
+        //e.Phone = phone;
+        //e.Email = email;
 
         await TestCreateAsync(e);
     }
@@ -40,10 +40,10 @@ public class TestQuestionReal : TestMgmtEntities
         await TestUpdateAsync(new MQuestionEntity()
         {
             Id= id,
-            Name= fullName,
-            Phone= phone,
-            Email= email,
-            Address="default",
+            //Name= fullName,
+            //Phone= phone,
+            //Email= email,
+            //Address="default",
         });
     }
 

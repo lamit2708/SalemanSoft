@@ -10,14 +10,9 @@ public static class DealStepHistoryEntityMethods
         return new DealStepHistoryDto()
         {
             Id = src.Id,
-            Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            DealStepHistoryInfoId = src.DealStepHistoryInfoId,
-            IsBought = src.IsBought,
+            DealStepId = src.DealStepId,
+            DateTime = src.DateTime,
+            UserId = src.UserId,
         };
     }
 }

@@ -17,7 +17,7 @@ public class TestMgmtEntities : RepositoryTest<DealActivityDbContext, IDealActiv
     {
         nameof(Model.Id),
 
-        nameof(Model.Name),
+        nameof(Model.DealId),
        
     };
 
@@ -30,7 +30,7 @@ public class TestMgmtEntities : RepositoryTest<DealActivityDbContext, IDealActiv
         ServiceCollection?.AddScoped<IDealActivityRepository, EfcDealActivityRepository>();
     }
 
-    protected async Task TestGetFullNameByIdAsync(long id)
+    protected async Task TestGetFullNameByIdAsync(int id)
     {
         await RunTest("TestGetByIdAsync", async (r, l) =>
         {
@@ -94,7 +94,7 @@ public class TestMgmtEntities : RepositoryTest<DealActivityDbContext, IDealActiv
 
     }
 
-    protected async Task TestSaveRangeAsync(Model[] createEntities, Model[] updateEntities, long[]? deleteEntitiesIds)
+    protected async Task TestSaveRangeAsync(Model[] createEntities, Model[] updateEntities, int[]? deleteEntitiesIds)
     {
         await RunTest("TestAddDealActivity", async (r, l) =>
         {
@@ -112,7 +112,7 @@ public class TestMgmtEntities : RepositoryTest<DealActivityDbContext, IDealActiv
 
     }
 
-    protected async Task TestSaveRangeTransactionAsync(Model[] createEntities, Model[] updateEntities, long[]? deleteEntitiesIds)
+    protected async Task TestSaveRangeTransactionAsync(Model[] createEntities, Model[] updateEntities, int[]? deleteEntitiesIds)
     {
         await RunTest("TestAddDealActivity", async (r, l) =>
         {
@@ -148,7 +148,7 @@ public class TestMgmtEntities : RepositoryTest<DealActivityDbContext, IDealActiv
 
     }
 
-    protected async Task TestDeleteRangeAsync(params long[] ids)
+    protected async Task TestDeleteRangeAsync(params int[] ids)
     {
         await RunTest("TestDelDealActivity", async (r, l) =>
         {

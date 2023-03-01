@@ -7,10 +7,7 @@ namespace VSoft.Company.URO.UserRole.Repository.UnitTest.Real.Values.GroupA
     {
         protected override MUserRoleEntity Entity => new MUserRoleEntity()
         {
-            //Id = 63452,
-          
-            Name = "Đặng Thế Nhân",
-           
+            Id = 1,
         };
     }
 }

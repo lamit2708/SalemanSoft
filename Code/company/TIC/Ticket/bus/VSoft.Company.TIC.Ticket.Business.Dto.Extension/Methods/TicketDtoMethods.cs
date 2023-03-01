@@ -11,13 +11,7 @@ public static class TicketDtoMethods
         {
             Id = src.Id,
             Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            TicketInfoId = src.TicketInfoId,
-            IsBought = src.IsBought,
+            CustomerId = src.CustomerId
         };
     }
 }

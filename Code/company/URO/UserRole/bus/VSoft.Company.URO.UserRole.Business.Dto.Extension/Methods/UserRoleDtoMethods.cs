@@ -10,14 +10,8 @@ public static class UserRoleDtoMethods
         return new MUserRoleEntity()
         {
             Id = src.Id,
-            Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            UserRoleInfoId = src.UserRoleInfoId,
-            IsBought = src.IsBought,
+            RoleId = src.RoleId,
+            UserId = src.UserId,
         };
     }
 }

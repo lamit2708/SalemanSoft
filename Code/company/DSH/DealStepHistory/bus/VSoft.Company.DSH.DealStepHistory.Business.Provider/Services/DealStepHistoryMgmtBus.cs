@@ -27,7 +27,7 @@ public class DealStepHistoryMgmtBus : BusinessRepositoryService<DealStepHistoryD
 
     protected override List<string>? SaveRequiredFields { get; set; } = new List<string>()
     {
-        nameof(DealStepHistoryDto.Name),
+        nameof(DealStepHistoryDto.DealStepId),
         
     };
 

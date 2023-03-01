@@ -5,7 +5,7 @@ using VSoft.Company.DST.DealStep.Repository.Services;
 
 namespace VSoft.Company.DST.DealStep.Repository.Efc.Services;
 
-public interface IDealStepRepositoryEfc : IDealStepRepository, IEfcRepositoryEntityMgmtId<DealStepDbContext, MDealStepEntity, long>
+public interface IDealStepRepositoryEfc : IDealStepRepository, IEfcRepositoryEntityMgmtId<DealStepDbContext, MDealStepEntity, int>
 {
    
 }

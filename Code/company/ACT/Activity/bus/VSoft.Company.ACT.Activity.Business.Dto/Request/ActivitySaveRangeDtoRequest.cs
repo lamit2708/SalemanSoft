@@ -3,7 +3,7 @@ using VSoft.Company.ACT.Activity.Business.Dto.Data;
 
 namespace VSoft.Company.ACT.Activity.Business.Dto.Request
 {
-    public class ActivitySaveRangeDtoRequest : MDtoRequestRanges<ActivityDto, long>
+    public class ActivitySaveRangeDtoRequest : MDtoRequestRanges<ActivityDto, int>
     {
       
     }

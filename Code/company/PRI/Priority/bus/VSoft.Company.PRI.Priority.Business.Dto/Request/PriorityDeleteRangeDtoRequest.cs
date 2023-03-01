@@ -2,7 +2,7 @@
 
 namespace VSoft.Company.PRI.Priority.Business.Dto.Request
 {
-    public class PriorityDeleteRangeDtoRequest : MDtoRequestDeleteRange<long>
+    public class PriorityDeleteRangeDtoRequest : MDtoRequestDeleteRange<int>
     {
        
     }

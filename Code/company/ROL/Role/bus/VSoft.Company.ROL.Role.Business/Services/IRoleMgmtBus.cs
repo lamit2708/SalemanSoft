@@ -7,17 +7,17 @@ namespace VSoft.Company.ROL.Role.Business.Services;
 
 public interface IRoleMgmtBus
 {
-    MDtoResponseString GetFullName(MDtoRequestFindByLong request);
+    MDtoResponseString GetFullName(MDtoRequestFindByInt request);
 
-    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request);
+    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request);
 
-    RoleFindDtoResponse Find(MDtoRequestFindByLong request);
+    RoleFindDtoResponse Find(MDtoRequestFindByInt request);
 
-    Task<RoleFindDtoResponse> FindAsync(MDtoRequestFindByLong request);
+    Task<RoleFindDtoResponse> FindAsync(MDtoRequestFindByInt request);
 
-    RoleFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request);
+    RoleFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request);
 
-    Task<RoleFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request);
+    Task<RoleFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request);
 
     RoleInsertDtoResponse Create(RoleInsertDtoRequest request);
 

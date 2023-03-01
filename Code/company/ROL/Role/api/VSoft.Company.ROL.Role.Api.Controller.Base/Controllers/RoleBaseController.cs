@@ -16,14 +16,14 @@ public abstract class RoleBaseController : ControllerBase
     }    
 
     [HttpGet(nameof(IRoleActionName.FindOne))]
-    public async Task<IActionResult> FindAsync([FromQuery] MDtoRequestFindByLong dtoRequest)
+    public async Task<IActionResult> FindAsync([FromQuery] MDtoRequestFindByInt dtoRequest)
     {
         var res = await Bus.FindAsync(dtoRequest);
         return Ok(res);
     }
 
     [HttpGet(nameof(IRoleActionName.FindRange))]
-    public async Task<IActionResult> FindRangeAsync([FromBody] MDtoRequestFindRangeByLongs dtosRequest)
+    public async Task<IActionResult> FindRangeAsync([FromBody] MDtoRequestFindRangeByInts dtosRequest)
     {
         var res = await Bus.FindRangeAsync(dtosRequest);
         return Ok(res);

@@ -25,8 +25,8 @@ public class TestCustomerSourceReal : TestMgmtEntities
     {
         var e = new A01().GetCreateEntity();
         e.Name = fullName;
-        e.Phone = phone;
-        e.Email = email;
+        //e.Phone = phone;
+        //e.Email = email;
 
         await TestCreateAsync(e);
     }
@@ -35,15 +35,15 @@ public class TestCustomerSourceReal : TestMgmtEntities
     [DataRow(4,"Đặng Thế Nhân", "@3504984957", "aaa@gmail.com")]
     [DataRow(5,"Lê Vũ Lâm", "@0234532565", "abc@yahoo.com")]
     [DataRow(6,"Nguyễn Tấn Phát", "@54235235236", "xyz@gmail.com")]
-    public async Task UpdateAsync(long id,string fullName, string phone, string email)
+    public async Task UpdateAsync(int id,string fullName, string phone, string email)
     {
         await TestUpdateAsync(new MCustomerSourceEntity()
         {
             Id= id,
             Name= fullName,
-            Phone= phone,
-            Email= email,
-            Address="default",
+            //Phone= phone,
+            //Email= email,
+            //Address="default",
         });
     }
 

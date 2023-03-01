@@ -3,7 +3,7 @@ using VSoft.Company.UCU.UserCustomer.Business.Dto.Data;
 
 namespace VSoft.Company.UCU.UserCustomer.Business.Dto.Request
 {
-    public class UserCustomerSaveRangeDtoRequest : MDtoRequestRanges<UserCustomerDto, long>
+    public class UserCustomerSaveRangeDtoRequest : MDtoRequestRanges<UserCustomerDto, int>
     {
       
     }

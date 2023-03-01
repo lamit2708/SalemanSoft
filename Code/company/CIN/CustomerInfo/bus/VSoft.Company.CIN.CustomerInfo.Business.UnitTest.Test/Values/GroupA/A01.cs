@@ -8,8 +8,8 @@ namespace VSoft.Company.CIN.CustomerInfo.Business.UnitTest.Test.Values.GroupA
         protected override CustomerInfoDto Dto => new CustomerInfoDto()
         {
          
-            Name = "Đặng Thế Nhân",
-            
+            //Name = "Đặng Thế Nhân",
+            CustomerSourceId = 1,
         };
     }
 }

@@ -23,4 +23,4 @@ var repository = serviceProvider?.GetService<IUserRoleRepository>();
 var id = 63452;
 var entity = await (repository?.GetByIdAsync(id) ?? Task.FromResult<MUserRoleEntity?>(null));
 Console.WriteLine($"UserRoleId: {entity?.Id}");
-Console.WriteLine($"UserRoleFullName: {entity?.Name}");
+Console.WriteLine($"UserRoleUserId: {entity?.UserId}");

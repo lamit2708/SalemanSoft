@@ -6,7 +6,7 @@ using VSoft.Company.DAC.DealActivity.Repository.Efc.Services;
 
 namespace VSoft.Company.DAC.DealActivity.Repository.Efc.Provider.Services;
 
-public class EfcDealActivityRepository : EFcRepositoryEntityMgmtId<DealActivityDbContext, MDealActivityEntity, long>, IDealActivityRepositoryEfc
+public class EfcDealActivityRepository : EFcRepositoryEntityMgmtId<DealActivityDbContext, MDealActivityEntity, int>, IDealActivityRepositoryEfc
 {
 
     public EfcDealActivityRepository(DealActivityDbContext dbContext) : base(dbContext, dbContext.Items)
@@ -14,19 +14,19 @@ public class EfcDealActivityRepository : EFcRepositoryEntityMgmtId<DealActivityD
 
     }
 
-    public string? GetFullName(long? id)
+    public string? GetFullName(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");
         if (id == null) throw new Exception("id is null");
-        return Entities.Where(x => x.Id == id).Select(x => x.Name ?? string.Empty).FirstOrDefault();
+        return Entities.Where(x => x.Id == id).Select(x => x.DealId.ToString() ?? string.Empty).FirstOrDefault();
     }
 
-    public Task<string?> GetFullNameAsync(long? id)
+    public Task<string?> GetFullNameAsync(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");
         if (id == null) throw new Exception("id is null");
-        return Entities.Where(x => x.Id == id).Select(x => x.Name ?? string.Empty).FirstOrDefaultAsync() ;
+        return Entities.Where(x => x.Id == id).Select(x => x.DealId.ToString() ?? string.Empty).FirstOrDefaultAsync() ;
     }
 }

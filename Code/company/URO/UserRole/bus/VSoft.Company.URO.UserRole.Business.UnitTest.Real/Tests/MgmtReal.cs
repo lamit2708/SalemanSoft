@@ -37,9 +37,9 @@ namespace VSoft.Company.URO.UserRole.Business.UnitTest.Test.Tests
         public async Task TestCreate(string fullName, string phone, string email)
         {
             var e = new UserRoleDto();
-            e.Name = fullName;
-            e.Phone = phone;
-            e.Email = email;
+            //e.Name = fullName;
+            //e.Phone = phone;
+            //e.Email = email;
             await TestCreateAsync(new UserRoleInsertDtoRequest()
             {
                 Data = e

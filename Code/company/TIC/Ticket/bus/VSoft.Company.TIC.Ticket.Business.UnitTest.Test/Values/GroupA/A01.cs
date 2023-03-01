@@ -8,8 +8,8 @@ namespace VSoft.Company.TIC.Ticket.Business.UnitTest.Test.Values.GroupA
         protected override TicketDto Dto => new TicketDto()
         {
          
-            Name = "Đặng Thế Nhân",
-            
+            //Name = "Đặng Thế Nhân",
+            Id = 1
         };
     }
 }

@@ -17,7 +17,7 @@ public class TestMgmtEntities : RepositoryTest<DealStepHistoryDbContext, IDealSt
     {
         nameof(Model.Id),
 
-        nameof(Model.Name),
+        nameof(Model.DealStepId),
        
     };
 

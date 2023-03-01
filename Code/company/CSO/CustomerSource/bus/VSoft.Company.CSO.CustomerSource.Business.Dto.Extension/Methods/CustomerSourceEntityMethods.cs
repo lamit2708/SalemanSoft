@@ -11,13 +11,7 @@ public static class CustomerSourceEntityMethods
         {
             Id = src.Id,
             Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            CustomerSourceInfoId = src.CustomerSourceInfoId,
-            IsBought = src.IsBought,
+            Description = src.Description,
         };
     }
 }

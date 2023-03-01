@@ -2,7 +2,7 @@
 
 namespace VSoft.Company.TIC.Ticket.Business.Dto.Request
 {
-    public class TicketDeleteRangeDtoRequest : MDtoRequestDeleteRange<long>
+    public class TicketDeleteRangeDtoRequest : MDtoRequestDeleteRange<int>
     {
        
     }

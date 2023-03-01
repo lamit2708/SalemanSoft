@@ -7,10 +7,7 @@ namespace VSoft.Company.ROL.Role.Repository.UnitTest.Real.Values.GroupA
     {
         protected override MRoleEntity Entity => new MRoleEntity()
         {
-            //Id = 63452,
-          
             Name = "Đặng Thế Nhân",
-           
         };
     }
 }

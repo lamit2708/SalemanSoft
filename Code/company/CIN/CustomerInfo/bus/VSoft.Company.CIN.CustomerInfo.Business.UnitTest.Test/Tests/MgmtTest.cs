@@ -50,7 +50,7 @@ namespace VSoft.Company.CIN.CustomerInfo.Business.UnitTest.Test.Tests
         public async Task CreateAsync(string name, string desc)
         {
             var dto = new A01().GetCreateDto();
-            dto.Name = desc;
+            //dto.Name = desc;
         
             await TestCreateAsync(new CustomerInfoInsertDtoRequest()
             {

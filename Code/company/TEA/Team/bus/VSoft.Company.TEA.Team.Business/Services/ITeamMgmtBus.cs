@@ -7,17 +7,17 @@ namespace VSoft.Company.TEA.Team.Business.Services;
 
 public interface ITeamMgmtBus
 {
-    MDtoResponseString GetFullName(MDtoRequestFindByLong request);
+    MDtoResponseString GetFullName(MDtoRequestFindByInt request);
 
-    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request);
+    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request);
 
-    TeamFindDtoResponse Find(MDtoRequestFindByLong request);
+    TeamFindDtoResponse Find(MDtoRequestFindByInt request);
 
-    Task<TeamFindDtoResponse> FindAsync(MDtoRequestFindByLong request);
+    Task<TeamFindDtoResponse> FindAsync(MDtoRequestFindByInt request);
 
-    TeamFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request);
+    TeamFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request);
 
-    Task<TeamFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request);
+    Task<TeamFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request);
 
     TeamInsertDtoResponse Create(TeamInsertDtoRequest request);
 

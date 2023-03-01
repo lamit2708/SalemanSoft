@@ -4,10 +4,10 @@ using VSoft.Company.DAC.DealActivity.Data.Entity.Models;
 
 namespace VSoft.Company.DAC.DealActivity.Repository.Services;
 
-public interface IDealActivityRepository : IEfcRepositoryEntityMgmtId<DealActivityDbContext, MDealActivityEntity, long>
+public interface IDealActivityRepository : IEfcRepositoryEntityMgmtId<DealActivityDbContext, MDealActivityEntity, int>
 {
 
-    string? GetFullName(long? id);
+    string? GetFullName(int? id);
 
-    Task<string?> GetFullNameAsync(long? id);
+    Task<string?> GetFullNameAsync(int? id);
 }

@@ -23,4 +23,4 @@ var repository = serviceProvider?.GetService<IDealStepHistoryRepository>();
 var id = 63452;
 var entity = await (repository?.GetByIdAsync(id) ?? Task.FromResult<MDealStepHistoryEntity?>(null));
 Console.WriteLine($"DealStepHistoryId: {entity?.Id}");
-Console.WriteLine($"DealStepHistoryFullName: {entity?.Name}");
+Console.WriteLine($"DealStepHistoryDealStepId: {entity?.DealStepId}");

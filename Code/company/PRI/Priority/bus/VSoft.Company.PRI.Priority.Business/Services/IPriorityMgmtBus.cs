@@ -7,17 +7,17 @@ namespace VSoft.Company.PRI.Priority.Business.Services;
 
 public interface IPriorityMgmtBus
 {
-    MDtoResponseString GetFullName(MDtoRequestFindByLong request);
+    MDtoResponseString GetFullName(MDtoRequestFindByInt request);
 
-    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request);
+    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request);
 
-    PriorityFindDtoResponse Find(MDtoRequestFindByLong request);
+    PriorityFindDtoResponse Find(MDtoRequestFindByInt request);
 
-    Task<PriorityFindDtoResponse> FindAsync(MDtoRequestFindByLong request);
+    Task<PriorityFindDtoResponse> FindAsync(MDtoRequestFindByInt request);
 
-    PriorityFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request);
+    PriorityFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request);
 
-    Task<PriorityFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request);
+    Task<PriorityFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request);
 
     PriorityInsertDtoResponse Create(PriorityInsertDtoRequest request);
 

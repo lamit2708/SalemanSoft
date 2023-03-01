@@ -2,7 +2,7 @@
 
 namespace VSoft.Company.ACT.Activity.Business.Dto.Request
 {
-    public class ActivityDeleteRangeDtoRequest : MDtoRequestDeleteRange<long>
+    public class ActivityDeleteRangeDtoRequest : MDtoRequestDeleteRange<int>
     {
        
     }

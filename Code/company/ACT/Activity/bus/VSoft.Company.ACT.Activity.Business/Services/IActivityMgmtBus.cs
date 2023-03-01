@@ -7,17 +7,17 @@ namespace VSoft.Company.ACT.Activity.Business.Services;
 
 public interface IActivityMgmtBus
 {
-    MDtoResponseString GetFullName(MDtoRequestFindByLong request);
+    MDtoResponseString GetFullName(MDtoRequestFindByInt request);
 
-    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request);
+    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request);
 
-    ActivityFindDtoResponse Find(MDtoRequestFindByLong request);
+    ActivityFindDtoResponse Find(MDtoRequestFindByInt request);
 
-    Task<ActivityFindDtoResponse> FindAsync(MDtoRequestFindByLong request);
+    Task<ActivityFindDtoResponse> FindAsync(MDtoRequestFindByInt request);
 
-    ActivityFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request);
+    ActivityFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request);
 
-    Task<ActivityFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request);
+    Task<ActivityFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request);
 
     ActivityInsertDtoResponse Create(ActivityInsertDtoRequest request);
 

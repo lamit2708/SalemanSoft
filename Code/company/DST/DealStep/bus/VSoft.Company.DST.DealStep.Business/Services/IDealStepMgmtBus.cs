@@ -7,17 +7,17 @@ namespace VSoft.Company.DST.DealStep.Business.Services;
 
 public interface IDealStepMgmtBus
 {
-    MDtoResponseString GetFullName(MDtoRequestFindByLong request);
+    MDtoResponseString GetFullName(MDtoRequestFindByInt request);
 
-    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request);
+    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request);
 
-    DealStepFindDtoResponse Find(MDtoRequestFindByLong request);
+    DealStepFindDtoResponse Find(MDtoRequestFindByInt request);
 
-    Task<DealStepFindDtoResponse> FindAsync(MDtoRequestFindByLong request);
+    Task<DealStepFindDtoResponse> FindAsync(MDtoRequestFindByInt request);
 
-    DealStepFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request);
+    DealStepFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request);
 
-    Task<DealStepFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request);
+    Task<DealStepFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request);
 
     DealStepInsertDtoResponse Create(DealStepInsertDtoRequest request);
 

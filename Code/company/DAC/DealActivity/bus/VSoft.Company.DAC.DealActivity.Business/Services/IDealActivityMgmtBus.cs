@@ -7,17 +7,17 @@ namespace VSoft.Company.DAC.DealActivity.Business.Services;
 
 public interface IDealActivityMgmtBus
 {
-    MDtoResponseString GetFullName(MDtoRequestFindByLong request);
+    MDtoResponseString GetFullName(MDtoRequestFindByInt request);
 
-    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request);
+    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request);
 
-    DealActivityFindDtoResponse Find(MDtoRequestFindByLong request);
+    DealActivityFindDtoResponse Find(MDtoRequestFindByInt request);
 
-    Task<DealActivityFindDtoResponse> FindAsync(MDtoRequestFindByLong request);
+    Task<DealActivityFindDtoResponse> FindAsync(MDtoRequestFindByInt request);
 
-    DealActivityFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request);
+    DealActivityFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request);
 
-    Task<DealActivityFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request);
+    Task<DealActivityFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request);
 
     DealActivityInsertDtoResponse Create(DealActivityInsertDtoRequest request);
 

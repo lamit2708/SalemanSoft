@@ -27,7 +27,7 @@ public class CustomerInfoMgmtBus : BusinessRepositoryService<CustomerInfoDto, IC
 
     protected override List<string>? SaveRequiredFields { get; set; } = new List<string>()
     {
-        nameof(CustomerInfoDto.Name),
+        nameof(CustomerInfoDto.CustomerSourceId),
         
     };
 

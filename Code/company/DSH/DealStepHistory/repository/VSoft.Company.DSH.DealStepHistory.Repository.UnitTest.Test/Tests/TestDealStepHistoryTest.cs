@@ -34,7 +34,7 @@ public class TestDealStepHistoryTest : TestMgmtEntities
     public async Task CreateAsync(string fullName)
     {
         var e = new A01().GetCreateEntity();
-        e.Name = fullName;
+        //e.Name = fullName;
       
         await TestCreateAsync(e);
     }

@@ -29,22 +29,18 @@ public class AnwserDbContext : EfcDbContext<AnwserDbContext, MAnwserEntity>
     protected void ConfigIndex(EntityTypeBuilder<MAnwserEntity> entity)
     {
         entity.HasKey(e => e.Id).HasName("PRIMARY");
-        entity.HasIndex(e => e.AnwserInfoId, "FK_AnwserInfo_TO_Anwser");
-        entity.HasIndex(e => e.PriorityId, "FK_Priority_TO_Anwser");
-        entity.HasIndex(e => e.Phone, "UQ_Phone").IsUnique();
+        entity.HasIndex(e => e.QuestionId, "FK_Question_TO_Anwser");
+        entity.HasIndex(e => e.UserId, "FK_User_TO_Anwser");
     }
 
   
     protected void ConfigBasicFields(EntityTypeBuilder<MAnwserEntity> entity)
     {
         entity.Property(e => e.Id).HasColumnType("bigint(20)");
-        entity.Property(e => e.Address).HasMaxLength(100).HasDefaultValueSql("'NULL'");
-        entity.Property(e => e.AnwserInfoId).HasDefaultValueSql("'NULL'").HasColumnType("bigint(20)");
-        entity.Property(e => e.Email).HasMaxLength(100);
-        entity.Property(e => e.Gender).HasDefaultValueSql("'NULL'").HasComment("True: Male, False: Female");
-        entity.Property(e => e.Name).HasMaxLength(100);
-        entity.Property(e => e.Phone).HasMaxLength(100);
-        entity.Property(e => e.PriorityId).HasDefaultValueSql("'NULL'").HasColumnType("int(11)");
+        entity.Property(e => e.Content).HasMaxLength(512);
+        entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+        entity.Property(e => e.QuestionId).HasColumnType("bigint(20)");
+        entity.Property(e => e.UserId).HasColumnType("int(11)");
     }
 
  

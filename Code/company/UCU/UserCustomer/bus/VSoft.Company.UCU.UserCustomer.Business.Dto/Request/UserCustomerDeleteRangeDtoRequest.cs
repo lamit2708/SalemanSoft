@@ -2,7 +2,7 @@
 
 namespace VSoft.Company.UCU.UserCustomer.Business.Dto.Request
 {
-    public class UserCustomerDeleteRangeDtoRequest : MDtoRequestDeleteRange<long>
+    public class UserCustomerDeleteRangeDtoRequest : MDtoRequestDeleteRange<int>
     {
        
     }

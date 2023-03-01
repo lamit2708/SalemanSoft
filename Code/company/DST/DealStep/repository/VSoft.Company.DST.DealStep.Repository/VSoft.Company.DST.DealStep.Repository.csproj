@@ -12,6 +12,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Models\**" />
+	  <EmbeddedResource Remove="Models\**" />
+	  <None Remove="Models\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
 	</ItemGroup>
 
@@ -31,10 +37,6 @@
 	  <Reference Include="VSoft.Company.DST.DealStep.Data.Entity">
 	    <HintPath>..\..\..\..\..\..\..\library\dotnet\company\DST\DealStep\data\VSoft.Company.DST.DealStep.Data.Entity.dll</HintPath>
 	  </Reference>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Models\" />
 	</ItemGroup>
 
 </Project>

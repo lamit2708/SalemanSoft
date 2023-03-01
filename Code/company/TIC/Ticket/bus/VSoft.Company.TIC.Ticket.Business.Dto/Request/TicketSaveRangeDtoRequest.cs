@@ -3,7 +3,7 @@ using VSoft.Company.TIC.Ticket.Business.Dto.Data;
 
 namespace VSoft.Company.TIC.Ticket.Business.Dto.Request
 {
-    public class TicketSaveRangeDtoRequest : MDtoRequestRanges<TicketDto, long>
+    public class TicketSaveRangeDtoRequest : MDtoRequestRanges<TicketDto, int>
     {
       
     }

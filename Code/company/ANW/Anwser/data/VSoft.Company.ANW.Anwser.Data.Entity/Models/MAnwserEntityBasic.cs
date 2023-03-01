@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VegunSoft.Framework.Entity.Key.Base;
+﻿using VegunSoft.Framework.Entity.Key.Base;
 
 namespace VSoft.Company.ANW.Anwser.Data.Entity.Models
 {
@@ -11,23 +6,12 @@ namespace VSoft.Company.ANW.Anwser.Data.Entity.Models
     {
         public long Id { get; set; }
 
-        public string Name { get; set; } = null!;
+        public string Content { get; set; } = null!;
 
-        public string Phone { get; set; } = null!;
+        public DateTime CreatedDate { get; set; }
 
-        public string Email { get; set; } = null!;
+        public int UserId { get; set; }
 
-        public string? Address { get; set; }
-
-        /// <summary>
-        /// True: Male, False: Female
-        /// </summary>
-        public bool? Gender { get; set; }
-
-        public int? PriorityId { get; set; }
-
-        public long? AnwserInfoId { get; set; }
-
-        public bool IsBought { get; set; }
+        public long QuestionId { get; set; }
     }
 }

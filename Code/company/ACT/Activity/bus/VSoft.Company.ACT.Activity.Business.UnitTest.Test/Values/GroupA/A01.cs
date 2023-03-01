@@ -7,9 +7,7 @@ namespace VSoft.Company.ACT.Activity.Business.UnitTest.Test.Values.GroupA
     {
         protected override ActivityDto Dto => new ActivityDto()
         {
-         
-            Name = "Đặng Thế Nhân",
-            
+            Id = 1
         };
     }
 }

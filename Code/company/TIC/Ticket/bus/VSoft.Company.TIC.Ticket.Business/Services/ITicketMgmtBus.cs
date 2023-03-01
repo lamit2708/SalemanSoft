@@ -7,17 +7,17 @@ namespace VSoft.Company.TIC.Ticket.Business.Services;
 
 public interface ITicketMgmtBus
 {
-    MDtoResponseString GetFullName(MDtoRequestFindByLong request);
+    MDtoResponseString GetFullName(MDtoRequestFindByInt request);
 
-    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request);
+    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request);
 
-    TicketFindDtoResponse Find(MDtoRequestFindByLong request);
+    TicketFindDtoResponse Find(MDtoRequestFindByInt request);
 
-    Task<TicketFindDtoResponse> FindAsync(MDtoRequestFindByLong request);
+    Task<TicketFindDtoResponse> FindAsync(MDtoRequestFindByInt request);
 
-    TicketFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request);
+    TicketFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request);
 
-    Task<TicketFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request);
+    Task<TicketFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request);
 
     TicketInsertDtoResponse Create(TicketInsertDtoRequest request);
 

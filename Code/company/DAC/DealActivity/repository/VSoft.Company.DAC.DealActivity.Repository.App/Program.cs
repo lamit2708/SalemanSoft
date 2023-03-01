@@ -23,4 +23,4 @@ var repository = serviceProvider?.GetService<IDealActivityRepository>();
 var id = 63452;
 var entity = await (repository?.GetByIdAsync(id) ?? Task.FromResult<MDealActivityEntity?>(null));
 Console.WriteLine($"DealActivityId: {entity?.Id}");
-Console.WriteLine($"DealActivityFullName: {entity?.Name}");
+Console.WriteLine($"DealActivityDealId: {entity?.DealId}");

@@ -7,9 +7,7 @@ namespace VSoft.Company.URO.UserRole.Business.UnitTest.Test.Values.GroupA
     {
         protected override UserRoleDto Dto => new UserRoleDto()
         {
-         
-            Name = "Đặng Thế Nhân",
-            
+            Id = 1
         };
     }
 }

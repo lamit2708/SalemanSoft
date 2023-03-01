@@ -7,10 +7,7 @@ namespace VSoft.Company.TIC.Ticket.Repository.UnitTest.Test.Values.GroupA
     {
         protected override MTicketEntity Entity => new MTicketEntity()
         {
-            //Id = 63452,
-           
-            Name = "Đặng Thế Nhân",
-         
+            Id = 1,
         };
     }
 }

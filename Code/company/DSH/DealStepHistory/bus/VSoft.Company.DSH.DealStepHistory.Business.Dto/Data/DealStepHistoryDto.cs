@@ -1,37 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VSoft.Company.DSH.DealStepHistory.Business.Dto.Data
+﻿namespace VSoft.Company.DSH.DealStepHistory.Business.Dto.Data
 {
     public class DealStepHistoryDto
     {
         public long Id { get; set; }
 
-        public string Name { get; set; } = null!;
+        public int DealStepId { get; set; }
 
-        public string Phone { get; set; } = null!;
+        public DateTime DateTime { get; set; }
 
-        public string Email { get; set; } = null!;
-
-        public string? Address { get; set; }
-
-        /// <summary>
-        /// True: Male, False: Female
-        /// </summary>
-        public bool? Gender { get; set; }
-
-        public int? PriorityId { get; set; }
-
-        public long? DealStepHistoryInfoId { get; set; }
-
-        public bool IsBought { get; set; }
+        public int UserId { get; set; }
 
         public override string ToString()
         {
-            return $"{Id} / {Name}";
+            return $"{Id} / {DealStepId}";
         }
     }
 }

@@ -11,13 +11,7 @@ public static class RoleDtoMethods
         {
             Id = src.Id,
             Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            RoleInfoId = src.RoleInfoId,
-            IsBought = src.IsBought,
+            Description = src.Description
         };
     }
 }

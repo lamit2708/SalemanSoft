@@ -7,10 +7,7 @@ namespace VSoft.Company.ANW.Anwser.Repository.UnitTest.Real.Values.GroupA
     {
         protected override MAnwserEntity Entity => new MAnwserEntity()
         {
-            //Id = 63452,
-          
-            Name = "Đặng Thế Nhân",
-           
+            Id = 1,
         };
     }
 }

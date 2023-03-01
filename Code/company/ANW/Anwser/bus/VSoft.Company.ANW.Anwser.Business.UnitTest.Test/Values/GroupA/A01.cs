@@ -7,9 +7,7 @@ namespace VSoft.Company.ANW.Anwser.Business.UnitTest.Test.Values.GroupA
     {
         protected override AnwserDto Dto => new AnwserDto()
         {
-         
-            Name = "Đặng Thế Nhân",
-            
+            QuestionId = 1,
         };
     }
 }

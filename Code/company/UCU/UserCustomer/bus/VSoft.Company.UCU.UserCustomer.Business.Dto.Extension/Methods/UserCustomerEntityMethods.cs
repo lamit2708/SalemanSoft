@@ -10,14 +10,11 @@ public static class UserCustomerEntityMethods
         return new UserCustomerDto()
         {
             Id = src.Id,
-            Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            UserCustomerInfoId = src.UserCustomerInfoId,
-            IsBought = src.IsBought,
+            CustomerId = src.CustomerId,
+            UserId = src.UserId,
+            TeamId = src.TeamId,
+            CreatedDateTeam = src.CreatedDateTeam,
+            CreatedDateUser = src.CreatedDateUser,
         };
     }
 }

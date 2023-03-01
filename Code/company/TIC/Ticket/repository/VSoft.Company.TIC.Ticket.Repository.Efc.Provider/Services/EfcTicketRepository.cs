@@ -6,7 +6,7 @@ using VSoft.Company.TIC.Ticket.Repository.Efc.Services;
 
 namespace VSoft.Company.TIC.Ticket.Repository.Efc.Provider.Services;
 
-public class EfcTicketRepository : EFcRepositoryEntityMgmtId<TicketDbContext, MTicketEntity, long>, ITicketRepositoryEfc
+public class EfcTicketRepository : EFcRepositoryEntityMgmtId<TicketDbContext, MTicketEntity, int>, ITicketRepositoryEfc
 {
 
     public EfcTicketRepository(TicketDbContext dbContext) : base(dbContext, dbContext.Items)
@@ -14,7 +14,7 @@ public class EfcTicketRepository : EFcRepositoryEntityMgmtId<TicketDbContext, MT
 
     }
 
-    public string? GetFullName(long? id)
+    public string? GetFullName(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");
@@ -22,7 +22,7 @@ public class EfcTicketRepository : EFcRepositoryEntityMgmtId<TicketDbContext, MT
         return Entities.Where(x => x.Id == id).Select(x => x.Name ?? string.Empty).FirstOrDefault();
     }
 
-    public Task<string?> GetFullNameAsync(long? id)
+    public Task<string?> GetFullNameAsync(int? id)
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");

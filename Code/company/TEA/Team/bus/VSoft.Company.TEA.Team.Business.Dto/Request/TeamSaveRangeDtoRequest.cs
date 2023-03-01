@@ -3,7 +3,7 @@ using VSoft.Company.TEA.Team.Business.Dto.Data;
 
 namespace VSoft.Company.TEA.Team.Business.Dto.Request
 {
-    public class TeamSaveRangeDtoRequest : MDtoRequestRanges<TeamDto, long>
+    public class TeamSaveRangeDtoRequest : MDtoRequestRanges<TeamDto, int>
     {
       
     }

@@ -7,8 +7,8 @@ namespace VSoft.Company.DAC.DealActivity.Business.UnitTest.Test.Values.GroupA
     {
         protected override DealActivityDto Dto => new DealActivityDto()
         {
-         
-            Name = "Đặng Thế Nhân",
+         Id = 1,
+            //Name = "Đặng Thế Nhân",
             
         };
     }

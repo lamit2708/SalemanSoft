@@ -7,10 +7,7 @@ namespace VSoft.Company.UCU.UserCustomer.Repository.UnitTest.Real.Values.GroupA
     {
         protected override MUserCustomerEntity Entity => new MUserCustomerEntity()
         {
-            //Id = 63452,
-          
-            Name = "Đặng Thế Nhân",
-           
+            Id = 1,
         };
     }
 }

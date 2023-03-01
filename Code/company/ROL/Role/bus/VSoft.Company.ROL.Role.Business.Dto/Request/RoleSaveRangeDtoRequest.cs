@@ -3,7 +3,7 @@ using VSoft.Company.ROL.Role.Business.Dto.Data;
 
 namespace VSoft.Company.ROL.Role.Business.Dto.Request
 {
-    public class RoleSaveRangeDtoRequest : MDtoRequestRanges<RoleDto, long>
+    public class RoleSaveRangeDtoRequest : MDtoRequestRanges<RoleDto, int>
     {
       
     }

@@ -2,7 +2,7 @@
 
 namespace VSoft.Company.TEA.Team.Business.Dto.Request
 {
-    public class TeamDeleteRangeDtoRequest : MDtoRequestDeleteRange<long>
+    public class TeamDeleteRangeDtoRequest : MDtoRequestDeleteRange<int>
     {
        
     }

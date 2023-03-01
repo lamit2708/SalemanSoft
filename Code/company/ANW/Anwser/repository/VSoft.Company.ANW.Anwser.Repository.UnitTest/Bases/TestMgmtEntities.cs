@@ -17,7 +17,7 @@ public class TestMgmtEntities : RepositoryTest<AnwserDbContext, IAnwserRepositor
     {
         nameof(Model.Id),
 
-        nameof(Model.Name),
+        nameof(Model.QuestionId),
        
     };
 

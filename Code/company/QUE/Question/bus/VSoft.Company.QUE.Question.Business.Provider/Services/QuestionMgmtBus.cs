@@ -27,7 +27,7 @@ public class QuestionMgmtBus : BusinessRepositoryService<QuestionDto, IQuestionR
 
     protected override List<string>? SaveRequiredFields { get; set; } = new List<string>()
     {
-        nameof(QuestionDto.Name),
+        nameof(QuestionDto.TicketId),
         
     };
 

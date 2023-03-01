@@ -7,10 +7,7 @@ namespace VSoft.Company.DAC.DealActivity.Repository.UnitTest.Real.Values.GroupA
     {
         protected override MDealActivityEntity Entity => new MDealActivityEntity()
         {
-            //Id = 63452,
-          
-            Name = "Đặng Thế Nhân",
-           
+            Id = 1,
         };
     }
 }

@@ -7,10 +7,7 @@ namespace VSoft.Company.DSH.DealStepHistory.Repository.UnitTest.Test.Values.Grou
     {
         protected override MDealStepHistoryEntity Entity => new MDealStepHistoryEntity()
         {
-            //Id = 63452,
-           
-            Name = "Đặng Thế Nhân",
-         
+            Id = 1,
         };
     }
 }

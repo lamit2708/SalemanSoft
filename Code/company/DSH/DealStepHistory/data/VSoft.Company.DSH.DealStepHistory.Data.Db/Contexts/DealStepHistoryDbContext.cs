@@ -28,23 +28,19 @@ public class DealStepHistoryDbContext : EfcDbContext<DealStepHistoryDbContext, M
 
     protected void ConfigIndex(EntityTypeBuilder<MDealStepHistoryEntity> entity)
     {
-        entity.HasKey(e => e.Id).HasName("PRIMARY");
-        entity.HasIndex(e => e.DealStepHistoryInfoId, "FK_DealStepHistoryInfo_TO_DealStepHistory");
-        entity.HasIndex(e => e.PriorityId, "FK_Priority_TO_DealStepHistory");
-        entity.HasIndex(e => e.Phone, "UQ_Phone").IsUnique();
+        entity.HasKey(e => e.Id);
+        entity.HasIndex(e => e.DealStepId, "FK_DealStep_TO_DealStepHistory");
+        entity.HasIndex(e => e.Id, "FK_Deal_TO_DealStepHistory");
+        entity.HasIndex(e => e.UserId, "FK_User_TO_DealStepHistory");
     }
 
   
     protected void ConfigBasicFields(EntityTypeBuilder<MDealStepHistoryEntity> entity)
     {
+        entity.Property(e => e.DateTime).HasColumnType("datetime");
+        entity.Property(e => e.DealStepId).HasColumnType("int(11)");
         entity.Property(e => e.Id).HasColumnType("bigint(20)");
-        entity.Property(e => e.Address).HasMaxLength(100).HasDefaultValueSql("'NULL'");
-        entity.Property(e => e.DealStepHistoryInfoId).HasDefaultValueSql("'NULL'").HasColumnType("bigint(20)");
-        entity.Property(e => e.Email).HasMaxLength(100);
-        entity.Property(e => e.Gender).HasDefaultValueSql("'NULL'").HasComment("True: Male, False: Female");
-        entity.Property(e => e.Name).HasMaxLength(100);
-        entity.Property(e => e.Phone).HasMaxLength(100);
-        entity.Property(e => e.PriorityId).HasDefaultValueSql("'NULL'").HasColumnType("int(11)");
+        entity.Property(e => e.UserId).HasColumnType("int(11)");
     }
 
  

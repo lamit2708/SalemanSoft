@@ -17,7 +17,7 @@ public class TestMgmtEntities : RepositoryTest<CustomerInfoDbContext, ICustomerI
     {
         nameof(Model.Id),
 
-        nameof(Model.Name),
+        nameof(Model.CustomerSourceId),
        
     };
 

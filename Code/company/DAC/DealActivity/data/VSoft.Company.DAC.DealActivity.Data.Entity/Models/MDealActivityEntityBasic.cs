@@ -7,27 +7,20 @@ using VegunSoft.Framework.Entity.Key.Base;
 
 namespace VSoft.Company.DAC.DealActivity.Data.Entity.Models
 {
-    public class MDealActivityEntityBasic : IIdEntity<long>
+    public class MDealActivityEntityBasic : IIdEntity<int>
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
 
-        public string Name { get; set; } = null!;
+        public long DealId { get; set; }
 
-        public string Phone { get; set; } = null!;
+        public int ActivityId { get; set; }
 
-        public string Email { get; set; } = null!;
+        public string Subject { get; set; } = null!;
 
-        public string? Address { get; set; }
+        public string Content { get; set; } = null!;
 
-        /// <summary>
-        /// True: Male, False: Female
-        /// </summary>
-        public bool? Gender { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public int? PriorityId { get; set; }
-
-        public long? DealActivityInfoId { get; set; }
-
-        public bool IsBought { get; set; }
+        public int UserId { get; set; }
     }
 }

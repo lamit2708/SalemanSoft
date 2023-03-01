@@ -7,9 +7,7 @@ namespace VSoft.Company.DSH.DealStepHistory.Business.UnitTest.Test.Values.GroupA
     {
         protected override DealStepHistoryDto Dto => new DealStepHistoryDto()
         {
-         
-            Name = "Đặng Thế Nhân",
-            
+            Id = 1   
         };
     }
 }

@@ -5,7 +5,7 @@ using VSoft.Company.DAC.DealActivity.Repository.Services;
 
 namespace VSoft.Company.DAC.DealActivity.Repository.Efc.Services;
 
-public interface IDealActivityRepositoryEfc : IDealActivityRepository, IEfcRepositoryEntityMgmtId<DealActivityDbContext, MDealActivityEntity, long>
+public interface IDealActivityRepositoryEfc : IDealActivityRepository, IEfcRepositoryEntityMgmtId<DealActivityDbContext, MDealActivityEntity, int>
 {
    
 }

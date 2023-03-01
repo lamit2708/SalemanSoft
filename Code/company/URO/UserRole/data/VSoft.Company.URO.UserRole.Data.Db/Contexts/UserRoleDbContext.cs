@@ -28,23 +28,16 @@ public class UserRoleDbContext : EfcDbContext<UserRoleDbContext, MUserRoleEntity
 
     protected void ConfigIndex(EntityTypeBuilder<MUserRoleEntity> entity)
     {
-        entity.HasKey(e => e.Id).HasName("PRIMARY");
-        entity.HasIndex(e => e.UserRoleInfoId, "FK_UserRoleInfo_TO_UserRole");
-        entity.HasIndex(e => e.PriorityId, "FK_Priority_TO_UserRole");
-        entity.HasIndex(e => e.Phone, "UQ_Phone").IsUnique();
+        entity.HasKey(e => e.Id);
+        entity.HasIndex(e => e.RoleId, "FK_Role_TO_UserRole");
+        entity.HasIndex(e => e.UserId, "FK_User_TO_UserRole");
     }
 
   
     protected void ConfigBasicFields(EntityTypeBuilder<MUserRoleEntity> entity)
     {
-        entity.Property(e => e.Id).HasColumnType("bigint(20)");
-        entity.Property(e => e.Address).HasMaxLength(100).HasDefaultValueSql("'NULL'");
-        entity.Property(e => e.UserRoleInfoId).HasDefaultValueSql("'NULL'").HasColumnType("bigint(20)");
-        entity.Property(e => e.Email).HasMaxLength(100);
-        entity.Property(e => e.Gender).HasDefaultValueSql("'NULL'").HasComment("True: Male, False: Female");
-        entity.Property(e => e.Name).HasMaxLength(100);
-        entity.Property(e => e.Phone).HasMaxLength(100);
-        entity.Property(e => e.PriorityId).HasDefaultValueSql("'NULL'").HasColumnType("int(11)");
+        entity.Property(e => e.RoleId).HasColumnType("int(11)");
+        entity.Property(e => e.UserId).HasColumnType("int(11)");
     }
 
  

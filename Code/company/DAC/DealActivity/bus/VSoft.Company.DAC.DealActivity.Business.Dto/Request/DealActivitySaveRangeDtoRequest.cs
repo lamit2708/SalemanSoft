@@ -3,7 +3,7 @@ using VSoft.Company.DAC.DealActivity.Business.Dto.Data;
 
 namespace VSoft.Company.DAC.DealActivity.Business.Dto.Request
 {
-    public class DealActivitySaveRangeDtoRequest : MDtoRequestRanges<DealActivityDto, long>
+    public class DealActivitySaveRangeDtoRequest : MDtoRequestRanges<DealActivityDto, int>
     {
       
     }

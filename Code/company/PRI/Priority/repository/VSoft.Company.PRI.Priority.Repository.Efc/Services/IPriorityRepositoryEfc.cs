@@ -5,7 +5,7 @@ using VSoft.Company.PRI.Priority.Repository.Services;
 
 namespace VSoft.Company.PRI.Priority.Repository.Efc.Services;
 
-public interface IPriorityRepositoryEfc : IPriorityRepository, IEfcRepositoryEntityMgmtId<PriorityDbContext, MPriorityEntity, long>
+public interface IPriorityRepositoryEfc : IPriorityRepository, IEfcRepositoryEntityMgmtId<PriorityDbContext, MPriorityEntity, int>
 {
    
 }

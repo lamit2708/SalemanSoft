@@ -4,10 +4,10 @@ using VSoft.Company.ACT.Activity.Data.Entity.Models;
 
 namespace VSoft.Company.ACT.Activity.Repository.Services;
 
-public interface IActivityRepository : IEfcRepositoryEntityMgmtId<ActivityDbContext, MActivityEntity, long>
+public interface IActivityRepository : IEfcRepositoryEntityMgmtId<ActivityDbContext, MActivityEntity, int>
 {
 
-    string? GetFullName(long? id);
+    string? GetFullName(int? id);
 
-    Task<string?> GetFullNameAsync(long? id);
+    Task<string?> GetFullNameAsync(int? id);
 }

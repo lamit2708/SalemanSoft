@@ -17,7 +17,7 @@ public class TestMgmtEntities : RepositoryTest<UserCustomerDbContext, IUserCusto
     {
         nameof(Model.Id),
 
-        nameof(Model.Name),
+        nameof(Model.CustomerId),
        
     };
 
@@ -30,7 +30,7 @@ public class TestMgmtEntities : RepositoryTest<UserCustomerDbContext, IUserCusto
         ServiceCollection?.AddScoped<IUserCustomerRepository, EfcUserCustomerRepository>();
     }
 
-    protected async Task TestGetFullNameByIdAsync(long id)
+    protected async Task TestGetFullNameByIdAsync(int id)
     {
         await RunTest("TestGetByIdAsync", async (r, l) =>
         {
@@ -39,7 +39,7 @@ public class TestMgmtEntities : RepositoryTest<UserCustomerDbContext, IUserCusto
         });
     }
 
-    protected async Task TestGetByIdAsync(long id)
+    protected async Task TestGetByIdAsync(int id)
     {
         await RunTest("TestGetByIdAsync", async (r, l) =>
         {
@@ -94,7 +94,7 @@ public class TestMgmtEntities : RepositoryTest<UserCustomerDbContext, IUserCusto
 
     }
 
-    protected async Task TestSaveRangeAsync(Model[] createEntities, Model[] updateEntities, long[]? deleteEntitiesIds)
+    protected async Task TestSaveRangeAsync(Model[] createEntities, Model[] updateEntities, int[]? deleteEntitiesIds)
     {
         await RunTest("TestAddUserCustomer", async (r, l) =>
         {
@@ -112,7 +112,7 @@ public class TestMgmtEntities : RepositoryTest<UserCustomerDbContext, IUserCusto
 
     }
 
-    protected async Task TestSaveRangeTransactionAsync(Model[] createEntities, Model[] updateEntities, long[]? deleteEntitiesIds)
+    protected async Task TestSaveRangeTransactionAsync(Model[] createEntities, Model[] updateEntities, int[]? deleteEntitiesIds)
     {
         await RunTest("TestAddUserCustomer", async (r, l) =>
         {
@@ -148,7 +148,7 @@ public class TestMgmtEntities : RepositoryTest<UserCustomerDbContext, IUserCusto
 
     }
 
-    protected async Task TestDeleteRangeAsync(params long[] ids)
+    protected async Task TestDeleteRangeAsync(params int[] ids)
     {
         await RunTest("TestDelUserCustomer", async (r, l) =>
         {

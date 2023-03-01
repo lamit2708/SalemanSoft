@@ -4,10 +4,10 @@ using VSoft.Company.CSO.CustomerSource.Data.Entity.Models;
 
 namespace VSoft.Company.CSO.CustomerSource.Repository.Services;
 
-public interface ICustomerSourceRepository : IEfcRepositoryEntityMgmtId<CustomerSourceDbContext, MCustomerSourceEntity, long>
+public interface ICustomerSourceRepository : IEfcRepositoryEntityMgmtId<CustomerSourceDbContext, MCustomerSourceEntity, int>
 {
 
-    string? GetFullName(long? id);
+    string? GetFullName(int? id);
 
-    Task<string?> GetFullNameAsync(long? id);
+    Task<string?> GetFullNameAsync(int? id);
 }

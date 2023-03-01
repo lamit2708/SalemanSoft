@@ -36,54 +36,54 @@ public class TeamMgmtBus : BusinessRepositoryService<TeamDto, ITeamRepository>, 
 
     }
 
-    public MDtoResponseString GetFullName(MDtoRequestFindByLong request)
+    public MDtoResponseString GetFullName(MDtoRequestFindByInt request)
     {
-        return GetValue<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return GetValue<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullName), request, "email",
             (id) => Repository?.GetFullName(id)
         );
     }
 
-    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request)
+    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request)
     {
-        return await GetValueAsync<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return await GetValueAsync<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullNameAsync), request, "email",
             async (id) => await (Repository?.GetFullNameAsync(id) ?? Task.FromResult<string?>(null))
         );
     }
 
-    public TeamFindDtoResponse Find(MDtoRequestFindByLong request)
+    public TeamFindDtoResponse Find(MDtoRequestFindByInt request)
     {
-        return Find<MDtoRequestFindByLong, TeamFindDtoResponse, long>
+        return Find<MDtoRequestFindByInt, TeamFindDtoResponse, int>
         (
             request,
             (id) => Repository?.GetById(id)?.GetDto()
         );
     }
 
-    public async Task<TeamFindDtoResponse> FindAsync(MDtoRequestFindByLong request)
+    public async Task<TeamFindDtoResponse> FindAsync(MDtoRequestFindByInt request)
     {
-        return await FindAsync<MDtoRequestFindByLong, TeamFindDtoResponse, long>
+        return await FindAsync<MDtoRequestFindByInt, TeamFindDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdAsync(id) ?? Task.FromResult<MTeamEntity?>(null)))?.GetDto()
         );
     }
 
-    public TeamFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request)
+    public TeamFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request)
     {
-        return FindRange<MDtoRequestFindRangeByLongs, TeamFindRangeDtoResponse, long>
+        return FindRange<MDtoRequestFindRangeByInts, TeamFindRangeDtoResponse, int>
         (
             request,
             (id) => Repository?.GetByIds(id)?.Select(e => e.GetDto()).ToArray()
         );
     }
 
-    public async Task<TeamFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request)
+    public async Task<TeamFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request)
     {
-        return await FindRangeAsync<MDtoRequestFindRangeByLongs, TeamFindRangeDtoResponse, long>
+        return await FindRangeAsync<MDtoRequestFindRangeByInts, TeamFindRangeDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdsAsync(id) ?? Task.FromResult<IEnumerable<MTeamEntity>?>(null)))?.Select(e => e.GetDto()).ToArray()
@@ -229,7 +229,7 @@ public class TeamMgmtBus : BusinessRepositoryService<TeamDto, ITeamRepository>, 
 
     public TeamDeleteRangeDtoResponse DeleteRange(TeamDeleteRangeDtoRequest request)
     {
-        return DeleteRange<TeamDeleteRangeDtoRequest, TeamDeleteRangeDtoResponse, long>
+        return DeleteRange<TeamDeleteRangeDtoRequest, TeamDeleteRangeDtoResponse, int>
         (
              request,
              (ids) =>
@@ -243,7 +243,7 @@ public class TeamMgmtBus : BusinessRepositoryService<TeamDto, ITeamRepository>, 
 
     public async Task<TeamDeleteRangeDtoResponse> DeleteRangeAsync(TeamDeleteRangeDtoRequest request)
     {
-       return await DeleteRangeAsync<TeamDeleteRangeDtoRequest, TeamDeleteRangeDtoResponse, long>
+       return await DeleteRangeAsync<TeamDeleteRangeDtoRequest, TeamDeleteRangeDtoResponse, int>
        (
             request,
             async (ids) =>

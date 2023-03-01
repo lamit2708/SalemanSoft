@@ -14,7 +14,7 @@ namespace VSoft.Company.URO.UserRole.Repository.UnitTest.Bases
         public virtual MUserRoleEntity GetCreateEntity(string fullName)
         {
             var e = Entity;
-            e.Name = fullName;
+            //e.Name = fullName;
             return e;
         }
 
@@ -30,7 +30,7 @@ namespace VSoft.Company.URO.UserRole.Repository.UnitTest.Bases
             var e = Entity;
             var arr = data.Split(" / ");
             e.Id = Convert.ToInt32(arr[0]);
-            e.Name = arr[1];
+            //e.Name = arr[1];
             return e;
         }
 
@@ -38,7 +38,7 @@ namespace VSoft.Company.URO.UserRole.Repository.UnitTest.Bases
         {
             var e = Entity;
             e.Id = id;
-            e.Name = fullName;
+            //e.Name = fullName;
             return e;
         }
 

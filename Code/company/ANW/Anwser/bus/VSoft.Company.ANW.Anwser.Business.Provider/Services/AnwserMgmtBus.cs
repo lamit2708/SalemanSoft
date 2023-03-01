@@ -27,7 +27,7 @@ public class AnwserMgmtBus : BusinessRepositoryService<AnwserDto, IAnwserReposit
 
     protected override List<string>? SaveRequiredFields { get; set; } = new List<string>()
     {
-        nameof(AnwserDto.Name),
+        nameof(AnwserDto.QuestionId),
         
     };
 

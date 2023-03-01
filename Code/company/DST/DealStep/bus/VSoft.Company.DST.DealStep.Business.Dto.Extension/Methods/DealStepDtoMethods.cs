@@ -11,13 +11,7 @@ public static class DealStepDtoMethods
         {
             Id = src.Id,
             Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            DealStepInfoId = src.DealStepInfoId,
-            IsBought = src.IsBought,
+            Description = src.Description
         };
     }
 }

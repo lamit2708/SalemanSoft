@@ -7,9 +7,7 @@ namespace VSoft.Company.UCU.UserCustomer.Business.UnitTest.Test.Values.GroupA
     {
         protected override UserCustomerDto Dto => new UserCustomerDto()
         {
-         
-            Name = "Đặng Thế Nhân",
-            
+            Id = 1
         };
     }
 }

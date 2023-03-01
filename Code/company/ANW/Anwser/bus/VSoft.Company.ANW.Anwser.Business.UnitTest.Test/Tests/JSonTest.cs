@@ -12,7 +12,7 @@ namespace VSoft.Company.ANW.Anwser.Business.UnitTest.Test.Tests
         public async Task WriteCreateJsonAsync(string fullName)
         {
             var dto = new A01().GetCreateDto();
-            dto.Name = fullName;            
+            //dto.Name = fullName;            
             await WriteJSonAsync(dto);
         }
 

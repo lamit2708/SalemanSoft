@@ -12,9 +12,9 @@ namespace VSoft.Company.DAC.DealActivity.Business.UnitTest.Test.Tests
         [DataRow(63491)]
         [DataRow(63492)]
         [DataRow(63493)]
-        public async Task FindAsync(long id)
+        public async Task FindAsync(int id)
         {
-            await TestFindAsync(new MDtoRequestFindByLong()
+            await TestFindAsync(new MDtoRequestFindByInt()
             {
                 Id = id,
             });
@@ -22,9 +22,9 @@ namespace VSoft.Company.DAC.DealActivity.Business.UnitTest.Test.Tests
 
         [TestMethod]
         [DataRow(63494, 63495, 63496)]
-        public async Task FindRangeAsync(long id1, long id2, long id3)
+        public async Task FindRangeAsync(int id1, int id2, int id3)
         {
-            await TestFindRangeAsync(new MDtoRequestFindRangeByLongs()
+            await TestFindRangeAsync(new MDtoRequestFindRangeByInts()
             {
                 Ids = new[] { id1, id2, id3 },
             });
@@ -37,9 +37,9 @@ namespace VSoft.Company.DAC.DealActivity.Business.UnitTest.Test.Tests
         public async Task TestCreate(string fullName, string phone, string email)
         {
             var e = new DealActivityDto();
-            e.Name = fullName;
-            e.Phone = phone;
-            e.Email = email;
+            //e.Name = fullName;
+            //e.Phone = phone;
+            //e.Email = email;
             await TestCreateAsync(new DealActivityInsertDtoRequest()
             {
                 Data = e
@@ -64,7 +64,7 @@ namespace VSoft.Company.DAC.DealActivity.Business.UnitTest.Test.Tests
         [DataRow(1)]
         [DataRow(2)]
         [DataRow(3)]
-        public async Task DeleteAsync(long id)
+        public async Task DeleteAsync(int id)
         {
             await TestDeleteAsync(new DealActivityDeleteDtoRequest()
             {

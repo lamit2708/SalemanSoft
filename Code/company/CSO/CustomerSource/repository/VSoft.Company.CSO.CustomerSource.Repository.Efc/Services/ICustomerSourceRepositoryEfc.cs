@@ -5,7 +5,7 @@ using VSoft.Company.CSO.CustomerSource.Repository.Services;
 
 namespace VSoft.Company.CSO.CustomerSource.Repository.Efc.Services;
 
-public interface ICustomerSourceRepositoryEfc : ICustomerSourceRepository, IEfcRepositoryEntityMgmtId<CustomerSourceDbContext, MCustomerSourceEntity, long>
+public interface ICustomerSourceRepositoryEfc : ICustomerSourceRepository, IEfcRepositoryEntityMgmtId<CustomerSourceDbContext, MCustomerSourceEntity, int>
 {
    
 }

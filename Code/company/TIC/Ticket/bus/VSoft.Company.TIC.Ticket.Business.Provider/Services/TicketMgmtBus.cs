@@ -36,54 +36,54 @@ public class TicketMgmtBus : BusinessRepositoryService<TicketDto, ITicketReposit
 
     }
 
-    public MDtoResponseString GetFullName(MDtoRequestFindByLong request)
+    public MDtoResponseString GetFullName(MDtoRequestFindByInt request)
     {
-        return GetValue<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return GetValue<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullName), request, "email",
             (id) => Repository?.GetFullName(id)
         );
     }
 
-    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request)
+    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request)
     {
-        return await GetValueAsync<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return await GetValueAsync<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullNameAsync), request, "email",
             async (id) => await (Repository?.GetFullNameAsync(id) ?? Task.FromResult<string?>(null))
         );
     }
 
-    public TicketFindDtoResponse Find(MDtoRequestFindByLong request)
+    public TicketFindDtoResponse Find(MDtoRequestFindByInt request)
     {
-        return Find<MDtoRequestFindByLong, TicketFindDtoResponse, long>
+        return Find<MDtoRequestFindByInt, TicketFindDtoResponse, int>
         (
             request,
             (id) => Repository?.GetById(id)?.GetDto()
         );
     }
 
-    public async Task<TicketFindDtoResponse> FindAsync(MDtoRequestFindByLong request)
+    public async Task<TicketFindDtoResponse> FindAsync(MDtoRequestFindByInt request)
     {
-        return await FindAsync<MDtoRequestFindByLong, TicketFindDtoResponse, long>
+        return await FindAsync<MDtoRequestFindByInt, TicketFindDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdAsync(id) ?? Task.FromResult<MTicketEntity?>(null)))?.GetDto()
         );
     }
 
-    public TicketFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request)
+    public TicketFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request)
     {
-        return FindRange<MDtoRequestFindRangeByLongs, TicketFindRangeDtoResponse, long>
+        return FindRange<MDtoRequestFindRangeByInts, TicketFindRangeDtoResponse, int>
         (
             request,
             (id) => Repository?.GetByIds(id)?.Select(e => e.GetDto()).ToArray()
         );
     }
 
-    public async Task<TicketFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request)
+    public async Task<TicketFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request)
     {
-        return await FindRangeAsync<MDtoRequestFindRangeByLongs, TicketFindRangeDtoResponse, long>
+        return await FindRangeAsync<MDtoRequestFindRangeByInts, TicketFindRangeDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdsAsync(id) ?? Task.FromResult<IEnumerable<MTicketEntity>?>(null)))?.Select(e => e.GetDto()).ToArray()
@@ -201,7 +201,7 @@ public class TicketMgmtBus : BusinessRepositoryService<TicketDto, ITicketReposit
 
     public TicketDeleteDtoResponse Delete(TicketDeleteDtoRequest request)
     {
-        return Delete<TicketDeleteDtoRequest, TicketDeleteDtoResponse, long>
+        return Delete<TicketDeleteDtoRequest, TicketDeleteDtoResponse, int>
         (
              request,
              (id) =>
@@ -215,7 +215,7 @@ public class TicketMgmtBus : BusinessRepositoryService<TicketDto, ITicketReposit
 
     public async Task<TicketDeleteDtoResponse> DeleteAsync(TicketDeleteDtoRequest request)
     {
-        return await DeleteAsync<TicketDeleteDtoRequest, TicketDeleteDtoResponse, long>
+        return await DeleteAsync<TicketDeleteDtoRequest, TicketDeleteDtoResponse, int>
         (
              request,
              async (id) =>
@@ -229,7 +229,7 @@ public class TicketMgmtBus : BusinessRepositoryService<TicketDto, ITicketReposit
 
     public TicketDeleteRangeDtoResponse DeleteRange(TicketDeleteRangeDtoRequest request)
     {
-        return DeleteRange<TicketDeleteRangeDtoRequest, TicketDeleteRangeDtoResponse, long>
+        return DeleteRange<TicketDeleteRangeDtoRequest, TicketDeleteRangeDtoResponse, int>
         (
              request,
              (ids) =>
@@ -243,7 +243,7 @@ public class TicketMgmtBus : BusinessRepositoryService<TicketDto, ITicketReposit
 
     public async Task<TicketDeleteRangeDtoResponse> DeleteRangeAsync(TicketDeleteRangeDtoRequest request)
     {
-       return await DeleteRangeAsync<TicketDeleteRangeDtoRequest, TicketDeleteRangeDtoResponse, long>
+       return await DeleteRangeAsync<TicketDeleteRangeDtoRequest, TicketDeleteRangeDtoResponse, int>
        (
             request,
             async (ids) =>
