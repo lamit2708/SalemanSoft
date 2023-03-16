@@ -7,5 +7,5 @@ namespace VSoft.Company.CTM.Customer.Repository.Efc.Services;
 
 public interface ICustomerRepositoryEfc : ICustomerRepository, IEfcRepositoryEntityMgmtId<CustomerDbContext, MCustomerEntity, long>
 {
-   
+    
 }

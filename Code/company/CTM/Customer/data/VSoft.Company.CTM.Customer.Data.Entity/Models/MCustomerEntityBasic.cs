@@ -29,5 +29,7 @@ namespace VSoft.Company.CTM.Customer.Data.Entity.Models
         public long? CustomerInfoId { get; set; }
 
         public bool IsBought { get; set; }
+
+        public string? Keyword { get; set; }
     }
 }

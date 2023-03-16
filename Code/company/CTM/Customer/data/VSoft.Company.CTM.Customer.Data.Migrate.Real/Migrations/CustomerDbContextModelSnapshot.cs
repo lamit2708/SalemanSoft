@@ -22,33 +22,63 @@ namespace VSoft.Company.CTM.Customer.Data.Migrate.Real.Migrations
 
             modelBuilder.Entity("VSoft.Company.CTM.Customer.Data.Entity.Models.MCustomerEntity", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(128)
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnType("bigint(20)");
 
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime")
-                        .HasColumnName("CreatedDate");
-
-                    b.Property<string>("FullName")
+                    b.Property<string>("Address")
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)")
-                        .HasColumnName("FullName");
+                        .HasDefaultValueSql("'NULL'");
 
-                    b.Property<bool?>("IsDeleted")
+                    b.Property<long?>("CustomerInfoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint(20)")
+                        .HasDefaultValueSql("'NULL'");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<bool?>("Gender")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint(1)")
-                        .HasColumnName("IsDeleted");
+                        .HasDefaultValueSql("'NULL'")
+                        .HasComment("True: Male, False: Female");
 
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime")
-                        .HasColumnName("UpdatedDate");
+                    b.Property<bool>("IsBought")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Keyword")
+                        .HasColumnType("varchar(512)")
+                        .HasColumnName("Keyword");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int?>("PriorityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int(11)")
+                        .HasDefaultValueSql("'NULL'");
 
                     b.HasKey("Id")
-                        .HasName("pk_Customer");
+                        .HasName("PRIMARY");
 
-                    b.HasIndex(new[] { "FullName" }, "IDX_Customer_FullName");
+                    b.HasIndex(new[] { "CustomerInfoId" }, "FK_CustomerInfo_TO_Customer");
+
+                    b.HasIndex(new[] { "PriorityId" }, "FK_Priority_TO_Customer");
+
+                    b.HasIndex(new[] { "Phone" }, "UQ_Phone")
+                        .IsUnique();
 
                     b.ToTable("Customer", (string)null);
                 });

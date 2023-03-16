@@ -1,4 +1,5 @@
-﻿using VSoft.Company.CTM.Customer.Repository.UnitTest.Bases;
+﻿using VSoft.Company.CTM.Customer.Data.Entity.Models;
+using VSoft.Company.CTM.Customer.Repository.UnitTest.Bases;
 using VSoft.Company.CTM.Customer.Repository.UnitTest.Test.Values.GroupA;
 
 namespace VSoft.Company.CTM.Customer.Repository.UnitTest.Test.Tests;
@@ -16,6 +17,19 @@ public class TestCustomerTest : TestMgmtEntities
     public async Task GetFullNameByIdAsync(int id)
     {
         await TestGetFullNameByIdAsync(id);
+       
+    }
+    [TestMethod]
+    [DataRow(1, DisplayName = "Case 1")]
+    [DataRow(2, DisplayName = "Case 2")]
+    public async Task GetCustomerByNameAsync(string name)
+    {
+        
+        await RunTest("TestGetByIdAsync", async (r, log) =>
+        {
+            var e = await (r?.GetCustomersByNameAsync(name) ?? Task.FromResult(new List<MCustomerEntity>()));
+            log(e.FirstOrDefault()?.Name ?? string.Empty);
+        });
     }
 
 

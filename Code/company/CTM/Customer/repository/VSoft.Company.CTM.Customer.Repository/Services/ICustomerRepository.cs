@@ -10,4 +10,11 @@ public interface ICustomerRepository : IEfcRepositoryEntityMgmtId<CustomerDbCont
     string? GetFullName(long? id);
 
     Task<string?> GetFullNameAsync(long? id);
+
+    Task<List<MCustomerEntity>> GetCustomersByNameAsync(string name);
+
+    MCustomerEntity? CreateWithKeyword(MCustomerEntity entity);
+
+    MCustomerEntity? UpdateWithKeyword(MCustomerEntity entity);
+
 }
