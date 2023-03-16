@@ -1,10 +1,29 @@
 
         
+CREATE TABLE `Order`
+(
+  Id           INT      NOT NULL,
+  CustomerId   BIGINT   NOT NULL,
+  UserId       INT      NOT NULL,
+  CreatedDate  DATETIME NULL    ,
+  EditedUserId INT      NULL    ,
+  EditedDate   DATETIME NULL    ,
+  PRIMARY KEY (Id)
+);
+
 CREATE TABLE Activity
 (
-  Id          INT          NOT NULL AUTO_INCREMENT,
-  Name        VARCHAR(100) NOT NULL,
-  Description VARCHAR(512) NOT NULL,
+  Id           INT          NOT NULL AUTO_INCREMENT,
+  Name         VARCHAR(100) NOT NULL,
+  Content      VARCHAR(512) NOT NULL,
+  ActivityType VARCHAR(100) NOT NULL,
+  `Date`       DATETIME     NULL    ,
+  `From`       DATETIME     NULL    ,
+  `To`         DATETIME     NULL    ,
+  ToWho        VARCHAR(100) NULL    ,
+  SubType      VARCHAR(100) NULL    ,
+  CreatedDate  DATETIME     NULL    ,
+  CreatedUser  INT          NOT NULL,
   PRIMARY KEY (Id)
 );
 
@@ -43,6 +62,10 @@ CREATE TABLE CustomerInfo
   Job              VARCHAR(100) NULL    ,
   BirthDate        DATETIME     NULL    ,
   IsMarrage        BOOL         NULL    ,
+  Charater         VARCHAR(100) NULL    ,
+  Income           VARCHAR(100) NULL    ,
+  Evaluate         VARCHAR(100) NULL    ,
+  Type             VARCHAR(100) NULL    ,
   PRIMARY KEY (Id)
 );
 
@@ -59,26 +82,25 @@ ALTER TABLE CustomerSource
 
 CREATE TABLE Deal
 (
-  Id          BIGINT       NOT NULL AUTO_INCREMENT,
-  CreatedDate DATETIME     NOT NULL,
-  CustomerId  BIGINT       NOT NULL,
-  DealStepId  INT          NOT NULL,
-  UserId      INT          NOT NULL,
-  OrderId     INT          NULL    ,
-  Name        VARCHAR(100) NULL    ,
-  Description VARCHAR(512) NULL    ,
+  Id            BIGINT       NOT NULL AUTO_INCREMENT,
+  CreatedDate   DATETIME     NOT NULL,
+  CustomerId    BIGINT       NOT NULL,
+  DealStepId    INT          NOT NULL,
+  UserId        INT          NOT NULL,
+  OrderId       INT          NULL    ,
+  Name          VARCHAR(100) NULL    ,
+  Description   VARCHAR(512) NULL    ,
+  PridictPrice  DOUBLE       NOT NULL,
+  DateFor       DATETIME     NULL    ,
+  PricePossible DOUBLE       NULL    ,
   PRIMARY KEY (Id)
 );
 
 CREATE TABLE DealActivity
 (
-  Id          INT          NOT NULL AUTO_INCREMENT,
-  DealId      BIGINT       NOT NULL,
-  ActivityId  INT          NOT NULL,
-  Subject     VARCHAR(100) NOT NULL,
-  Content     VARCHAR(512) NOT NULL,
-  CreatedDate DATETIME     NOT NULL,
-  UserId      INT          NOT NULL,
+  Id         INT    NOT NULL AUTO_INCREMENT,
+  DealId     BIGINT NOT NULL,
+  ActivityId INT    NOT NULL,
   PRIMARY KEY (Id)
 );
 
@@ -109,19 +131,10 @@ CREATE TABLE DealStepHistory
   UserId     INT      NOT NULL
 );
 
-CREATE TABLE `Order`
-(
-  Id          INT      NOT NULL,
-  CustomerId  BIGINT   NOT NULL,
-  UserId      INT      NOT NULL,
-  CreatedDate DATETIME NULL    ,
-  PRIMARY KEY (Id)
-);
-
 CREATE TABLE Priority
 (
-  Id          INT            NOT NULL AUTO_INCREMENT,
-  Name        VARCHAR(100)   NOT NULL,
+  Id          INT          NOT NULL AUTO_INCREMENT,
+  Name        VARCHAR(100) NOT NULL,
   Description VARCHAR(512) NOT NULL,
   PRIMARY KEY (Id)
 );
@@ -132,18 +145,36 @@ CREATE TABLE Product
   Name        VARCHAR(100) NOT NULL,
   Price       DOUBLE       NOT NULL,
   Quatity     INT          NOT NULL DEFAULT 0,
-  Category    VARCHAR(100) NULL    ,
   Description VARCHAR(512) NULL    ,
+  CategoryId  INT          NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE ProductCategory
+(
+  Id   INT         NOT NULL AUTO_INCREMENT,
+  Name VARCHAR(50) NOT NULL,
   PRIMARY KEY (Id)
 );
 
 CREATE TABLE ProductOrder
 (
-  Id        INT    NOT NULL,
-  OrderId   INT    NOT NULL,
-  ProductId INT    NOT NULL,
-  Quatity   INT    NOT NULL,
-  UnitPrice DOUBLE NOT NULL,
+  Id          INT    NOT NULL,
+  OrderId     INT    NOT NULL,
+  ProductId   INT    NOT NULL,
+  Quatity     INT    NOT NULL,
+  UnitPrice   DOUBLE NOT NULL,
+  ChangePrice DOUBLE NULL    ,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE ProductQuotation
+(
+  Id        INT      NOT NULL AUTO_INCREMENT,
+  ProductId INT      NOT NULL,
+  Price     DOUBLE   NOT NULL,
+  `From`    DATETIME NOT NULL,
+  `To`      DATETIME NULL    ,
   PRIMARY KEY (Id)
 );
 
@@ -160,7 +191,83 @@ CREATE TABLE Role
 (
   Id          INT          NOT NULL AUTO_INCREMENT,
   Name        VARCHAR(100) NOT NULL,
-  Description VARCHAR(512) NOT NULL,
+  Description VARCHAR(512) NULL    ,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Survey
+(
+  Id          INT          NOT NULL AUTO_INCREMENT,
+  Name        VARCHAR(100) NOT NULL,
+  Description VARCHAR(512) NULL    ,
+  CreatedUser INT          NOT NULL,
+  CreatedDate DATETIME     NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE SurveyContent
+(
+  Id       INT          NOT NULL AUTO_INCREMENT,
+  SurveyId INT          NOT NULL,
+  Question VARCHAR(100) NOT NULL,
+  Answer   VARCHAR(100) NULL    ,
+  `From`   INT          NULL    ,
+  `To`     INT          NULL    ,
+  Score    INT          NULL    ,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE SurveyResult
+(
+  Id       INT NOT NULL AUTO_INCREMENT,
+  SurveyId INT NOT NULL,
+  `From`   INT NOT NULL,
+  `To`     INT NULL    ,
+  Score    INT NULL    ,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Task
+(
+  Id          INT          NOT NULL AUTO_INCREMENT,
+  Title       VARCHAR(100) NOT NULL,
+  Content     VARCHAR(512) NOT NULL,
+  CreatedUser INT          NOT NULL,
+  CreatedDate DATETIME     NOT NULL,
+  `From`      DATETIME     NOT NULL,
+  `To`        DATETIME     NOT NULL,
+  TaskStatus  INT          NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE TaskCustomer
+(
+  Id          INT NOT NULL AUTO_INCREMENT,
+  TaskId      INT NOT NULL,
+  UserRelated INT NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE TaskDeal
+(
+  Id          INT    NOT NULL AUTO_INCREMENT,
+  TaskId      INT    NOT NULL,
+  DealRelated BIGINT NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE TaskStatus
+(
+  Id   INT          NOT NULL AUTO_INCREMENT,
+  Name VARCHAR(100) NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE TaskUser
+(
+  Id          INT NOT NULL AUTO_INCREMENT,
+  TaskId      INT NOT NULL,
+  UserRelated INT NOT NULL,
   PRIMARY KEY (Id)
 );
 
@@ -203,6 +310,7 @@ CREATE TABLE UserCustomer
   TeamId          INT      NOT NULL,
   CreatedDateTeam DATETIME NOT NULL,
   CreatedDateUser DATETIME NOT NULL,
+  IsAccept        BOOL     NOT NULL,
   PRIMARY KEY (Id)
 );
 
@@ -307,11 +415,6 @@ ALTER TABLE DealActivity
     FOREIGN KEY (DealId)
     REFERENCES Deal (Id);
 
-ALTER TABLE DealActivity
-  ADD CONSTRAINT FK_User_TO_DealActivity
-    FOREIGN KEY (UserId)
-    REFERENCES User (Id);
-
 ALTER TABLE Deal
   ADD CONSTRAINT FK_User_TO_Deal
     FOREIGN KEY (UserId)
@@ -361,6 +464,81 @@ ALTER TABLE Ticket
   ADD CONSTRAINT FK_Customer_TO_Ticket
     FOREIGN KEY (CustomerId)
     REFERENCES Customer (Id);
+
+ALTER TABLE Product
+  ADD CONSTRAINT FK_ProductCategory_TO_Product
+    FOREIGN KEY (CategoryId)
+    REFERENCES ProductCategory (Id);
+
+ALTER TABLE ProductQuotation
+  ADD CONSTRAINT FK_Product_TO_ProductQuotation
+    FOREIGN KEY (ProductId)
+    REFERENCES Product (Id);
+
+ALTER TABLE Survey
+  ADD CONSTRAINT FK_User_TO_Survey
+    FOREIGN KEY (CreatedUser)
+    REFERENCES User (Id);
+
+ALTER TABLE `Order`
+  ADD CONSTRAINT FK_User_TO_Order1
+    FOREIGN KEY (EditedUserId)
+    REFERENCES User (Id);
+
+ALTER TABLE Task
+  ADD CONSTRAINT FK_User_TO_Task
+    FOREIGN KEY (CreatedUser)
+    REFERENCES User (Id);
+
+ALTER TABLE Task
+  ADD CONSTRAINT FK_TaskStatus_TO_Task
+    FOREIGN KEY (TaskStatus)
+    REFERENCES TaskStatus (Id);
+
+ALTER TABLE TaskUser
+  ADD CONSTRAINT FK_Task_TO_TaskUser
+    FOREIGN KEY (TaskId)
+    REFERENCES Task (Id);
+
+ALTER TABLE TaskUser
+  ADD CONSTRAINT FK_User_TO_TaskUser
+    FOREIGN KEY (UserRelated)
+    REFERENCES User (Id);
+
+ALTER TABLE TaskCustomer
+  ADD CONSTRAINT FK_Task_TO_TaskCustomer
+    FOREIGN KEY (TaskId)
+    REFERENCES Task (Id);
+
+ALTER TABLE TaskCustomer
+  ADD CONSTRAINT FK_User_TO_TaskCustomer
+    FOREIGN KEY (UserRelated)
+    REFERENCES User (Id);
+
+ALTER TABLE TaskDeal
+  ADD CONSTRAINT FK_Task_TO_TaskDeal
+    FOREIGN KEY (TaskId)
+    REFERENCES Task (Id);
+
+ALTER TABLE TaskDeal
+  ADD CONSTRAINT FK_Deal_TO_TaskDeal
+    FOREIGN KEY (DealRelated)
+    REFERENCES Deal (Id);
+
+ALTER TABLE Activity
+  ADD CONSTRAINT FK_User_TO_Activity
+    FOREIGN KEY (CreatedUser)
+    REFERENCES User (Id);
+
+ALTER TABLE SurveyResult
+  ADD CONSTRAINT FK_Survey_TO_SurveyResult
+    FOREIGN KEY (SurveyId)
+    REFERENCES Survey (Id);
+
+ALTER TABLE SurveyContent
+  ADD CONSTRAINT FK_Survey_TO_SurveyContent
+    FOREIGN KEY (SurveyId)
+    REFERENCES Survey (Id);
 
         
       

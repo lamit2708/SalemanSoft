@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -470.70000000000266,
-    "scrollLeft": -586.4000000000007,
-    "zoomLevel": 0.6,
+    "scrollTop": -1248.3000000000027,
+    "scrollLeft": 0,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": false,
       "columnComment": false,
@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "user",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "C#",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -357,9 +357,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1853.429,
-          "top": 1372.467,
-          "zIndex": 10,
+          "left": 1908.629,
+          "top": 1312.467,
+          "zIndex": 89,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2774,10 +2774,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 37.8921,
           "top": 1516.818,
-          "zIndex": 21,
+          "zIndex": 92,
           "widthName": 60,
           "widthComment": 60
         },
@@ -4510,8 +4510,8 @@
           "columnIds": [
             "128422a1-928d-4992-888f-05d90e02ce82"
           ],
-          "x": 2182.429,
-          "y": 1427.467,
+          "x": 2237.629,
+          "y": 1367.467,
           "direction": "right"
         },
         "constraintName": "fk_role_to_user-role",
@@ -4536,8 +4536,8 @@
           "columnIds": [
             "5d1e7a2f-b316-4f20-868b-85ba7980fe87"
           ],
-          "x": 1853.429,
-          "y": 1427.467,
+          "x": 1908.629,
+          "y": 1367.467,
           "direction": "left"
         },
         "constraintName": "fk_user_to_user-role",
