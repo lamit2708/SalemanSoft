@@ -34,7 +34,7 @@ public class EfcCustomerRepository : EFcRepositoryEntityMgmtId<CustomerDbContext
     {
         if (DbContext == null) throw new Exception("Context is null");
         if (Entities == null) throw new Exception("Entities is null");
-        if (string.IsNullOrEmpty(name )) throw new Exception("name is null");
+        if (string.IsNullOrEmpty(name )) throw new Exception("The name is null");
         return Entities.Where(x => (x.Keyword??string.Empty).ToLower().Contains(name.ToLower())).ToListAsync();
     }
     public MCustomerEntity? UpdateWithKeyword(MCustomerEntity entity)
