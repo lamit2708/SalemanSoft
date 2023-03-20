@@ -15,5 +15,7 @@ namespace VSoft.Company.PRO.Product.Data.Entity.Models
         public string? Category { get; set; }
 
         public string? Description { get; set; }
+
+        public string? Keyword { get; set; }
     }
 }
