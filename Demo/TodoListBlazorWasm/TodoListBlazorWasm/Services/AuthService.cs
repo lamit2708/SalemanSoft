@@ -8,7 +8,7 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
-using TodoList.Models;
+using TodoData.Entity.Base.Entities;
 
 namespace TodoListBlazorWasm.Services
 {

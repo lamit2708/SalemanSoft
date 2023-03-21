@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TodoList.Models.Enums;
+using TodoData.DVO.Enums;
 
-namespace TodoList.Models
+namespace TodoData.DVO.Models
 {
-    public class TaskDto
+    public class DVOTask
     {
         public Guid Id { get; set; }
 
@@ -16,7 +16,7 @@ namespace TodoList.Models
         public Guid? AssigneeId { get; set; }
 
         public string AssigneeName { set; get; }
-        
+
         public DateTime CreatedDate { get; set; }
 
         public Priority Priority { get; set; }

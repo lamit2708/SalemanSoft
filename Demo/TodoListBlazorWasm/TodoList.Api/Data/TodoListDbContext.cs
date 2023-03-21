@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TodoData.DVO.Entities;
+using TodoData.Entity.Base.Entities;
 using TodoList.Api.Entities;
 
 namespace TodoList.Api.Data

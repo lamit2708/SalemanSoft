@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.WebUtilities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using TodoList.Models;
-using TodoList.Models.SeedWork;
+using TodoData.DVO.Models;
+using TodoData.Entity.Base.Paging;
 
-namespace TodoListBlazorWasm.Services
+namespace TodoRepository.Services
 {
     public class TaskApiClient : ITaskApiClient
     {
@@ -38,7 +37,7 @@ namespace TodoListBlazorWasm.Services
             return result.IsSuccessStatusCode;
         }
 
-        public async Task<PagedList<TaskDto>> GetMyTasks(TaskListSearch taskListSearch)
+        public async Task<PagedList<DVOTask>> GetMyTasks(TaskListSearch taskListSearch)
         {
             var queryStringParam = new Dictionary<string, string>
             {
@@ -54,17 +53,17 @@ namespace TodoListBlazorWasm.Services
 
             string url = QueryHelpers.AddQueryString("/api/tasks/me", queryStringParam);
 
-            var result = await _httpClient.GetFromJsonAsync<PagedList<TaskDto>>(url);
+            var result = await _httpClient.GetFromJsonAsync<PagedList<DVOTask>>(url);
             return result;
         }
 
-        public async Task<TaskDto> GetTaskDetail(string id)
+        public async Task<DVOTask> GetTaskDetail(string id)
         {
-            var result = await _httpClient.GetFromJsonAsync<TaskDto>($"/api/tasks/{id}");
+            var result = await _httpClient.GetFromJsonAsync<DVOTask>($"/api/tasks/{id}");
             return result;
         }
 
-        public async Task<PagedList<TaskDto>> GetTaskList(TaskListSearch taskListSearch)
+        public async Task<PagedList<DVOTask>> GetTaskList(TaskListSearch taskListSearch)
         {
             var queryStringParam = new Dictionary<string, string>
             {
@@ -80,7 +79,7 @@ namespace TodoListBlazorWasm.Services
 
             string url = QueryHelpers.AddQueryString("/api/tasks", queryStringParam);
 
-            var result = await _httpClient.GetFromJsonAsync<PagedList<TaskDto>>(url);
+            var result = await _httpClient.GetFromJsonAsync<PagedList<DVOTask>>(url);
             return result;
         }
 

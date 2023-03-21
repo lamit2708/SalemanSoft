@@ -1,7 +1,8 @@
 ﻿@page "/taskCreate"
-@using TodoList.Models;
-@using TodoList.Models.Enums;
+@using TodoData.DVO.Enums;
+@using TodoData.DVO.Models;
 @using TodoListBlazorWasm.Services;
+@using TodoRepository.Services;
 
 @inject ITaskApiClient TaskApiClient;
 @inject NavigationManager NavigationManager;

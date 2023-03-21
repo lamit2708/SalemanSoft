@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
-using Blazored.Toast.Services;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Forms;
-using TodoList.Models;
-using TodoList.Models.Enums;
-using TodoList.Models.SeedWork;
+using TodoData.DVO.Models;
+using TodoData.Entity.Base.Paging;
 using TodoListBlazorWasm.Components;
 using TodoListBlazorWasm.Pages.Components;
-using TodoListBlazorWasm.Services;
 using TodoListBlazorWasm.Shared;
+using TodoRepository.Services;
 
 namespace TodoListBlazorWasm.Pages
 {
@@ -24,7 +19,7 @@ namespace TodoListBlazorWasm.Pages
         protected AssignTask AssignTaskDialog { set; get; }
 
         private Guid DeleteId { set; get; }
-        private List<TaskDto> Tasks;
+        private List<DVOTask> Tasks;
         public MetaData MetaData { get; set; } = new MetaData();
 
         private TaskListSearch TaskListSearch = new TaskListSearch();

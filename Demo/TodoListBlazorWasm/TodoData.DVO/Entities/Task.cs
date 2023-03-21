@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
-using TodoList.Models.Enums;
+using System.ComponentModel.DataAnnotations;
+using TodoData.DVO.Enums;
+using TodoData.Entity.Base.Entities;
 
-namespace TodoList.Api.Entities
+namespace TodoData.DVO.Entities
 {
     public class Task
     {

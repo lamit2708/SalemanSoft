@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
-using TodoList.Api.Entities;
-using TodoList.Models.Enums;
-using Task = System.Threading.Tasks.Task;
+using TodoData.DVO.Enums;
+using TodoData.Entity.Base.Entities;
+using TaskEntity = TodoData.DVO.Entities.Task;
 
 namespace TodoList.Api.Data
 {
@@ -37,7 +37,7 @@ namespace TodoList.Api.Data
             {
                 for (var i=0;i< 1000;i++)
                 {
-                    context.Tasks.Add(new Entities.Task()
+                    context.Tasks.Add(new TaskEntity()
                     {
                         Id = Guid.NewGuid(),
                         Name = $"Same tasks {i+2}",

@@ -1,25 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using TodoList.Models;
-using TodoList.Models.SeedWork;
-using Task = TodoList.Api.Entities.Task;
+using TodoData.DVO.Models;
+using TodoData.Entity.Base.Paging;
+using TaskEntity = TodoData.DVO.Entities.Task;
 
 namespace TodoList.Api.Repositories
 {
     public interface ITaskRepository
     {
-        Task<PagedList<Task>> GetTaskList(TaskListSearch taskListSearch);
+        Task<PagedList<TaskEntity>> GetTaskList(TaskListSearch taskListSearch);
 
-        Task<PagedList<Task>> GetTaskListByUserId(Guid userId, TaskListSearch taskListSearch);
+        Task<PagedList<TaskEntity>> GetTaskListByUserId(Guid userId, TaskListSearch taskListSearch);
 
-        Task<Task> Create(Task task);
+        Task<TaskEntity> Create(TaskEntity task);
 
-        Task<Task> Update(Task task);
+        Task<TaskEntity> Update(TaskEntity task);
 
-        Task<Task> Delete(Task task);
+        Task<TaskEntity> Delete(TaskEntity task);
 
-        Task<Task> GetById(Guid id);
+        Task<TaskEntity> GetById(Guid id);
     }
 }

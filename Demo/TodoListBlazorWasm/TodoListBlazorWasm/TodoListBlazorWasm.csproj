@@ -14,7 +14,8 @@
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TodoList.Models\TodoList.Models.csproj" />
+    <ProjectReference Include="..\TodoData.DVO\TodoData.DVO.csproj" />
+    <ProjectReference Include="..\TodoRepository\TodoRepository.csproj" />
   </ItemGroup>
 
 </Project>

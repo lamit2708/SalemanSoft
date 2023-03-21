@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TodoList.Models
+namespace TodoData.Entity.Base.Entities
 {
     public class LoginRequest
     {

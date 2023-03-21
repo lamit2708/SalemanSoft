@@ -1,4 +1,4 @@
-﻿namespace TodoList.Models.Enums
+﻿namespace TodoData.DVO.Enums
 {
     public enum Priority
     {

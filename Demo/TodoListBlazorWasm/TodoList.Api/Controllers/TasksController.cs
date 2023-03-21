@@ -2,14 +2,14 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using TodoList.Api.Entities;
 using TodoList.Api.Repositories;
-using TodoList.Models;
-using TodoList.Models.Enums;
-using TodoList.Models.SeedWork;
 using TodoList.Api.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using TodoData.DVO.Models;
+using TodoData.DVO.Enums;
+using TaskEntity = TodoData.DVO.Entities.Task;
+using TodoData.Entity.Base.Paging;
 
 namespace TodoList.Api.Controllers
 {
@@ -30,7 +30,7 @@ namespace TodoList.Api.Controllers
         public async Task<IActionResult> GetAll([FromQuery] TaskListSearch taskListSearch)
         {
             var pagedList = await _taskRepository.GetTaskList(taskListSearch);
-            var taskDtos = pagedList.Items.Select(x => new TaskDto()
+            var taskDtos = pagedList.Items.Select(x => new DVOTask()
             {
                 Status = x.Status,
                 Name = x.Name,
@@ -42,7 +42,7 @@ namespace TodoList.Api.Controllers
             });
 
             return Ok(
-                    new PagedList<TaskDto>(taskDtos.ToList(),
+                    new PagedList<DVOTask>(taskDtos.ToList(),
                         pagedList.MetaData.TotalCount,
                         pagedList.MetaData.CurrentPage,
                         pagedList.MetaData.PageSize)
@@ -54,7 +54,7 @@ namespace TodoList.Api.Controllers
         {
             var userId = User.GetUserId();
             var pagedList = await _taskRepository.GetTaskListByUserId(Guid.Parse(userId), taskListSearch);
-            var taskDtos = pagedList.Items.Select(x => new TaskDto()
+            var taskDtos = pagedList.Items.Select(x => new DVOTask()
             {
                 Status = x.Status,
                 Name = x.Name,
@@ -66,7 +66,7 @@ namespace TodoList.Api.Controllers
             });
 
             return Ok(
-                    new PagedList<TaskDto>(taskDtos.ToList(),
+                    new PagedList<DVOTask>(taskDtos.ToList(),
                         pagedList.MetaData.TotalCount,
                         pagedList.MetaData.CurrentPage,
                         pagedList.MetaData.PageSize)
@@ -79,7 +79,7 @@ namespace TodoList.Api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var task = await _taskRepository.Create(new Entities.Task()
+            var task = await _taskRepository.Create(new TaskEntity()
             {
                 Name = request.Name,
                 Priority = request.Priority.HasValue ? request.Priority.Value : Priority.Low,
@@ -110,7 +110,7 @@ namespace TodoList.Api.Controllers
 
             var taskResult = await _taskRepository.Update(taskFromDb);
 
-            return Ok(new TaskDto()
+            return Ok(new DVOTask()
             {
                 Name = taskResult.Name,
                 Status = taskResult.Status,
@@ -139,7 +139,7 @@ namespace TodoList.Api.Controllers
 
             var taskResult = await _taskRepository.Update(taskFromDb);
 
-            return Ok(new TaskDto()
+            return Ok(new DVOTask()
             {
                 Name = taskResult.Name,
                 Status = taskResult.Status,
@@ -158,7 +158,7 @@ namespace TodoList.Api.Controllers
         {
             var task = await _taskRepository.GetById(id);
             if (task == null) return NotFound($"{id} is not found");
-            return Ok(new TaskDto()
+            return Ok(new DVOTask()
             {
                 Name = task.Name,
                 Status = task.Status,
@@ -177,7 +177,7 @@ namespace TodoList.Api.Controllers
             if (task == null) return NotFound($"{id} is not found");
 
             await _taskRepository.Delete(task);
-            return Ok(new TaskDto()
+            return Ok(new DVOTask()
             {
                 Name = task.Name,
                 Status = task.Status,

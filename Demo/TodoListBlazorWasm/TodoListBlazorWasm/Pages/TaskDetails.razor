@@ -1,7 +1,9 @@
 ﻿@page "/taskDetails/{TaskId}"
+@using TodoData.DVO.Models;
+@using TodoData.DVO.Enums;
 @using TodoListBlazorWasm.Services;
-@using TodoList.Models;
 @using TodoListBlazorWasm.Components;
+@using TodoRepository.Services;
 
 @inject ITaskApiClient TaskApiClient;
 
@@ -42,7 +44,7 @@ else
     [Parameter]
     public string TaskId { set; get; }
 
-    private TaskDto Task { set; get; }
+    private DVOTask Task { set; get; }
 
     protected async override Task OnInitializedAsync()
     {

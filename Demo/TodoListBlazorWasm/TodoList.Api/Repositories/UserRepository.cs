@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TodoData.Entity.Base.Entities;
 using TodoList.Api.Data;
-using TodoList.Api.Entities;
 
 
 namespace TodoList.Api.Repositories

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TodoList.Models.Enums;
-using TodoList.Models.SeedWork;
+using TodoData.DVO.Enums;
+using TodoData.Entity.Base.Paging;
 
-namespace TodoList.Models
+namespace TodoData.DVO.Models
 {
     public class TaskListSearch : PagingParameters
     {
