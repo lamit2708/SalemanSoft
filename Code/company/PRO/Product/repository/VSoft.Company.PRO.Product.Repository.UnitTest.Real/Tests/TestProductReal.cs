@@ -1,4 +1,5 @@
-﻿using VSoft.Company.PRO.Product.Data.Entity.Models;
+﻿using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using VSoft.Company.PRO.Product.Data.Entity.Models;
 using VSoft.Company.PRO.Product.Repository.UnitTest.Bases;
 using VSoft.Company.PRO.Product.Repository.UnitTest.Real.Values.GroupA;
 
@@ -54,5 +55,25 @@ public class TestProductReal : TestMgmtEntities
     {
         
         await TestDeleteAsync(id);
+    }
+
+    [TestMethod]
+    // [DataRow("Đặng Thế Nhân1", "35049843957", "aaa@gmail.com")]
+    // [DataRow("Lê Vũ Lâm1", "02345332565", "abc@yahoo.com")]
+    [DataRow("Phần mềm tính tiền", "abc xyz", 20000,1)]
+    public async Task CreateWithKeywordAsync(string fullName, string description, double price,int quatity)
+    {
+        var e = new A01().GetCreateEntity();
+        e.Name = fullName;
+        e.Description = description;
+        e.Price = price;
+        e.Quatity = quatity;
+       
+
+        await RunTest("CreateWithKeywordAsync", async (r, l) =>
+        {
+            var res = r?.CreateWithKeyword(e);
+            LogEntity(res, l);
+        });
     }
 }

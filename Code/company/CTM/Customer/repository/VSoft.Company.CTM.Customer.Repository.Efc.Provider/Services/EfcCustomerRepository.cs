@@ -13,7 +13,14 @@ public class EfcCustomerRepository : EFcRepositoryEntityMgmtId<CustomerDbContext
     {
 
     }
-
+    //public async Task<MCustomerEntity?> CreateAsync(MCustomerEntity entity, string abc)
+    //{
+    //    if (DbContext == null) throw new Exception("_context is null");
+    //    if (Entities == null) throw new Exception("EntitySet is null");
+    //    await Entities.AddAsync(entity);
+    //    await DbContext.SaveChangesAsync();
+    //    return entity;
+    //}
     public string? GetFullName(long? id)
     {
         if (DbContext == null) throw new Exception("Context is null");

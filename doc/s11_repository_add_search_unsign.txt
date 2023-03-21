@@ -1,0 +1,14 @@
+1)Cấu trúc:
+Tầng Efc.Provider thừa kế từa Efc, Efc thừa kế từ Repository
+2)Trong tầng Efc.Provider:
++Thêm hàm xử lý GetByNameAsync, UpdateWithKeyword, CreateWithKeyword
++Thêm interface trong IProductRepository tầng Repository
+3)Khi thiếu reference gắn vào:
+<Reference Include="VegunSoft.Framework.Repository.Id.Efc">
+			<HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vegun-library-dnet\Framework\Repository\VegunSoft.Framework.Repository.Id.Efc.dll</HintPath>
+		</Reference>
+		<Reference Include="VegunSoft.Framework.Repository">
+			<HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vegun-library-dnet\Framework\Repository\VegunSoft.Framework.Repository.dll</HintPath>
+		</Reference>
+
+Trong Project UnitTest.Real
