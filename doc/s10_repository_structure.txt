@@ -1,0 +1,10 @@
+1)Project Repository
++Tầng Repository chứa Interface
++Tầng Efc: Interface khi cần gọi Entity Framework Core, tách code khỏi tầng repo,
+ kế thừa interface của tầng Repository
++Tầng Interface Efc kế thừa Repo và IEfcRepositoryEntityMgmtId
++Tầng Repository.Efc.Provider: Gọi lên Repository.Efc;
+
+
+2)Library của Repository:
++Id.Efc.Provider kế thừa Efc.Provider

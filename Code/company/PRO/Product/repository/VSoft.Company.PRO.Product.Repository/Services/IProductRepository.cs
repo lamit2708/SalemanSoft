@@ -10,4 +10,12 @@ public interface IProductRepository : IEfcRepositoryEntityMgmtId<ProductDbContex
     string? GetFullName(int? id);
 
     Task<string?> GetFullNameAsync(int? id);
+
+    Task<List<MProductEntity>> GetByNameAsync(string name);
+
+
+    MProductEntity? UpdateWithKeyword(MProductEntity entity);
+
+    MProductEntity? CreateWithKeyword(MProductEntity entity);
+
 }

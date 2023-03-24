@@ -29,4 +29,85 @@ public class EfcProductRepository : EFcRepositoryEntityMgmtId<ProductDbContext, 
         if (id == null) throw new Exception("id is null");
         return Entities.Where(x => x.Id == id).Select(x => x.Name ?? string.Empty).FirstOrDefaultAsync() ;
     }
+    public Task<List<MProductEntity>> GetByNameAsync(string name)
+    {
+        if (DbContext == null) throw new Exception("Context is null");
+        if (Entities == null) throw new Exception("Entities is null");
+        if (string.IsNullOrEmpty(name)) throw new Exception("The name is null");
+        return Entities.Where(x => (x.Keyword ?? string.Empty).ToLower().Contains(name.ToLower())).ToListAsync();
+    }
+    public MProductEntity? UpdateWithKeyword(MProductEntity entity)
+    {
+        entity.Keyword = CreateKeyword($"{entity.Name} {entity.Description}");
+        return base.Update(entity);
+
+    }
+    public MProductEntity? CreateWithKeyword(MProductEntity entity)
+    {
+        entity.Keyword = CreateKeyword($"{entity.Name} {entity.Description}");
+        return base.Create(entity);
+
+    }
+
+    private string? CreateKeyword(string v)
+    {
+        return RemoveSign4VietnameseString(v);
+    }
+    private static readonly string[] VietnameseSigns = new string[]
+
+   {
+
+        "aAeEoOuUiIdDyY",
+
+        "áàạảãâấầậẩẫăắằặẳẵ",
+
+        "ÁÀẠẢÃÂẤẦẬẨẪĂẮẰẶẲẴ",
+
+        "éèẹẻẽêếềệểễ",
+
+        "ÉÈẸẺẼÊẾỀỆỂỄ",
+
+        "óòọỏõôốồộổỗơớờợởỡ",
+
+        "ÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠ",
+
+        "úùụủũưứừựửữ",
+
+        "ÚÙỤỦŨƯỨỪỰỬỮ",
+
+        "íìịỉĩ",
+
+        "ÍÌỊỈĨ",
+
+        "đ",
+
+        "Đ",
+
+        "ýỳỵỷỹ",
+
+        "ÝỲỴỶỸ"
+
+   };
+
+
+
+    public static string RemoveSign4VietnameseString(string str)
+
+    {
+
+        //Tiến hành thay thế , lọc bỏ dấu cho chuỗi
+
+        for (int i = 1; i < VietnameseSigns.Length; i++)
+
+        {
+
+            for (int j = 0; j < VietnameseSigns[i].Length; j++)
+
+                str = str.Replace(VietnameseSigns[i][j], VietnameseSigns[0][i - 1]);
+
+        }
+
+        return str;
+
+    }
 }
