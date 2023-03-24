@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VSoft.Company.UI.TEA.Team.Data.DVO\VSoft.Company.UI.TEA.Team.Data.DVO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="VSoft.Company.TEA.Team.Business.Dto">
+      <HintPath>..\..\..\..\..\..\..\library\dotnet\company\TEA\Team\bus\VSoft.Company.TEA.Team.Business.Dto.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

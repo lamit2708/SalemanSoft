@@ -48,13 +48,13 @@
 			<HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vegun-library-dnet\Framework\Repository\VegunSoft.Framework.Repository.Model.dll</HintPath>
 		</Reference>
 		<Reference Include="VSoft.Company.TEA.Team.Data.Db">
-			<HintPath>..\..\..\..\..\..\..\library\dotnet\company\TEA\Team\data\VSoft.Company.TEA.Team.Data.Db.dll</HintPath>
+		  <HintPath>..\..\..\..\..\..\..\library\dotnet\company\TEA\Team\data\VSoft.Company.TEA.Team.Data.Db.dll</HintPath>
 		</Reference>
 		<Reference Include="VSoft.Company.TEA.Team.Data.Entity">
 			<HintPath>..\..\..\..\..\..\..\library\dotnet\company\TEA\Team\data\VSoft.Company.TEA.Team.Data.Entity.dll</HintPath>
 		</Reference>
 		<Reference Include="VSoft.Company.TEA.Team.Repository">
-			<HintPath>..\..\..\..\..\..\..\library\dotnet\company\TEA\Team\repository\VSoft.Company.TEA.Team.Repository.dll</HintPath>
+		  <HintPath>..\..\..\..\..\..\..\library\dotnet\company\TEA\Team\repository\VSoft.Company.TEA.Team.Repository.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 
