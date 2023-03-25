@@ -6,8 +6,8 @@ namespace VSoft.Company.UI.TEA.Team.Client.Main.Pages
 {
     public partial class PageTable
     {
-        private List<TeamDvo> Teams;
-        protected Confirmation DeleteConfirmation { set; get; }
+        private List<TeamDvo>? Teams;
+        protected Confirmation? DeleteConfirmation { set; get; }
         private int DeleteId { set; get; }
         public MetaData MetaData { get; set; } = new MetaData();
 

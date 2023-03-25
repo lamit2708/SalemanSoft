@@ -20,7 +20,7 @@
       <HintPath>..\..\..\..\..\..\..\..\..\Library\DNet\product\vegun-library-dnet\Framework\Paging\VegunSoft.Framework.Paging.Provider.dll</HintPath>
     </Reference>
     <Reference Include="VegunSoft.Framework.Ui.Component">
-      <HintPath>..\..\..\..\..\..\..\Blazor\Code\vgsoft-framework-blazor\Component\VegunSoft.Framework.Ui.Component\bin\Debug\net7.0\VegunSoft.Framework.Ui.Component.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Blazor\Code\vgsoft-framework-blazor\Component\VegunSoft.Framework.Ui.Component\bin\Debug\net6.0\VegunSoft.Framework.Ui.Component.dll</HintPath>
     </Reference>
     <Reference Include="VSoft.Company.UI.TEA.Team.Data.DVO">
       <HintPath>..\..\data\VSoft.Company.UI.TEA.Team.Data.DVO\bin\Debug\net6.0\VSoft.Company.UI.TEA.Team.Data.DVO.dll</HintPath>

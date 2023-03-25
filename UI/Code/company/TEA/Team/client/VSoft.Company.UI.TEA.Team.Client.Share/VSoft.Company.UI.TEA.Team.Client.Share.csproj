@@ -1,12 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
   </PropertyGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="VegunSoft.Framework.Ui.Component">
+      <HintPath>..\..\..\..\..\..\..\Blazor\Code\vgsoft-framework-blazor\Component\VegunSoft.Framework.Ui.Component\bin\Debug\net6.0\VegunSoft.Framework.Ui.Component.dll</HintPath>
+    </Reference>
   </ItemGroup>
   
 
