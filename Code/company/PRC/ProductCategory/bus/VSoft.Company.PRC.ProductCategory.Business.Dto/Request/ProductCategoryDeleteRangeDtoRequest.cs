@@ -2,7 +2,7 @@
 
 namespace VSoft.Company.PRC.ProductCategory.Business.Dto.Request
 {
-    public class ProductCategoryDeleteRangeDtoRequest : MDtoRequestDeleteRange<long>
+    public class ProductCategoryDeleteRangeDtoRequest : MDtoRequestDeleteRange<int>
     {
 
     }

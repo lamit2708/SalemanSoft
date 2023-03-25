@@ -7,17 +7,17 @@ namespace VSoft.Company.PRC.ProductCategory.Business.Services;
 
 public interface IProductCategoryMgmtBus
 {
-    MDtoResponseString GetFullName(MDtoRequestFindByLong request);
+    MDtoResponseString GetFullName(MDtoRequestFindByInt request);
 
-    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request);
+    Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request);
 
-    ProductCategoryFindDtoResponse Find(MDtoRequestFindByLong request);
+    ProductCategoryFindDtoResponse Find(MDtoRequestFindByInt request);
 
-    Task<ProductCategoryFindDtoResponse> FindAsync(MDtoRequestFindByLong request);
+    Task<ProductCategoryFindDtoResponse> FindAsync(MDtoRequestFindByInt request);
 
-    ProductCategoryFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request);
+    ProductCategoryFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request);
 
-    Task<ProductCategoryFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request);
+    Task<ProductCategoryFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request);
 
     ProductCategoryInsertDtoResponse Create(ProductCategoryInsertDtoRequest request);
 

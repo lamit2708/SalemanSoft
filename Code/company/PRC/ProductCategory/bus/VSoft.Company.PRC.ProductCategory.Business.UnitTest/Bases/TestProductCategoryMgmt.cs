@@ -33,7 +33,7 @@ namespace VSoft.Company.PRC.ProductCategory.Business.UnitTest.Bases
         }
 
 
-        protected async Task TestGetFullNameByIdAsync(MDtoRequestFindByLong dto)
+        protected async Task TestGetFullNameByIdAsync(MDtoRequestFindByInt dto)
         {
             await RunTest("TestGetByIdAsync", async (log) =>
             {
@@ -45,7 +45,7 @@ namespace VSoft.Company.PRC.ProductCategory.Business.UnitTest.Bases
         }
 
 
-        protected async Task TestFindAsync(MDtoRequestFindByLong request)
+        protected async Task TestFindAsync(MDtoRequestFindByInt request)
         {
             await RunTest("TestFindAsync", async (log) =>
             {
@@ -57,8 +57,9 @@ namespace VSoft.Company.PRC.ProductCategory.Business.UnitTest.Bases
             });
 
         }
+        
 
-        protected async Task TestFindRangeAsync(MDtoRequestFindRangeByLongs request)
+        protected async Task TestFindRangeAsync(MDtoRequestFindRangeByInts request)
         {
             await RunTest("TestFindRangeAsync", async (log) =>
             {

@@ -89,7 +89,7 @@ Theo cấu trúc tương tự;
 +Chạy UnitTest cho các hàm create, update, delete
 +Kiểm tra với table trong database
 
-8) Làm việc với Business
+8) Làm việc với Business: Convert Entity qua Dto
 +Mở VSoft.Company.USR.User.Business.Dto>UserDto.cs
 +Copy từ VSoft.Company.USR.User.Data.Entity>MUserEntity.cs => Lấy các thuộc tính của Entity, chép vào UserDto
 +Chỉnh lại code trong VSoft.Company.USR.User.Business.Dto.Extension> UserDtoMethods.cs, UserEntityMethods.cs

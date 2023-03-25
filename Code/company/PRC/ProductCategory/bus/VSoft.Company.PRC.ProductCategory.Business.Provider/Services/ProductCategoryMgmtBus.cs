@@ -36,54 +36,54 @@ public class ProductCategoryMgmtBus : BusinessRepositoryService<ProductCategoryD
 
     }
 
-    public MDtoResponseString GetFullName(MDtoRequestFindByLong request)
+    public MDtoResponseString GetFullName(MDtoRequestFindByInt request)
     {
-        return GetValue<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return GetValue<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullName), request, "email",
             (id) => Repository?.GetFullName(id)
         );
     }
 
-    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByLong request)
+    public async Task<MDtoResponseString> GetFullNameAsync(MDtoRequestFindByInt request)
     {
-        return await GetValueAsync<MDtoRequestFindByLong, MDtoResponseString, long, string>
+        return await GetValueAsync<MDtoRequestFindByInt, MDtoResponseString, int, string>
         (
             nameof(GetFullNameAsync), request, "email",
             async (id) => await (Repository?.GetFullNameAsync(id) ?? Task.FromResult<string?>(null))
         );
     }
 
-    public ProductCategoryFindDtoResponse Find(MDtoRequestFindByLong request)
+    public ProductCategoryFindDtoResponse Find(MDtoRequestFindByInt request)
     {
-        return Find<MDtoRequestFindByLong, ProductCategoryFindDtoResponse, long>
+        return Find<MDtoRequestFindByInt, ProductCategoryFindDtoResponse, int>
         (
             request,
             (id) => Repository?.GetById(id)?.GetDto()
         );
     }
 
-    public async Task<ProductCategoryFindDtoResponse> FindAsync(MDtoRequestFindByLong request)
+    public async Task<ProductCategoryFindDtoResponse> FindAsync(MDtoRequestFindByInt request)
     {
-        return await FindAsync<MDtoRequestFindByLong, ProductCategoryFindDtoResponse, long>
+        return await FindAsync<MDtoRequestFindByInt, ProductCategoryFindDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdAsync(id) ?? Task.FromResult<MProductCategoryEntity?>(null)))?.GetDto()
         );
     }
 
-    public ProductCategoryFindRangeDtoResponse FindRange(MDtoRequestFindRangeByLongs request)
+    public ProductCategoryFindRangeDtoResponse FindRange(MDtoRequestFindRangeByInts request)
     {
-        return FindRange<MDtoRequestFindRangeByLongs, ProductCategoryFindRangeDtoResponse, long>
+        return FindRange<MDtoRequestFindRangeByInts, ProductCategoryFindRangeDtoResponse, int>
         (
             request,
             (id) => Repository?.GetByIds(id)?.Select(e => e.GetDto()).ToArray()
         );
     }
 
-    public async Task<ProductCategoryFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByLongs request)
+    public async Task<ProductCategoryFindRangeDtoResponse> FindRangeAsync(MDtoRequestFindRangeByInts request)
     {
-        return await FindRangeAsync<MDtoRequestFindRangeByLongs, ProductCategoryFindRangeDtoResponse, long>
+        return await FindRangeAsync<MDtoRequestFindRangeByInts, ProductCategoryFindRangeDtoResponse, int>
         (
             request,
             async (id) => (await (Repository?.GetByIdsAsync(id) ?? Task.FromResult<IEnumerable<MProductCategoryEntity>?>(null)))?.Select(e => e.GetDto()).ToArray()
@@ -201,7 +201,7 @@ public class ProductCategoryMgmtBus : BusinessRepositoryService<ProductCategoryD
 
     public ProductCategoryDeleteDtoResponse Delete(ProductCategoryDeleteDtoRequest request)
     {
-        return Delete<ProductCategoryDeleteDtoRequest, ProductCategoryDeleteDtoResponse, long>
+        return Delete<ProductCategoryDeleteDtoRequest, ProductCategoryDeleteDtoResponse, int>
         (
              request,
              (id) =>
@@ -215,7 +215,7 @@ public class ProductCategoryMgmtBus : BusinessRepositoryService<ProductCategoryD
 
     public async Task<ProductCategoryDeleteDtoResponse> DeleteAsync(ProductCategoryDeleteDtoRequest request)
     {
-        return await DeleteAsync<ProductCategoryDeleteDtoRequest, ProductCategoryDeleteDtoResponse, long>
+        return await DeleteAsync<ProductCategoryDeleteDtoRequest, ProductCategoryDeleteDtoResponse, int>
         (
              request,
              async (id) =>
@@ -229,7 +229,7 @@ public class ProductCategoryMgmtBus : BusinessRepositoryService<ProductCategoryD
 
     public ProductCategoryDeleteRangeDtoResponse DeleteRange(ProductCategoryDeleteRangeDtoRequest request)
     {
-        return DeleteRange<ProductCategoryDeleteRangeDtoRequest, ProductCategoryDeleteRangeDtoResponse, long>
+        return DeleteRange<ProductCategoryDeleteRangeDtoRequest, ProductCategoryDeleteRangeDtoResponse, int>
         (
              request,
              (ids) =>
@@ -243,7 +243,7 @@ public class ProductCategoryMgmtBus : BusinessRepositoryService<ProductCategoryD
 
     public async Task<ProductCategoryDeleteRangeDtoResponse> DeleteRangeAsync(ProductCategoryDeleteRangeDtoRequest request)
     {
-        return await DeleteRangeAsync<ProductCategoryDeleteRangeDtoRequest, ProductCategoryDeleteRangeDtoResponse, long>
+        return await DeleteRangeAsync<ProductCategoryDeleteRangeDtoRequest, ProductCategoryDeleteRangeDtoResponse, int>
         (
              request,
              async (ids) =>

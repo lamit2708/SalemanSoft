@@ -9,37 +9,37 @@ namespace VSoft.Company.PRC.ProductCategory.Business.UnitTest.Test.Tests
     public class MgmtReal : TestProductCategoryMgmt
     {
         [TestMethod]
-        [DataRow(63491)]
-        [DataRow(63492)]
-        [DataRow(63493)]
-        public async Task FindAsync(long id)
+        [DataRow(1)]
+        [DataRow(2)]
+        [DataRow(3)]
+        public async Task FindAsync(int id)
         {
-            await TestFindAsync(new MDtoRequestFindByLong()
+            await TestFindAsync(new MDtoRequestFindByInt()
             {
                 Id = id,
             });
         }
 
         [TestMethod]
-        [DataRow(63494, 63495, 63496)]
-        public async Task FindRangeAsync(long id1, long id2, long id3)
+        [DataRow(1, 2, 3)]
+        public async Task FindRangeAsync(int id1, int id2, int id3)
         {
-            await TestFindRangeAsync(new MDtoRequestFindRangeByLongs()
+            await TestFindRangeAsync(new MDtoRequestFindRangeByInts()
             {
                 Ids = new[] { id1, id2, id3 },
             });
         }
 
+
         [TestMethod]
-        [DataRow("Đặng Thế Nhân", "3504984957", "aaa@gmail.com")]
-        [DataRow("Lê Vũ Lâm", "0234532565", "abc@yahoo.com")]
-        [DataRow("Nguyễn Tấn Phát", "54235235236", "xyz@gmail.com")]
-        public async Task TestCreate(string fullName, string phone, string email)
+        [DataRow("Phần mềm")]
+        [DataRow("Dự án web")]
+        [DataRow("Dự án mobile")]
+        public async Task TestCreate(string name)
         {
             var e = new ProductCategoryDto();
-            e.Name = fullName;
-            e.Phone = phone;
-            e.Email = email;
+            e.Name = name;
+           
             await TestCreateAsync(new ProductCategoryInsertDtoRequest()
             {
                 Data = e
@@ -61,10 +61,10 @@ namespace VSoft.Company.PRC.ProductCategory.Business.UnitTest.Test.Tests
         }
 
         [TestMethod]
-        [DataRow(1)]
-        [DataRow(2)]
-        [DataRow(3)]
-        public async Task DeleteAsync(long id)
+        [DataRow(13)]
+        [DataRow(14)]
+        [DataRow(15)]
+        public async Task DeleteAsync(int id)
         {
             await TestDeleteAsync(new ProductCategoryDeleteDtoRequest()
             {

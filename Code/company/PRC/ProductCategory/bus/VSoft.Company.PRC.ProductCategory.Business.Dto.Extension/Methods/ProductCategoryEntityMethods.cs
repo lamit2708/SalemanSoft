@@ -11,13 +11,7 @@ public static class ProductCategoryEntityMethods
         {
             Id = src.Id,
             Name = src.Name,
-            Phone = src.Phone,
-            Email = src.Email,
-            Address = src.Address,
-            Gender = src.Gender,
-            PriorityId = src.PriorityId,
-            ProductCategoryInfoId = src.ProductCategoryInfoId,
-            IsBought = src.IsBought,
+           
         };
     }
 }
