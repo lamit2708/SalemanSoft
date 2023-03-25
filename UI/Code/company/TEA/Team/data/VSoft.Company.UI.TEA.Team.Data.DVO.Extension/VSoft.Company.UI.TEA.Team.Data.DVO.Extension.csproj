@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,8 +9,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="VegunSoft.Framework.Business.Dto">
+      <HintPath>..\..\..\..\..\..\..\..\..\Library\DNet\product\vegun-library-dnet\Framework\Business\VegunSoft.Framework.Business.Dto.dll</HintPath>
+    </Reference>
     <Reference Include="VSoft.Company.TEA.Team.Business.Dto">
-      <HintPath>..\..\..\..\..\..\..\library\dotnet\company\TEA\Team\bus\VSoft.Company.TEA.Team.Business.Dto.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\library\dotnet\company\TEA\Team\bus\VSoft.Company.TEA.Team.Business.Dto.dll</HintPath>
     </Reference>
   </ItemGroup>
 
