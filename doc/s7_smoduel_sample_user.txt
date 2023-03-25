@@ -7,45 +7,34 @@
 cd D:\workspace\SalemanSoft\git\Code\company\USR\User\
 --Chạy câu lệnh đổi tên
 Get-ChildItem -Recurse -Filter *.CTM.Customer* | Rename-Item -NewName { $_.name -replace '.CTM.Customer', '.USR.User'} -verbose
-Ex: Get-ChildItem -Recurse -Filter *.CTM.Customer* | Rename-Item -NewName { $_.name -replace '.CTM.Customer', '.PCR.ProductCategory'} -verbose
+
 --Đổi tên file
 Get-ChildItem -Recurse -Filter *Customer* | Rename-Item -NewName { $_.name -replace 'Customer', 'User'} -verbose
-Ex: Get-ChildItem -Recurse -Filter *Customer* | Rename-Item -NewName { $_.name -replace 'Customer', 'ProductCategory'} -verbose
-
 
 --Đổi tên trong nội dung của file code bằng visual studio code
 +Mở visual studio code
 +Mở thư mục D:\workspace\SalemanSoft\git\Code\company\USR\User
-Ex: +Mở thư mục D:\workspace\SalemanSoft\git\Code\company\PRC\ProductCategory
-
 +Chọn phân biệt hoa thường
 +Thay CTM.Customer> USR.User 
-+Thay Customer>User  [ProductCategory]
++Thay Customer>User
 +Replace all
-+Thay customer>user  [productCategory]
++Thay customer>user
 +Replace all
 
 
 3)Làm việc tầng DATA
 +Vào Data>D:\workspace\SalemanSoft\git\Code\company\USR\User\data
-+Chạy Visual studio, build success to check;
 
-Tìm câu lệnh trong Project Migrate.Real\cmds\Scaffold.txt
-Câu lệnh đọc database để biến thành entity cho bảng user
++Chạy câu lệnh đọc database để biến thành entity cho bảng user
 Scaffold-DbContext 'Data Source=localhost;Initial Catalog=crmdb;User ID=root;Password=root' MySql.EntityFrameworkCore -Tables User
-Scaffold-DbContext 'Data Source=localhost;Initial Catalog=crmdb;User ID=root;Password=root' MySql.EntityFrameworkCore -Tables ProductCategory
 
 +Trong visual studio IDE, chọn Vsoft.Comapny.USR.User.Data.Migrate.Real
 Set as startup project
 
 +Mở package manager Console> Chọn default project: Vsoft.Company.USR.User.Data.Migrate.Real
 
-+Run câu lệnh:
-Scaffold-DbContext 'Data Source=localhost;Initial Catalog=crmdb;User ID=root;Password=root' MySql.EntityFrameworkCore -Tables User
-Scaffold-DbContext 'Data Source=localhost;Initial Catalog=crmdb;User ID=root;Password=root' MySql.EntityFrameworkCore -Tables ProductCategory
-
 4)Code sinh ra bảng User trong Vsoft.Company.USR.User.Data.Migrate.Real 
-+Copy thuộc tính User vào VSoft.Company.USR.User.Data.Entity>MUserEntityBasic.cs
++Copy thuộc tính User vào VSoft.Company.USR.User.Data.Entity>MUserEntity.cs
 +Nếu id kiểu long hay int thì sửa lớp kế thừa IIdEntity<int> hay IIdEntity<long>
 
 5)Copy code từ Vsoft.Company.USR.User.Data.Migrate.Real>CrmDbContext.cs
@@ -79,13 +68,12 @@ Theo cấu trúc tương tự;
     }
 	
 6)Delete migration folder trong VSoft.Company.USR.User.Data.Migrate.Real
-+Delete migration folder, delete file code vừa được sinh ra (CrmDbContext.cs,MUserEntity.cs )
++Delete migration folder
 +Tạo lại migration
-+Mở package manager Console> add-migration Init 
++Mở package manager Console> Run add-migration Init 
 
 7)Làm việc tầng Repository
-+Add reference:
-+Build và sửa lỗi cho các field: Replace all ', long' into ', int'
++Build và sửa lỗi cho các field
 +Chạy UnitTest cho các hàm create, update, delete
 +Kiểm tra với table trong database
 
