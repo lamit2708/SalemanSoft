@@ -6,7 +6,6 @@ using TodoData.DVO.Models;
 using TodoData.Entity.Base.Paging;
 using TodoListBlazorWasm.Components;
 using TodoListBlazorWasm.Pages.Components;
-using TodoListBlazorWasm.Services;
 using TodoListBlazorWasm.Shared;
 using TodoRepository.Services;
 

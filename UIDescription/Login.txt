@@ -1,8 +1,0 @@
-1. Input:
-	+ Username (Text Field)
-	+ Password (Text Field)
-	+ Remember (Checkbox)
-	+ Login (Button)
-2. Chức năng:
-	+ Đăng nhập bằng tài khoản
-	

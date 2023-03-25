@@ -8,10 +8,10 @@ namespace VSoft.Company.TEA.Team.Client.UnitTest.Test.Values.GroupA
         protected override TeamDto Dto => new TeamDto()
         {
            
-            FullName = "Đặng Thế Nhân",
+            //FullName = "Đặng Thế Nhân",
           
-            CreatedDate = DateTime.Now,
-            UpdatedDate = DateTime.Now,
+            //CreatedDate = DateTime.Now,
+            //UpdatedDate = DateTime.Now,
 
         };
     }
