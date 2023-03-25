@@ -1,0 +1,14 @@
+
+1)Vào module cụ thể
+Mở Power shell chạy để module cần thay đổi
+
+Get-ChildItem -Recurse -Filter *Customer* | Rename-Item -NewName { $_.name -replace 'Customer', 'ProductCategory'} -verbose
+Get-ChildItem -Recurse -Filter *CTM* | Rename-Item -NewName { $_.name -replace 'CTM', 'PRC'} -verbose
+
+2)Mở Visual Studio Code, open folder PRC
+Search và replace (Chọn match case):
+Customer => ProductCategory
+CTM=>PRC
+Chú ý chọn Match case
+Replace tên hoa: Customer
+sau đó tên thường: customer (optional)
