@@ -1,0 +1,28 @@
+1) Tham khảo:
+https://dichvudanhvanban.com/dich-vu-nhan-viet-phan-mem-app-ung-dung-web-theo-yeu-cau-gia-cuc-re-226?gclid=CjwKCAjw_YShBhAiEiwAMomsEL23Abz1SWb0OGZqDkNoDOGabfq9E4U1g87n3E4IXApQvwsPHeRd6RoCR2wQAvD_BwE
+
+2)Danh mục sản phẩm:
+    [DataRow(1, "Thiết kế ứng dụng bán hàng")] //20tr - 100tr
+    [DataRow(2, "Thiết kế website theo yêu cầu")] //15tr -100tr
+    [DataRow(3, "Thiết kế ứng dụng mobile")] //20tr - 100tr
+    [DataRow(4, "Xây dựng hệ thống ERP")] //20tr - 200tr
+    [DataRow(5, "Xây dựng hệ thống CRM")] //20tr - 100tr
+
+
+3) Dữ liệu demo
+    [DataRow(1, "Thiết kế ứng dụng bán hàng")] // 
+    [DataRow(2, "Thiết kế website theo yêu cầu")]
+    [DataRow(3, "Thiết kế ứng dụng mobile")]
+    [DataRow(4, "Xây dựng hệ thống ERP")] //Xây dựng hệ thống quản lý
+    [DataRow(5, "Xây dựng hệ thống CRM")] //Xây dựng hệ thống quản lý
+    //[DataRow(5, "Xây dựng hệ thống quản lý phòng trọ")] //Xây dựng hệ thống quản lý
+    //[DataRow(5, "Xây dựng hệ thống quản lý trung tâm ngoại ngữ")] //Xây dựng hệ thống quản lý
+    //[DataRow(5, "Xây dựng hệ thống quản lý quán cà phê")] //Xây dựng hệ thống quản lý
+    //[DataRow(5, "Xây dựng hệ thống quản lý nhà hàng")] //Xây dựng hệ thống quản lý
+    //[DataRow(5, "Nâng cấp hệ thống CRM")] //Nâng cấp hệ thống
+    //[DataRow(5, "Nâng cấp hệ thống ERP")] //Nâng cấp hệ thống
+    //[DataRow(5, "Nâng cấp hệ thống bán hàng")] //Nâng cấp hệ thống
+    //[DataRow(5, "Nâng cấp hệ thống mobile")] //Nâng cấp hệ thống
+    //[DataRow(1, "Website bán quần áo")] // Thiết kế ứng dụng bán hàng
+    //[DataRow(1, "Website cửa hàng điện tử")] // Thiết ứng dụng bán hàng
+    //[DataRow(1, "Thiết kế ứng dụng bán hàng theo yêu cầu")] // Thiết ứng dụng bán hàng
