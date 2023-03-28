@@ -11,18 +11,23 @@ https://dichvudanhvanban.com/dich-vu-nhan-viet-phan-mem-app-ung-dung-web-theo-ye
 
 3) Dữ liệu demo
     [DataRow(1, "Thiết kế ứng dụng bán hàng")] // 
-    [DataRow(2, "Thiết kế website theo yêu cầu")]
+
     [DataRow(3, "Thiết kế ứng dụng mobile")]
-    [DataRow(4, "Xây dựng hệ thống quản lý ERP")] //Xây dựng hệ thống quản lý
-    [DataRow(5, "Xây dựng hệ thống CRM")] //Xây dựng hệ thống quản lý
+    [DataRow(4, "Xây dựng hệ thống quản lý nhân viên, chấm công, quét QR")] //Xây dựng hệ thống quản lý
+    [DataRow(5, "Xây dựng hệ thống chăm sóc khách hàng")] //Xây dựng hệ thống quản lý
     //[DataRow(5, "Xây dựng hệ thống quản lý phòng trọ")] //Xây dựng hệ thống quản lý
     //[DataRow(5, "Xây dựng hệ thống quản lý trung tâm ngoại ngữ")] //Xây dựng hệ thống quản lý
     //[DataRow(5, "Xây dựng hệ thống quản lý quán cà phê")] //Xây dựng hệ thống quản lý
     //[DataRow(5, "Xây dựng hệ thống quản lý nhà hàng")] //Xây dựng hệ thống quản lý
     //[DataRow(5, "Nâng cấp hệ thống CRM")] //Nâng cấp hệ thống
     //[DataRow(5, "Nâng cấp hệ thống ERP")] //Nâng cấp hệ thống
-    //[DataRow(5, "Nâng cấp hệ thống bán hàng")] //Nâng cấp hệ thống
-    //[DataRow(5, "Nâng cấp hệ thống mobile")] //Nâng cấp hệ thống
-    //[DataRow(1, "Website bán đồ chơi trẻ em")] // Thiết kế ứng dụng bán hàng
-    //[DataRow(1, "Website cửa hàng điện tử")] // Thiết ứng dụng bán hàng
-    //[DataRow(1, "Website bán quần áo")] // Thiết ứng dụng bán hàng
+    //[DataRow(5, "Nâng cấp hệ thống thương mại điện tử")] //Nâng cấp hệ thống
+//[DataRow(1, "Website Bất động sản")] // Thiết kế website
+//[DataRow(1, "Website Forum, tin tức")] // Thiết kế website
+    //[DataRow(1, "Website thương mại điện tử")] // Thiết kế website
+    [DataRow(2, "Thiết kế website theo yêu cầu")]
+//[DataRow(1, "Website giới thiệu doanh nghiệp")] // Thiết kế website
+ //[DataRow(1, "App ví điện tử")] // Thiết kế ứng dụng mobile
+//[DataRow(1, "App đặt vé du lịch")] // Thiết kế ứng dụng mobile
+ //[DataRow(1, "Dịch vụ SEO")] // Dịch vụ marketing
+ //[DataRow(1, "Marketing online, chạy quảng cáo Facebook, Google Adwords")] // Dịch vụ marketing
