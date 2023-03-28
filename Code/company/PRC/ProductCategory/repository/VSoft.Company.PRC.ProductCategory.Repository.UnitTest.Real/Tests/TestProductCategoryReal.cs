@@ -49,9 +49,21 @@ public class TestProductCategoryReal : TestMgmtEntities
     //}
 
     [TestMethod]
-    [DataRow(1, "Dự án phần mềm 1")]
-    [DataRow(2, "Dự án web blazor 1")]
-    [DataRow(3, "Dự án mobile 1")]
+    [DataRow(1, "Thiết kế phần mềm")] // 
+    [DataRow(2, "Thiết kế website")]
+    [DataRow(3, "Thiết kế ứng dụng mobile")]
+    [DataRow(4, "Xây dựng hệ thống quản lý")] 
+    //[DataRow(5, "Xây dựng hệ thống quản lý phòng trọ")] //Xây dựng hệ thống quản lý
+    //[DataRow(5, "Xây dựng hệ thống quản lý trung tâm ngoại ngữ")] //Xây dựng hệ thống quản lý
+    //[DataRow(5, "Xây dựng hệ thống quản lý quán cà phê")] //Xây dựng hệ thống quản lý
+    //[DataRow(5, "Xây dựng hệ thống quản lý nhà hàng")] //Xây dựng hệ thống quản lý
+    //[DataRow(5, "Nâng cấp hệ thống CRM")] //Nâng cấp hệ thống
+    //[DataRow(5, "Nâng cấp hệ thống ERP")] //Nâng cấp hệ thống
+    //[DataRow(5, "Nâng cấp hệ thống bán hàng")] //Nâng cấp hệ thống
+    //[DataRow(5, "Nâng cấp hệ thống mobile")] //Nâng cấp hệ thống
+    //[DataRow(1, "Website bán quần áo")] // Thiết kế ứng dụng bán hàng
+    //[DataRow(1, "Website cửa hàng điện tử")] // Thiết ứng dụng bán hàng
+    //[DataRow(1, "Thiết kế ứng dụng bán hàng theo yêu cầu")] // Thiết ứng dụng bán hàng
     public async Task UpdateAsync(int id, string name)
     {
         await TestUpdateAsync(new MProductCategoryEntity()
@@ -86,7 +98,7 @@ public class TestProductCategoryReal : TestMgmtEntities
     //}
 
     [TestMethod]
-    [DataRow(1)]
+    [DataRow(6)]
     public async Task DeleteAsync(int id)
     {
 
