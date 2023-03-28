@@ -16,11 +16,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VSoft.Company.UI.TEA.Team.Client.Main.Code\VSoft.Company.UI.TEA.Team.Client.Main.Code.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="VegunSoft.Framework.Paging.Provider">
       <HintPath>..\..\..\..\..\..\..\..\..\Library\DNet\product\vegun-library-dnet\Framework\Paging\VegunSoft.Framework.Paging.Provider.dll</HintPath>
     </Reference>
     <Reference Include="VegunSoft.Framework.Ui.Component">
-      <HintPath>..\..\..\..\..\..\..\Blazor\Code\vgsoft-framework-blazor\Component\VegunSoft.Framework.Ui.Component\bin\Debug\net6.0\VegunSoft.Framework.Ui.Component.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\Library\DNet\Product\vgsoft-library-dnet-blazor\Component\VegunSoft.Framework.Ui.Component.dll</HintPath>
     </Reference>
     <Reference Include="VSoft.Company.UI.TEA.Team.Data.DVO">
       <HintPath>..\..\data\VSoft.Company.UI.TEA.Team.Data.DVO\bin\Debug\net6.0\VSoft.Company.UI.TEA.Team.Data.DVO.dll</HintPath>

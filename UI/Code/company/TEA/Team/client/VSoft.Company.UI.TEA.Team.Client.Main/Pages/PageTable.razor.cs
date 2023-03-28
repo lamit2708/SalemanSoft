@@ -13,7 +13,7 @@ namespace VSoft.Company.UI.TEA.Team.Client.Main.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            
+            await base.OnInitializedAsync();
         }
 
         public async Task SearchTask(string keyword)
