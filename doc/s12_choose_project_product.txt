@@ -13,7 +13,7 @@ https://dichvudanhvanban.com/dich-vu-nhan-viet-phan-mem-app-ung-dung-web-theo-ye
     [DataRow(1, "Thiết kế ứng dụng bán hàng")] // 
     [DataRow(2, "Thiết kế website theo yêu cầu")]
     [DataRow(3, "Thiết kế ứng dụng mobile")]
-    [DataRow(4, "Xây dựng hệ thống ERP")] //Xây dựng hệ thống quản lý
+    [DataRow(4, "Xây dựng hệ thống quản lý ERP")] //Xây dựng hệ thống quản lý
     [DataRow(5, "Xây dựng hệ thống CRM")] //Xây dựng hệ thống quản lý
     //[DataRow(5, "Xây dựng hệ thống quản lý phòng trọ")] //Xây dựng hệ thống quản lý
     //[DataRow(5, "Xây dựng hệ thống quản lý trung tâm ngoại ngữ")] //Xây dựng hệ thống quản lý
@@ -23,6 +23,6 @@ https://dichvudanhvanban.com/dich-vu-nhan-viet-phan-mem-app-ung-dung-web-theo-ye
     //[DataRow(5, "Nâng cấp hệ thống ERP")] //Nâng cấp hệ thống
     //[DataRow(5, "Nâng cấp hệ thống bán hàng")] //Nâng cấp hệ thống
     //[DataRow(5, "Nâng cấp hệ thống mobile")] //Nâng cấp hệ thống
-    //[DataRow(1, "Website bán quần áo")] // Thiết kế ứng dụng bán hàng
+    //[DataRow(1, "Website bán đồ chơi trẻ em")] // Thiết kế ứng dụng bán hàng
     //[DataRow(1, "Website cửa hàng điện tử")] // Thiết ứng dụng bán hàng
-    //[DataRow(1, "Thiết kế ứng dụng bán hàng theo yêu cầu")] // Thiết ứng dụng bán hàng
+    //[DataRow(1, "Website bán quần áo")] // Thiết ứng dụng bán hàng
