@@ -7,7 +7,12 @@ https://dichvudanhvanban.com/dich-vu-nhan-viet-phan-mem-app-ung-dung-web-theo-ye
     [DataRow(3, "Thiết kế ứng dụng mobile")] //20tr - 100tr
     [DataRow(4, "Xây dựng hệ thống ERP")] //20tr - 200tr
     [DataRow(5, "Xây dựng hệ thống CRM")] //20tr - 100tr
-
+==========
+  [DataRow(1, "Thiết kế phần mềm")] // 
+    [DataRow(2, "Thiết kế website")]
+    [DataRow(3, "Thiết kế ứng dụng mobile")]
+    [DataRow(4, "Xây dựng hệ thống quản lý")] 
+Dịch vụ Marketing
 
 3) Dữ liệu demo
     [DataRow(1, "Thiết kế ứng dụng bán hàng")] // 

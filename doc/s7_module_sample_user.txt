@@ -90,3 +90,26 @@ Theo cấu trúc tương tự;
 Build
 Chọn VSoft.Company.USR.User.Api.UnitTest.Real> Set Startup Project;
 Run
+
+10) Làm việc tầng Client
++Chọn Client.UnitTest.Real, Set Start Up Project
++Double click vào Project UnitTest, copy reference vào UnitTest.Real
+ <ItemGroup>
+    <Reference Include="VegunSoft.Framework.Api.DtoClient.UnitTest">
+      <HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vgsoft-library-dnet-common\ApiDtoClient\VegunSoft.Framework.Api.DtoClient.UnitTest.dll</HintPath>
+    </Reference>
+    <Reference Include="VegunSoft.Framework.Business.Dto">
+      <HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vgsoft-library-dnet-common\Business\VegunSoft.Framework.Business.Dto.dll</HintPath>
+    </Reference>
+    <Reference Include="VegunSoft.Framework.Business.UnitTest">
+      <HintPath>..\..\..\..\..\..\..\..\Library\DNet\Product\vgsoft-library-dnet-common\Business\VegunSoft.Framework.Business.UnitTest.dll</HintPath>
+    </Reference>
+    <Reference Include="VSoft.Company.PRC.ProductCategory.Business.Dto">
+      <HintPath>..\..\..\..\..\..\..\SaleManSoftAPILib\dotnet\company\CTM\ProductCategory\bus\VSoft.Company.PRC.ProductCategory.Business.Dto.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
++Copy Mẫu MgmtTest.cs vào file UnitTest1.cs
++Add inherit, add reference, add using;
++Run API
++Run Client, call API to test
