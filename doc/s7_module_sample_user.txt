@@ -1,6 +1,9 @@
 1)Sao chép module mẫu
 -copy CTM\Customer --> USR\User
 -Xóa tất cả thư mục bin và obj bên trong
+-Mở folder lên D:\workspace\SalemanSoft\SaleManSoft\Code\company\PRO\Product
+Search obj và bin
+Delete all
 2)Rename 
 -Rename Tên thư mục theo cấu trúc (Thư mục).(File)
 --Mở powershell, nhảy đến thư mục của module mới:
