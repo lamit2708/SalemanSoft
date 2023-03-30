@@ -1,0 +1,5 @@
+1)Change column in Entity
+Set Startup project is UnitTest.Real
+Build
+Package Manager Console
+add-migration change_your_new_name

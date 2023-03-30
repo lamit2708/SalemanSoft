@@ -2,19 +2,19 @@
 https://dichvudanhvanban.com/dich-vu-nhan-viet-phan-mem-app-ung-dung-web-theo-yeu-cau-gia-cuc-re-226?gclid=CjwKCAjw_YShBhAiEiwAMomsEL23Abz1SWb0OGZqDkNoDOGabfq9E4U1g87n3E4IXApQvwsPHeRd6RoCR2wQAvD_BwE
 
 2)Danh mục sản phẩm:
++Xây dựng hệ thống quản lý
++Thiết kế website
++Thiết kế ứng dụng mobile
++Dịch vụ Marketing Online
+
     [DataRow(1, "Thiết kế ứng dụng bán hàng")] //20tr - 100tr
     [DataRow(2, "Thiết kế website theo yêu cầu")] //15tr -100tr
     [DataRow(3, "Thiết kế ứng dụng mobile")] //20tr - 100tr
     [DataRow(4, "Xây dựng hệ thống ERP")] //20tr - 200tr
     [DataRow(5, "Xây dựng hệ thống CRM")] //20tr - 100tr
-==========
-  [DataRow(1, "Thiết kế phần mềm")] // 
-    [DataRow(2, "Thiết kế website")]
-    [DataRow(3, "Thiết kế ứng dụng mobile")]
-    [DataRow(4, "Xây dựng hệ thống quản lý")] 
-Dịch vụ Marketing
 
-3) Dữ liệu demo
+3) Sản Phẩm
+
     [DataRow(1, "Thiết kế ứng dụng bán hàng")] // 
 
     [DataRow(3, "Thiết kế ứng dụng mobile")]

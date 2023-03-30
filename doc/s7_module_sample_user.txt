@@ -17,12 +17,11 @@ Get-ChildItem -Recurse -Filter *Customer* | Rename-Item -NewName { $_.name -repl
 --Đổi tên trong nội dung của file code bằng visual studio code
 +Mở visual studio code
 +Mở thư mục D:\workspace\SalemanSoft\git\Code\company\USR\User
-+Chọn phân biệt hoa thường
-+Thay CTM.Customer> USR.User 
-+Thay Customer>User
++Chọn phân biệt hoa thường (VERY IMPORTANT)
++Thay CTM => USR
++Thay Customer =>User
 +Replace all
-+Thay customer>user
-+Replace all
+
 
 
 3)Làm việc tầng DATA
