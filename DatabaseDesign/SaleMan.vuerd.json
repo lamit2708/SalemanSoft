@@ -1364,7 +1364,7 @@
             "id": "f373503d-a53b-46a8-910d-45d883949b2b"
           },
           {
-            "name": "Quatity",
+            "name": "Quantity",
             "comment": "",
             "dataType": "INT",
             "default": "0",
@@ -2858,7 +2858,7 @@
             "id": "e0cd9ea6-71d0-47be-af0f-4443dc0d49bb"
           },
           {
-            "name": "Quatity",
+            "name": "Quantity",
             "comment": "",
             "dataType": "INT",
             "default": "",

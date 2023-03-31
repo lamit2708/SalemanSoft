@@ -8,11 +8,10 @@ Delete all
 -Rename Tên thư mục theo cấu trúc (Thư mục).(File)
 --Mở powershell, nhảy đến thư mục của module mới:
 cd D:\workspace\SalemanSoft\git\Code\company\USR\User\
---Chạy câu lệnh đổi tên
-Get-ChildItem -Recurse -Filter *.CTM.Customer* | Rename-Item -NewName { $_.name -replace '.CTM.Customer', '.USR.User'} -verbose
-
---Đổi tên file
-Get-ChildItem -Recurse -Filter *Customer* | Rename-Item -NewName { $_.name -replace 'Customer', 'User'} -verbose
+--Chạy câu lệnh đổi tên cho CTM
+Get-ChildItem -Recurse | Where-Object {$_.Name -cmatch "CTM"} | Rename-Item -NewName { $_.name -creplace 'CTM', 'PRO'} -verbose
+--Chạy câu lệnh đổi tên cho Product
+Get-ChildItem -Recurse | Where-Object {$_.Name -cmatch "Customer"} | Rename-Item -NewName { $_.name -creplace 'Customer', 'Product'} -verbose
 
 --Đổi tên trong nội dung của file code bằng visual studio code
 +Mở visual studio code
