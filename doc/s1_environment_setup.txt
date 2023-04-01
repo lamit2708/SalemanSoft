@@ -13,4 +13,23 @@
 3)Database
 +Install xampp
 
+4)Clone Source code for library
+Clone D:\workspace\Library\DNet\Code
+vgsoft-framework-dnet
+vgsoft-framework-dnet-api
+vgsoft-framework-dnet-back
+vgsoft-framework-dnet-blazor
+vgsoft-framework-dnet-common
+vgsoft-framework-dnet-front
+
+5)Clone source code for DLL
+
+Clone to D:\workspace\Library\DNet\Product
+vgsoft-library-dnet
+vgsoft-library-dnet-api
+vgsoft-library-dnet-back
+vgsoft-library-dnet-blazor
+vgsoft-library-dnet-common
+vgsoft-library-dnet-front
+
 

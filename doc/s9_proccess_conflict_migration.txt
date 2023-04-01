@@ -1,4 +1,4 @@
-1)Trong file migration init, hàm UP, comment bước tạo database;
+1)Trong file migration init, hàm UP, comment bước tạo table
 2)Chạy update-database; bước này sẽ pass không lỗi 
 3)Sau bước này thì thao tác chỉnh sửa trong DBContext và Entity bình thường;
 4)Chú ý sửa cột trong Entity, thì sửa luôn trong DBContext, theo mẫu đã làm trong Customer
