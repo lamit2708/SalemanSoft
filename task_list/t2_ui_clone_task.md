@@ -1,5 +1,6 @@
 ## Copy TEA into PRO
-
+- [] cd D:\workspace\src\SaleManSoftUI\Code\company
+- [] Copy TEA into PRO
 ## Example to rename from the module TEA (Team) into the module PRO (Product)
 
 - [] Copy Folder TEA into Folder PRO
@@ -13,3 +14,6 @@
   * Team => Product
   * team => product
 
+## Build All
+- [] Build Data
+- [] Build Business
