@@ -1,0 +1,17 @@
+- STEP0: Should update lasted "visual Studio Code" version
+		- working folder: C:\PROJECTS\LAM\CODE\src\SaleManSoftUI\Code
+- step1: copy "C:\PROJECTS\LAM\CODE\src\SaleManSoftUI\Code\company\TEA" template
+- Step2: open powershell cd to "C:\PROJECTS\LAM\CODE\src\SaleManSoftUI\Code\company\PRO"
+- step3: using below script ( noted: rename PRO and Product for new name of Object according)
+	Get-ChildItem -Recurse | Where-Object {$_.Name -cmatch "TEA"} | Rename-Item -NewName { $_.name -creplace 'TEA', 'PRO'} -verbose
+	
+	Get-ChildItem -Recurse | Where-Object {$_.Name -cmatch "Team"} | Rename-Item -NewName { $_.name -creplace 'Team', 'Product'} -verbose
+	
+- Step4: rename objects inside code by visual studio code. Noted: Must select "Aa" icon to ensure matching search
+
+	example: TEA => PRO
+			Team => Product
+	
+
+
+--- BUILD PROJECTS ORDER -- -- DATA > BUSSINESS
