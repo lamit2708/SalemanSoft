@@ -1,5 +1,5 @@
 1)Cấu trúc:
-Tầng Efc.Provider thừa kế từa Efc, Efc thừa kế từ Repository
+Tầng Efc.Provider thừa kế từ Efc, Efc thừa kế từ Repository
 2)Trong tầng Efc.Provider:
 +Thêm hàm xử lý GetByNameAsync, UpdateWithKeyword, CreateWithKeyword
 +Thêm interface trong IProductRepository tầng Repository
