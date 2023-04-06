@@ -47,6 +47,12 @@
     }
 ```
 
+- []VSoft.Company.CTM.Customer.Business\ICustomerMgmtBus.cs
+```C#
+Task<CustomerTableKeySearchDtoResponse> GetTableByKeySearch(CustomerTableKeySearchDtoRequest request);
+```
+
+
 - [] Add Reference Paging to project VSoft.Company.CTM.Customer.Business.Provider
 ```C#
     <Reference Include="VegunSoft.Framework.Paging.Provider">
