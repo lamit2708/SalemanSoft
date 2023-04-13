@@ -32,4 +32,6 @@ vgsoft-library-dnet-blazor
 vgsoft-library-dnet-common
 vgsoft-library-dnet-front
 
+6)Fix path limitation path
+https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/The-Windows-10-default-path-length-limitation-MAX-PATH-is-256-characters.html
 
