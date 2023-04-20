@@ -23,19 +23,24 @@ namespace SolutionGenerator
     {
         static void Main(string[] args)
         {
-            args = new[]
+            var name = args != null && args.Length > 0 ? args[0] : "Solution";
+            var dir = Directory.GetCurrentDirectory();
+            Console.WriteLine($"Current Directory: {dir}");
+            string[] finalArgs = new[]
             {
                 "--folder",
-                "X:\\Programming\\SalemanSoft\\SaleManSoftUI\\Code",
+                dir,
                 "--output",
-                "SaleManSoftUI.sln",
+                $"{name}.sln",
             };
+
             var options = new Options();
-            var isValid = Parser.Default.ParseArgumentsStrict(args, options);
+            var isValid = Parser.Default.ParseArgumentsStrict(finalArgs, options);
             options.Folder = Path.GetFullPath(options.Folder).TrimEnd(Path.DirectorySeparatorChar);
             if (isValid)
                 new SolutionGenerator(options).Render();
-            Console.ReadKey();
+
+           // Console.ReadKey();
         }
 
     }
