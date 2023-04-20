@@ -1,0 +1,1 @@
+SolutionGenerator.exe --folder X:\Programming\SalemanSoft\SaleManSoftUI\Code --output SaleManSoftUI.sln
