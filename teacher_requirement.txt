@@ -1,0 +1,11 @@
+Báo giá, ghi giá tiền;
+Báo giá chọn phần mềm và chức năng cần;
+phần mềm gồm chức năng nào?
+Thêm hoạt động có gắn báo giá;
+demo trong pipeline
+Tư vấn trỏ qua hoạt động;
+báo giá trỏ qua order
+Sản phẩm cần chức năng để tick chọn=> tư vấn hoặc báo giá cho khách;
+Các hoạt động hiện không chạy;
+Chưa có quy trình hoàn chỉnh
+Dashboard thiếu, phân quyền thiếu
